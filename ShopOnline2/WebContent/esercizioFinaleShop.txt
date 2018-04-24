@@ -37,6 +37,7 @@ la recensione del prodotto
 mostra la lista dei prodotti acquistati ma non ancora consegnati
 qui è presente un bottone dettagli che mostra i dettagli dell'acquisto
 e una progress bar che indica lo stato di avanzamento della spedizione
+
 - CONTATTI
 questa pagina mostra i dettagli della società per la quale state sviluppando l'app
 nome, numero di telefono, mail, una breve descrizione e l'indirizzo
