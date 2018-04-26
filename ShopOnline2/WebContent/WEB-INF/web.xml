@@ -52,6 +52,16 @@
   <servlet-name>ListaProdotti</servlet-name>
   <url-pattern>/ListaProdotti</url-pattern>
   </servlet-mapping>
+  
+    <!-- Acquista -->
+  <servlet>
+  <servlet-name>Acquista</servlet-name>
+  <servlet-class>it.accenture.controller.Acquista</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Acquista</servlet-name>
+  <url-pattern>/Acquista</url-pattern>
+  </servlet-mapping>
 
 
 </web-app>
