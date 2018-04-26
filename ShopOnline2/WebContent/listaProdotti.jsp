@@ -18,6 +18,53 @@
 <%List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
 
 
+<!-- NAVBAR -->
+<nav class="nav navbar">
+<div class="navbar-header div-icona-home" style="margin-top: 15px; margin-left: 25px;">
+
+<a href="index.jsp">
+<img src="img/home.png" class="icona-home">
+</a>
+
+</div><!-- navbar header -->
+<div class="collapse navbar-collapse">
+<ul class="nav navbar-nav">
+<li><a href="ListaProdotti">Prodotti</a></li>
+<li><a href="ListaProdottiInOfferta">Offerte</a></li>
+<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="ListaProdottiPerCategoria">Categorie<span class="caret"></span></a>
+<ul class="dropdown-menu">
+  <li><a href="#">CALCIO</a></li>
+  <li><a href="#">BASKET</a></li>
+  <li><a href="#">TENNIS</a></li>
+  <li><a href="#">NUOTO</a></li>
+  <li><a href="#">TREKKING</a></li>
+  
+  
+</ul>
+</li>
+<% if (utente == null) { %>
+<li><a href="registrazione.jsp?form=registrazione">Registrazione</a></li>
+<li><a href="registrazione.jsp?form=login">Login</a></li>
+<% } else { %>
+<li><a href="ListaAcquisti">Lista Acquisti</a></li>
+<li><a href="ListaOrdini">Lista Ordini</a></li>
+<li><a href="Logout">Logout</a></li>
+<% } %>
+
+
+<input type="text" placeholder="Cerca..." style="margin-top: 25px; margin-left: 500px; margin-right: 10px;">
+<a href="ProfiloUtente"><img src="img/user.png" class="icona-user" style="margin-top: 15px;"></a>
+<a href="Carrello"><img src="img/cart.png" class="icona-cart" style="margin-top: 15px;"></a>
+
+</div><!-- chiusura navbar body -->
+</nav><!-- chiusura navbar  -->
+
+<!-- JUMBOTRON -->
+<div class="jumbotron">
+<h1>LISTA PRODOTTI</h1>
+<p></p>
+</div><!-- chiusura jumbotron -->
+
 
 <div class="container">
 <div class="table-responsive">
@@ -40,7 +87,7 @@
 <td><%=prodotto.getMarca() %></td>
 <td><%=prodotto.getPrezzo() %></td>
 <td><%=prodotto.getQuantitaDisponibile()%></td>
-<td><%=prodotto.getImmagine()%></td>
+<td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
 
 <td>
 <form action="ListaProdotti" method="post">

@@ -17,7 +17,7 @@
 
 <!-- NAVBAR -->
 <nav class="nav navbar">
-<div class="navbar-header div-icona-home" style="margin-top: 15px;">
+<div class="navbar-header div-icona-home" style="margin-top: 15px; margin-left: 25px;">
 
 <a href="index.jsp">
 <img src="img/home.png" class="icona-home">
@@ -49,7 +49,7 @@
 <% } %>
 
 
-<input type="text" placeholder="Cerca..." style="margin-top: 25px; margin-left: 65px;">
+<input type="text" placeholder="Cerca..." style="margin-top: 25px; margin-left: 500px; margin-right: 10px;">
 <a href="ProfiloUtente"><img src="img/user.png" class="icona-user" style="margin-top: 15px;"></a>
 <a href="Carrello"><img src="img/cart.png" class="icona-cart" style="margin-top: 15px;"></a>
 

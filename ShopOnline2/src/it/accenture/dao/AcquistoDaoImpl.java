@@ -65,7 +65,7 @@ public class AcquistoDaoImpl implements AcquistoDao {
 	@Override
 	public List<Acquisto> getListaAcquisti(int idUtente) {
 		List<Acquisto> listaAcquisti = new ArrayList<>();
-		String query = "select * from acquisto where id = " + idUtente;
+		String query = "select * from acquisto where id_utente = " + idUtente;
 		ResultSet rs = null;
 		try {
 			statement=connection.createStatement();
@@ -103,7 +103,7 @@ public class AcquistoDaoImpl implements AcquistoDao {
 	@Override
 	public List<Acquisto> getListaOrdini(int idUtente) {
 		List<Acquisto> listaOrdini = new ArrayList<>();
-		String query = "select * from acquisto where sysdate < data_fine and id = " + idUtente;
+		String query = "select * from acquisto where sysdate < data_fine and id_utente = " + idUtente;
 		ResultSet rs = null;
 		try {
 			statement=connection.createStatement();

@@ -87,7 +87,7 @@ insert into prodotto values (prodotto_sequence.nextval, 'parastinchi', 'CALCIO',
 
 insert into prodotto values (prodotto_sequence.nextval, 'borsa', 'NUOTO', 'nabaiji', 15, 'true',4, 5, 'img/borsa2.jpg');
 
-insert into prodotto values (prodotto_sequence.nextval, 'occhialini', 'NUOTO', 'arena', 21, 'false',0, 7, 'img/borsa2.jpg');
+insert into prodotto values (prodotto_sequence.nextval, 'occhialini', 'NUOTO', 'arena', 21, 'false',0, 7, 'img/occhialini.jpg');
 
 
 insert into prodotto values (prodotto_sequence.nextval, 'cuffia', 'NUOTO', 'speedo', 19, 'true',8, 5, 'img/cuffia.jpg');
