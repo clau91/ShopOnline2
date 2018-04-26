@@ -28,7 +28,7 @@ public class ProdottoDaoImpl implements ProdottoDao {
 	public List<Prodotto> getAllProdotti() {
 		List<Prodotto> listaProdotti = new ArrayList<>();
 		ResultSet rs = null;
-		String query = "select * from prodotto";
+		String query = "select * from prodotto where quantita_disponibile > 0";
 		try {
 			statement = connection.createStatement();
 			rs = statement.executeQuery(query);
@@ -105,7 +105,7 @@ public class ProdottoDaoImpl implements ProdottoDao {
 	public List<Prodotto> getProdottiPerCategoria(Categoria categoria) {
 		List<Prodotto> listaProdottiPerCategoria = new ArrayList<>();
 		ResultSet rs = null;
-		String query = "select * from prodotto where offerta = " + categoria;
+		String query = "select * from prodotto where categoria = " + categoria;
 		try {
 			statement = connection.createStatement();
 			rs = statement.executeQuery(query);

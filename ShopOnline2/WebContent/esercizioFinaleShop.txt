@@ -19,7 +19,9 @@ visualizzare la password che abbiamo scritto
 - LOGOUT
 - LISTA PRODOTTI
 mostrerà la lista dei prodotti disponibili
+
 - LISTA PRODOTTI IN OFFERTA
+
 - LISTA PRODOTTI PER CATEGORIA 
 implementare un menu a tendina nella navbar che consenta di scegliere la categoria
 per ogni prodotto ci sarà un bottone acquista (disponibile solo se si è loggati) e un bottone dettagli (che mostra i dettagli del prodotti)
