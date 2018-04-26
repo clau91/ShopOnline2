@@ -17,10 +17,12 @@
 
 <!-- NAVBAR -->
 <nav class="nav navbar">
-<div class="navbar-header div-icona-home">
+<div class="navbar-header div-icona-home" style="margin-top: 15px;">
+
 <a href="index.jsp">
 <img src="img/home.png" class="icona-home">
 </a>
+
 </div><!-- navbar header -->
 <div class="collapse navbar-collapse">
 <ul class="nav navbar-nav">
@@ -37,14 +39,10 @@
 <% } %>
 
 
+<input type="text" placeholder="Cerca..." style="margin-top: 25px; margin-left: 65px;">
+<a href="ProfiloUtente"><img src="img/user.png" class="icona-user" style="margin-top: 15px;"></a>
+<a href="Carrello"><img src="img/cart.png" class="icona-cart" style="margin-top: 15px;"></a>
 
-
-</ul>
-<ul class="nav navbar-nav navbar-right">
-<input type="text" placeholder="Cerca...">
-<li><a href="ProfiloUtente"><img src="img/user.png" class="icona-user"></a></li>
-<li><a href="Carrello"><img src="img/cart.png" class="icona-cart"></a></li>
-</ul>
 </div><!-- chiusura navbar body -->
 </nav><!-- chiusura navbar  -->
 

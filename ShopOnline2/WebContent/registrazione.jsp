@@ -9,31 +9,52 @@
 <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/stile.css">
 </head>
 <body>
 
+
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
 <% String scelta = (String) request.getParameter("form"); %>
+
+
+
 <!-- NAVBAR -->
-<nav class="nav navbar-inverse">
+<nav class="nav navbar">
 <div class="navbar-header div-icona-home">
 <a href="index.jsp">
-<img src="put an image" class="icona-home">
+<img src="img/home.png" class="icona-home">
 </a>
 </div><!-- navbar header -->
 <div class="collapse navbar-collapse">
 <ul class="nav navbar-nav">
-<li><a href="ListaProdotti">Lista Prodotti</a></li>
-<% if (utente ==null) { %>
+<li><a href="ListaProdotti">Prodotti</a></li>
+<li><a href="ListaProdottiInOfferta">Offerte</a></li>
+<li><a href="ListaProdottiPerCategoria">Categorie</a></li>
+<% if (utente == null) { %>
 <li><a href="registrazione.jsp?form=registrazione">Registrazione</a></li>
 <li><a href="registrazione.jsp?form=login">Login</a></li>
-<%} else { %>
-<li><a href="ListaPrenotazioni">Lista Prodotti</a></li>
-<li><a href="Logout.jsp">Logout</a></li>
+<% } else { %>
+<li><a href="ListaAcquisti">Lista Acquisti</a></li>
+<li><a href="ListaOrdini">Lista Ordini</a></li>
+<li><a href="Logout">Logout</a></li>
 <% } %>
+
+
+
+
+</ul>
+<ul class="nav navbar-nav navbar-right">
+<input type="text" placeholder="Cerca...">
+<li><a href="ProfiloUtente"><img src="img/user.png" class="icona-user"></a></li>
+<li><a href="Carrello"><img src="img/cart.png" class="icona-cart"></a></li>
 </ul>
 </div><!-- chiusura navbar body -->
 </nav><!-- chiusura navbar  -->
+
+
+
 <% if(scelta.equals("registrazione")) { %>
 <!-- JUMBOTRON -->
 <div class="jumbotron">

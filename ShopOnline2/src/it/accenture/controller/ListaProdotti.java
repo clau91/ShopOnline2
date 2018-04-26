@@ -16,6 +16,7 @@ import it.accenture.model.Prodotto;
 
 
 
+
 public class ListaProdotti extends HttpServlet {
 	
 	
@@ -45,6 +46,8 @@ public class ListaProdotti extends HttpServlet {
 		
 	}
 }
+
+
 
 
 
