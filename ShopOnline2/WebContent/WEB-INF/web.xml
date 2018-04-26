@@ -75,4 +75,15 @@
   </servlet-mapping>
 
 
+   <!-- LISTA Prodotti In OFFERTA -->
+  <servlet>
+  <servlet-name>ListaProdottiInOfferta</servlet-name>
+  <servlet-class>it.accenture.controller.ListaProdottiInOfferta</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>ListaProdottiInOfferta</servlet-name>
+  <url-pattern>/ListaProdottiInOfferta</url-pattern>
+  </servlet-mapping>
+
+
 </web-app>
