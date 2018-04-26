@@ -1,3 +1,4 @@
+<%@page import="it.accenture.model.Utente"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -11,6 +12,7 @@
 <link rel="stylesheet" href="css/stile.css">
 </head>
 <body>
+<% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
 
 
 <!-- NAVBAR -->
@@ -25,13 +27,15 @@
 <li><a href="ListaProdotti">Prodotti</a></li>
 <li><a href="ListaProdottiInOfferta">Offerte</a></li>
 <li><a href="ListaProdottiPerCategoria">Categorie</a></li>
-
+<% if (utente == null) { %>
 <li><a href="registrazione.jsp?form=registrazione">Registrazione</a></li>
 <li><a href="registrazione.jsp?form=login">Login</a></li>
-
+<% } else { %>
 <li><a href="ListaAcquisti">Lista Acquisti</a></li>
 <li><a href="ListaOrdini">Lista Ordini</a></li>
-<li><a href="Logout.jsp">Logout</a></li>
+<li><a href="Logout">Logout</a></li>
+<% } %>
+
 
 
 
