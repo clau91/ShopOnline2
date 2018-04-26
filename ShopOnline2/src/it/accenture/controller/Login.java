@@ -23,7 +23,7 @@ public class Login extends HttpServlet {
 		Utente utente = utenteService.login(username, password);
 		System.out.println(utente);
 		
-		if(utente != null) {
+		if(utente == null) {
 			System.out.println("Credenziali Sbagliate");
 			req.setAttribute("errore", true);
 			RequestDispatcher dispatcher = req.getRequestDispatcher("registrazione.jsp?form=login");
