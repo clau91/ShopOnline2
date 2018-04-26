@@ -64,4 +64,15 @@
   </servlet-mapping>
 
 
+   <!-- LISTA ORDINI -->
+  <servlet>
+  <servlet-name>ListaOrdini</servlet-name>
+  <servlet-class>it.accenture.controller.ListaOrdini</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>ListaOrdini</servlet-name>
+  <url-pattern>/ListaOrdini</url-pattern>
+  </servlet-mapping>
+
+
 </web-app>
