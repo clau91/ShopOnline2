@@ -31,6 +31,16 @@
   <servlet-name>Logout</servlet-name>
   <url-pattern>/Logout</url-pattern>
   </servlet-mapping>
+  
+    <!-- LISTA ACQUISTI -->
+  <servlet>
+  <servlet-name>ListaAcquisti</servlet-name>
+  <servlet-class>it.accenture.controller.ListaAcquisti</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>ListaAcquisti</servlet-name>
+  <url-pattern>/ListaAcquisti</url-pattern>
+  </servlet-mapping>
 
 
 </web-app>
