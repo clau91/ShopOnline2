@@ -79,6 +79,8 @@ Model:
 . immagine (String percorso)
 
 - Acquisto
+. idProdotto (Fk)
+. idUtente (Fk)
 . idAcquisto
 . tipoSpezione
 . dataInizio
