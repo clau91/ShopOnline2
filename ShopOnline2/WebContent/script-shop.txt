@@ -30,6 +30,10 @@ indirizzo varchar2(30),
 lista_ordini varchar2(20),
 lista_acquisti varchar2(20));
 
+alter table utente drop column lista_ordini;
+
+alter table utente drop column lista_acquisti;
+
 create table recensione (
 titolo varchar2(20) not null,
 contenuto varchar2(1000),
