@@ -28,7 +28,17 @@
 <ul class="nav navbar-nav">
 <li><a href="ListaProdotti">Prodotti</a></li>
 <li><a href="ListaProdottiInOfferta">Offerte</a></li>
-<li><a href="ListaProdottiPerCategoria">Categorie</a></li>
+<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="ListaProdottiPerCategoria">Categorie<span class="caret"></span></a>
+<ul class="dropdown-menu">
+  <li><a href="#">CALCIO</a></li>
+  <li><a href="#">BASKET</a></li>
+  <li><a href="#">TENNIS</a></li>
+  <li><a href="#">NUOTO</a></li>
+  <li><a href="#">TREKKING</a></li>
+  
+  
+</ul>
+</li>
 <% if (utente == null) { %>
 <li><a href="registrazione.jsp?form=registrazione">Registrazione</a></li>
 <li><a href="registrazione.jsp?form=login">Login</a></li>
