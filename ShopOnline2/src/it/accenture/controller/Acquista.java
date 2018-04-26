@@ -17,7 +17,9 @@ public class Acquista extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+		String nome = req.getParameter("nome");
+		String quantitaAcquistata = req.getParameter("quantitaAcquistata");
+		Double prezzoDiSpedizione = req.get
 	}
 	
 	
