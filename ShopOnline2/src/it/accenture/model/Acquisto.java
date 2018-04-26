@@ -7,7 +7,7 @@ public class Acquisto {
 	private int idAcquisto;
 	private Spedizione tipoSpedizione;
 	private LocalDate dataInizio;
-	private LocalDate dataFine = dataInizio + tipoSpedizione.getNumeroGiorni(numeroGiorni);
+	private LocalDate dataFine;
 	private double prezzoDiSpedizione;
 	private int quantitaAcquistata;
 	private int idProdotto;

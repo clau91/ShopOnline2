@@ -40,6 +40,7 @@
 <td><%=prodotto.getMarca() %></td>
 <td><%=prodotto.getPrezzo() %></td>
 <td><%=prodotto.getQuantitaDisponibile()%></td>
+<td><%=prodotto.getImmagine()%></td>
 
 <td>
 <form action="ListaProdotti" method="post">
