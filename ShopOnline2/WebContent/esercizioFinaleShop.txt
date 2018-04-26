@@ -87,6 +87,8 @@ Model:
 . dataFine
 . prezzoDiSpedizione 
 . quantitaAcquistata
+. idProdotto (FK)
+. idUtente (FK)
 
 - Utente
 . idUtente
