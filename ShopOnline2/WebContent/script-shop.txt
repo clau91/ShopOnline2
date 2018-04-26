@@ -1,0 +1,106 @@
+create table prodotto (id_prodotto integer primary key,
+nome varchar2(20),
+categoria varchar2(20),
+marca varchar2(20),
+prezzo number(20,2),
+offerta varchar2(20),
+constraint prodotto check (offerta in ('true', 'false')),
+sconto integer,
+quantita_disponibile integer,
+immagine varchar2(20));
+
+create table acquisto (id_acquisto integer primary key,
+tipo_spedizione varchar2(20),
+constraint acquisto check (tipo_spedizione in ('ordinaria', 'prioritaria', 'rapida')),
+data_inizio date,
+data_fine date,
+prezzo_spedizione number(10,2),
+quantita_acquistata integer,
+id_utente integer,
+id_prodotto integer,
+foreign key(id_utente) references utente(id_utente),
+foreign key(id_prodotto) references prodotto (id_prodotto)); 
+
+create table utente (id_utente integer primary key,
+nome varchar2(20) not null,
+cognome varchar2(20) not null,
+username varchar2(20) unique,
+password varchar2(20),
+indirizzo varchar2(30),
+lista_ordini varchar2(20),
+lista_acquisti varchar2(20));
+
+create table recensione (
+titolo varchar2(20) not null,
+contenuto varchar2(1000),
+id_utente integer,
+id_prodotto integer,
+foreign key(id_utente) references utente(id_utente),
+foreign key(id_prodotto) references prodotto (id_prodotto));
+
+
+create sequence utente_sequence start with 1 increment by 1;
+
+create sequence prodotto_sequence start with 1 increment by 1;
+
+create sequence acquisto_sequence start with 1 increment by 1;
+
+
+
+insert into prodotto values (prodotto_sequence.nextval, 'racchetta', 'TENNIS', 'head', 50, 'true',10, 15, 'img/racchetta.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 'borsa', 'TENNIS', 'babolat', 40, 'false',0, 8, 'img/borsa.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 'polo', 'TENNIS', 'nike', 35, 'true',5, 12, 'img/polo.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 'pantaloncini', 'TENNIS', 'nike', 25, 'true',10, 14, 'img/pantaloncini.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 'scarpe', 'TENNIS', 'wilson', 65, 'true',5, 9, 'img/scarpe.jpg');
+
+
+
+insert into prodotto values (prodotto_sequence.nextval, 'zaino', 'TREKKING', 'ferrino', 95, 'true',5, 7, 'img/zaino.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 'scarpe', 'TREKKING', 'salomon', 160, 'true',15, 10, 'img/scarpe2.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 't-shirt', 'TREKKING', 'the north face', 50, 'false',0, 6, 'img/tshirt.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 'pantaloncini', 'TREKKING', 'quechua', 25, 'true',10, 11, 'img/short2.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 'bastoni', 'TREKKING', 'ferrino', 80, 'true',13, 5, 'img/bastoni.jpg');
+
+
+insert into prodotto values (prodotto_sequence.nextval, 'scarpe', 'CALCIO', 'adidas', 70, 'true',8, 2, 'img/scarpe3.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 'maglietta', 'CALCIO', 'legea', 14, 'false',0, 11, 'img/magliettat.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 'completo', 'CALCIO', 'legea', 24.99, 'false',0, 11, 'img/completo.jpg');
+insert into prodotto values (prodotto_sequence.nextval, 'pallone', 'CALCIO', 'kipsta', 12, 'true',12, 5, 'img/pallone.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 'parastinchi', 'CALCIO', 'adidas', 19.99, 'true',5, 15, 'img/parastinchi.jpg');
+
+
+
+insert into prodotto values (prodotto_sequence.nextval, 'borsa', 'NUOTO', 'nabaiji', 15, 'true',4, 5, 'img/borsa2.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 'occhialini', 'NUOTO', 'arena', 21, 'false',0, 7, 'img/borsa2.jpg');
+
+
+insert into prodotto values (prodotto_sequence.nextval, 'cuffia', 'NUOTO', 'speedo', 19, 'true',8, 5, 'img/cuffia.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 'tappanaso', 'NUOTO', 'speedo', 7, 'true',11, 5, 'img/tappanaso.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 'boxer', 'NUOTO', 'arena', 30, 'true',9, 10, 'img/boxer.jpg');
+
+
+
+
+insert into prodotto values (prodotto_sequence.nextval, 'pallone', 'BASKET', 'spalding', 19.90, 'false',0, 10, 'img/pallone2.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 'canotta', 'BASKET', 'nike', 27.99, 'true',15, 10, 'img/canotta.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 'pantaloncini', 'BASKET', 'nike', 25.99, 'true',12, 5, 'img/pantaloni3.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 'scarpe', 'BASKET', 'tarmak', 49.99, 'false',0, 15, 'img/scarpe4.jpg');
+
+insert into prodotto values (prodotto_sequence.nextval, 'borraccia', 'BASKET', 'kipsta', 5.99, 'false',0, 12, 'img/borraccia.jpg');
