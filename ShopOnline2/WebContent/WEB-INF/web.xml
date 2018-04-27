@@ -86,4 +86,14 @@
   </servlet-mapping>
 
 
+   <!-- PROFILO UTENTE -->
+  <servlet>
+  <servlet-name>ProfiloUtente</servlet-name>
+  <servlet-class>it.accenture.controller.ProfiloUtente</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>ProfiloUtente</servlet-name>
+  <url-pattern>/ProfiloUtente</url-pattern>
+  </servlet-mapping>
+
 </web-app>
