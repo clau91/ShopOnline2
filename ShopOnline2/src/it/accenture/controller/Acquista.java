@@ -56,6 +56,8 @@ public class Acquista extends HttpServlet {
 		acquistoService.close();
 		
 		ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
+		prodottoService.updateQuantitaDisponibile(idProdotto);
+		prodottoService.close();
 		
 				
 	}
