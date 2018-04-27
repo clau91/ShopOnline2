@@ -23,10 +23,10 @@
 
 <!-- NAVBAR -->
 <nav class="nav navbar">
-<div class="navbar-header div-icona-home" style="margin-top: 15px; margin-left: 25px;">
+<div class="navbar-header div-icona-home" style="margin-left: 25px;">
 
 <a href="index.jsp">
-<img src="img/home.png" class="icona-home">
+<img src="img/home.png" class="icona">
 </a>
 </a>
 </div>
@@ -36,11 +36,11 @@
 <li><a href="ListaProdottiInOfferta">Offerte</a></li>
 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="ListaProdottiPerCategoria">Categorie<span class="caret"></span></a>
 <ul class="dropdown-menu">
-  <li><a href="#">CALCIO</a></li>
-  <li><a href="#">BASKET</a></li>
-  <li><a href="#">TENNIS</a></li>
-  <li><a href="#">NUOTO</a></li>
-  <li><a href="#">TREKKING</a></li>  
+  <li><a href="ListaProdottiPerCategoria?categoria=CALCIO">CALCIO</a></li>
+  <li><a href="ListaProdottiPerCategoria?categoria=BASKET">BASKET</a></li>
+  <li><a href="ListaProdottiPerCategoria?categoria=TENNIS">TENNIS</a></li>
+  <li><a href="ListaProdottiPerCategoria?categoria=NUOTO">NUOTO</a></li>
+  <li><a href="ListaProdottiPerCategoria?categoria=TREKKING">TREKKING</a></li>  
 </ul>
 </li>
 <% if (utente == null) { %>
@@ -52,15 +52,21 @@
 <li><a href="ListaOrdini">Lista Ordini</a></li>
 <li><a href="Logout">Logout</a></li>
 <li><a href="contatti.jsp">Contatti</a></li>
-
 <% } %>
 </ul>
 </div>
 
-<div align="right" style="margin-right: 30px;">
-<input type="text" placeholder="Cerca..." style="margin-top: 25px; margin-right: 20px;">
-<a href="ProfiloUtente"><img src="img/user.png" class="icona-user" style="margin-top: 15px;  margin-right: 15px;"></a>
-<a href="Carrello"><img src="img/cart.png" class="icona-cart" style="margin-top: 15px;  margin-right: 15px;"></a>
+<div align="right" style="margin-right: 40px;">
+<input type="text2" name="search" placeholder="Cerca...">
+
+
+
+<% if (utente == null) { %>
+<a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
+<% } else { %>
+<a href="profiloUtente.jsp"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
+<a href="Carrello"><img src="img/cart.png" class="icona" ></a>
+<% } %>
 </div>
 
 
@@ -88,7 +94,7 @@ novalidate id="formRegistrazione">
 
 <!-- NOME -->
 <div class="form-group">
-<label class="col-md-4 control-label">Inserisci Nome</label>
+<label class="col-md-4 control-label">Nome</label>
 <div class="col-md-5">
 <input type ="text" name="nome" placeholder="inserisci nome" class="form-control" id="nome">
 </div>
@@ -97,7 +103,7 @@ novalidate id="formRegistrazione">
 
 <!-- COGNOME -->
 <div class="form-group">
-<label class="col-md-4 control-label">Inserisci Cognome</label>
+<label class="col-md-4 control-label">Cognome</label>
 <div class="col-md-5">
 <input type ="text" name="cognome" placeholder="inserisci cognome" class="form-control" id="cognome">
 </div>
@@ -106,7 +112,7 @@ novalidate id="formRegistrazione">
 
 <!-- INDIRIZZO -->
 <div class="form-group">
-<label class="col-md-4 control-label">Inserisci Indirizzo</label>
+<label class="col-md-4 control-label">Indirizzo</label>
 <div class="col-md-5">
 <input type ="text" name="indirizzo" placeholder="inserisci indirizzo" class="form-control" id="indirizzo">
 </div>
@@ -115,7 +121,7 @@ novalidate id="formRegistrazione">
 
 <!-- USERNAME -->
 <div class="form-group">
-<label class="col-md-4 control-label">Inserisci Username</label>
+<label class="col-md-4 control-label">Username</label>
 <div class="col-md-5">
 <input type ="text" name="username" placeholder="inserisci username" class="form-control" id="username">
 </div>
@@ -124,7 +130,7 @@ novalidate id="formRegistrazione">
 
 <!-- PASSWORD -->
 <div class="form-group">
-<label class="col-md-4 control-label">Inserisci Password</label>
+<label class="col-md-4 control-label">Password</label>
 <div class="col-md-5">
 <input type ="password" name="password" placeholder="inserisci password" class="form-control" id="password">
 </div>
@@ -161,7 +167,7 @@ novalidate id="formLogin">
 
 <!-- USERNAME -->
 <div class="form-group">
-<label class="col-md-4 control-label">Inserisci Username</label>
+<label class="col-md-4 control-label">Username</label>
 <div class="col-md-5">
 <input type ="text" name="username" placeholder="inserisci username" class="form-control" id="username">
 </div>
@@ -170,10 +176,11 @@ novalidate id="formLogin">
 
 <!-- PASSWORD -->
 <div class="form-group">
-<label class="col-md-4 control-label">Inserisci Password</label>
+<label class="col-md-4 control-label">Password</label>
 <div class="col-md-5">
 <input type ="password" name="password" placeholder="inserisci password" class="form-control" id="myInput"><br>
-<input type="checkbox" onclick="myFunction()">Show Password
+<input type="checkbox" onclick="myFunction()">Mostra password
+
 
 </div>
 <span class="col-md-3"></span>

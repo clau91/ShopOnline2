@@ -59,7 +59,8 @@ public class Acquista extends HttpServlet {
 		prodottoService.updateQuantitaDisponibile(idProdotto);
 		prodottoService.close();
 		
-				
+		resp.sendRedirect("listaAcquisti.jsp");
+
 	}
 	
 	

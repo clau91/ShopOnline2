@@ -53,7 +53,7 @@
   <url-pattern>/ListaProdotti</url-pattern>
   </servlet-mapping>
   
-    <!-- Acquista -->
+  <!-- ACQUISTA -->
   <servlet>
   <servlet-name>Acquista</servlet-name>
   <servlet-class>it.accenture.controller.Acquista</servlet-class>
@@ -75,7 +75,7 @@
   </servlet-mapping>
 
 
-   <!-- LISTA Prodotti In OFFERTA -->
+  <!-- LISTA PRODOTTI IN OFFERTA -->
   <servlet>
   <servlet-name>ListaProdottiInOfferta</servlet-name>
   <servlet-class>it.accenture.controller.ListaProdottiInOfferta</servlet-class>
@@ -83,6 +83,16 @@
   <servlet-mapping>
   <servlet-name>ListaProdottiInOfferta</servlet-name>
   <url-pattern>/ListaProdottiInOfferta</url-pattern>
+  </servlet-mapping>
+  
+    <!-- LISTA PRODOTTI PER CATEGORIA -->
+  <servlet>
+  <servlet-name>ListaProdottiPerCategoria</servlet-name>
+  <servlet-class>it.accenture.controller.ListaProdottiPerCategoria</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>ListaProdottiPerCategoria</servlet-name>
+  <url-pattern>/ListaProdottiPerCategoria</url-pattern>
   </servlet-mapping>
 
 

@@ -38,7 +38,7 @@ function myMap() {
         map: map,
         title:"SportAddicted s.r.l."
     });
-    var contentString = '<em>SportAddicted s.r.l.</em>';
+    var contentString = '<em>SportAddicted s.r.l.</em><br><em>Via G. Washington 50</em><br><em>20146, Milano(MI)</em>';
     var infoWindow = new google.maps.InfoWindow({
         content: contentString
     });
@@ -46,3 +46,4 @@ function myMap() {
         infoWindow.open(map,marker);
     });
 }
+

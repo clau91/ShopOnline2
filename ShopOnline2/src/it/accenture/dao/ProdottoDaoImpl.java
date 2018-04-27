@@ -105,7 +105,7 @@ public class ProdottoDaoImpl implements ProdottoDao {
 	public List<Prodotto> getProdottiPerCategoria(Categoria categoria) {
 		List<Prodotto> listaProdottiPerCategoria = new ArrayList<>();
 		ResultSet rs = null;
-		String query = "select * from prodotto where categoria = " + categoria;
+		String query = "select * from prodotto where categoria = '" + categoria + "'";
 		try {
 			statement = connection.createStatement();
 			rs = statement.executeQuery(query);
@@ -154,12 +154,18 @@ public class ProdottoDaoImpl implements ProdottoDao {
 			}
 		}
 		
+	
 		
 	}
 
 	@Override
 	public void close() {
 		
+		try {
+			connection.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 	
