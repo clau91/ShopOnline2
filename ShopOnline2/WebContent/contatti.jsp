@@ -67,28 +67,19 @@
 </body>
 </html>
 
-<div align="center">
-<p style="font-size: 25px;">
-Sportaddicted nasce dall esperienza di quattro persone, Claudio, Daniele, Pavlin e Angelo, 
-<br>
-che da molto tempo condividono lavoro e passione per l'outdoor e per lo sport.
-<br>
-Sportaddicted propone ai propri clienti tutto quello che può essere utile o indispensabile 
-<br>
-per vivere il mondo outdoor in maniera piacevole, confortevole e rilassante senza tralasciare
-<br>
-chi lo pratica come challenger. Molti hanno la passione dello sport pur non gareggiando 
-<br>
-da professionisti e per loro Sportaddicted ha selezionato oggetti, accessori, modelli con questo tema e, 
-<br>
+<div style="text-align:justify; margin-top: 100px; margin-left: 140px; margin-right: 140px;">
+<p style="font-size: 20px;">
+Sportaddicted nasce dall esperienza di quattro persone, Claudio, Daniele, Pavlin e Angelo, che da molto tempo condividono lavoro e passione per l'outdoor e per lo sport.
+Sportaddicted propone ai propri clienti tutto quello che può essere utile o indispensabile per vivere il mondo outdoor in maniera piacevole, confortevole e rilassante senza tralasciare
+chi lo pratica come challenger. Molti hanno la passione dello sport pur non gareggiando da professionisti e per loro Sportaddicted ha selezionato oggetti, accessori, modelli con questo tema e, 
 siccome anche in città possiamo vivere in uno stile sportivo, Sportaddicted propone un abbigliamento 
-<br>
-sportivo in grado di incontrare i gusti di tutti e soddisfare ogni esigenza 
-<br>
-con la cortesia e competenza di sempre.
+sportivo in grado di incontrare i gusti di tutti e soddisfare ogni esigenza con la cortesia e competenza di sempre.
 <br>
 <br>
 <br>
+</p>
+</div>
+<div  align="center" style="font-size: 20px;" >
 Sportaddicted s.r.l.
 <br>
 Via G. Washington 50, 20146 Milano(MI)
