@@ -139,23 +139,30 @@ public class ProdottoDaoImpl implements ProdottoDao {
 		}
 
 	@Override
-	public void updateDisponibile(int idProdotto) {
+	public void updateQuantitaDisponibile(int idProdotto) {
+		String query = "update prodotto set quantita_disponibile = (quantita_disponibile - 1) where id_prodotto = " + idProdotto;
+		try {
+			statement = connection.createStatement();
+			statement.executeQuery(query);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				statement.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
 		
-	}
-
-	@Override
-	public void updateDisponibilitaByOrdini() {
 		
 	}
 
 	@Override
 	public void close() {
-		try {
-			connection.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		
 	}
+
+	
 
 	
 	

@@ -6,7 +6,7 @@ import it.accenture.model.Acquisto;
 
 public interface AcquistoDao {
 
-	public void AcquistaProdotto(Acquisto acquisto);
+	public void acquistaProdotto(Acquisto acquisto);
 	
 	public List<Acquisto> getListaAcquisti(int idUtente);
 	

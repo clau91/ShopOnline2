@@ -8,6 +8,7 @@
 <title>Registrazione</title>
 <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/gestioneForm.js"></script>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/stile.css">
@@ -50,6 +51,8 @@
 <li><a href="ListaAcquisti">Lista Acquisti</a></li>
 <li><a href="ListaOrdini">Lista Ordini</a></li>
 <li><a href="Logout">Logout</a></li>
+<li><a href="contatti.jsp">Contatti</a></li>
+
 <% } %>
 </ul>
 </div>

@@ -48,6 +48,8 @@
 <li><a href="ListaAcquisti">Lista Acquisti</a></li>
 <li><a href="ListaOrdini">Lista Ordini</a></li>
 <li><a href="Logout">Logout</a></li>
+<li><a href="contatti.jsp">Contatti</a></li>
+
 <% } %>
 </ul>
 </div>
@@ -78,8 +80,7 @@
 <th>Marca</th>
 <th>Prezzo </th>
 <th>Quantità Disponibile</th>
-<th>Prodotto In Offerta</th>
-<th>Sconto Prodotto(%)</th>
+<th>Sconto(%)</th>
 <th>Acquista</th>
 </tr>
 </thead>
@@ -91,7 +92,6 @@
 <td><%=prodotto.getMarca() %></td>
 <td><%=prodotto.getPrezzo() %></td>
 <td><%=prodotto.getQuantitaDisponibile()%></td>
-<td><%=prodotto.isOfferta() %></td>
 <td><%=prodotto.getSconto() %></td>
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
 

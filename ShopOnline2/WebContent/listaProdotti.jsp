@@ -48,6 +48,8 @@
 <li><a href="ListaAcquisti">Lista Acquisti</a></li>
 <li><a href="ListaOrdini">Lista Ordini</a></li>
 <li><a href="Logout">Logout</a></li>
+<li><a href="contatti.jsp">Contatti</a></li>
+
 <% } %>
 </ul>
 </div>

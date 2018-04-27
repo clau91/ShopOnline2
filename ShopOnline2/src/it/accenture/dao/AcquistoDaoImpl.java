@@ -27,7 +27,7 @@ public class AcquistoDaoImpl implements AcquistoDao {
 	}
 	
 	@Override
-	public void AcquistaProdotto(Acquisto acquisto) {
+	public void acquistaProdotto(Acquisto acquisto) {
 		String query = "insert into acquisto values ("
 				+ "acquisto_sequence.nextval,?,?,?,?,?,?,?)";
 		try {
