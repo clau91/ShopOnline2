@@ -1,24 +1,20 @@
 <%@page import="it.accenture.model.Utente"%>
-<%@page import="it.accenture.model.Acquisto"%>
-<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>CONTATTI</title>
 <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/gestioneForm.js"></script>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/stile.css">
-<title>Lista Ordini</title>
 </head>
 <body>
-<% Utente utente =(Utente)session.getAttribute("utenteLoggato"); %>
-<% List<Acquisto> listaOrdini = (List<Acquisto>) request.getAttribute("listaOrdini"); %>
+<% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
 
-
-<!-- NAVBAR -->
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-top: 15px; margin-left: 25px;">
 
@@ -61,39 +57,26 @@
 
 </nav><!-- chiusura navbar  -->
 
+
 <!-- JUMBOTRON -->
 <div class="jumbotron">
-<h1>WELCOME TO SPORTADDICTED</h1>
+<h1>CONTATTI</h1>
 <p></p>
 </div><!-- chiusura jumbotron -->
-
-<!-- Tabella -->
-<div class="table responsive">
-<table class="table">
-<thead>
-<tr>
-<th>Id Ordine</th>
-<th>Tipo Spedizione</th>
-<th>Data Ricevimento</th>
-<th>Data Evasione</th>
-<th>Prezzo Spedizione</th>
-<th>Quantità Acquistata</th>
-</tr>
-</thead>
-<tbody>
-<% for(Acquisto acquisto : listaOrdini) {%>
-<tr>
-<td><%=acquisto.getIdAcquisto() %></td>
-<td><%=acquisto.getTipoSpedizione()%></td>
-<td><%=acquisto.getDataInizio() %></td>
-<td><%=acquisto.getDataFine() %></td>
-<td><%=acquisto.getPrezzoDiSpedizione() %></td>
-<td><%=acquisto.getQuantitaAcquistata() %></td>
-</tr>
-<%} %>
-
-</tbody>
-</table>
-</div>
 </body>
 </html>
+
+<div align="center">
+<p style="font-size: 25px;">
+Sportaddicted s.r.l.
+<br>
+Via G. Washington 50, 20146 Milano(MI)
+<br>
+Tel: 800123123
+<br>
+Email: info@sportaddicted.com
+<br>
+<div id="map" style="width:400px;height:400px;background:yellow"></div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD6eXrAKjxJBoACBt2Rhb6fbhqCTrmz1c&callback=myMap"></script></p>
+</div>

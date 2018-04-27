@@ -27,10 +27,10 @@
 <a href="index.jsp">
 <img src="img/home.png" class="icona-home">
 </a>
-
-</div><!-- navbar header -->
-<div class="collapse navbar-collapse">
-<ul class="nav navbar-nav">
+</a>
+</div>
+<div align="center">
+<ul class="nav navbar-nav" >
 <li><a href="ListaProdotti">Prodotti</a></li>
 <li><a href="ListaProdottiInOfferta">Offerte</a></li>
 <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="ListaProdottiPerCategoria">Categorie<span class="caret"></span></a>
@@ -39,26 +39,28 @@
   <li><a href="#">BASKET</a></li>
   <li><a href="#">TENNIS</a></li>
   <li><a href="#">NUOTO</a></li>
-  <li><a href="#">TREKKING</a></li>
-  
-  
+  <li><a href="#">TREKKING</a></li>  
 </ul>
 </li>
 <% if (utente == null) { %>
 <li><a href="registrazione.jsp?form=registrazione">Registrazione</a></li>
 <li><a href="registrazione.jsp?form=login">Login</a></li>
+<li><a href="contatti.jsp">Contatti</a></li>
 <% } else { %>
 <li><a href="ListaAcquisti">Lista Acquisti</a></li>
 <li><a href="ListaOrdini">Lista Ordini</a></li>
 <li><a href="Logout">Logout</a></li>
 <% } %>
+</ul>
+</div>
+
+<div align="right" style="margin-right: 30px;">
+<input type="text" placeholder="Cerca..." style="margin-top: 25px; margin-right: 20px;">
+<a href="ProfiloUtente"><img src="img/user.png" class="icona-user" style="margin-top: 15px;  margin-right: 15px;"></a>
+<a href="Carrello"><img src="img/cart.png" class="icona-cart" style="margin-top: 15px;  margin-right: 15px;"></a>
+</div>
 
 
-<input type="text" placeholder="Cerca..." style="margin-top: 25px; margin-left: 500px; margin-right: 10px;">
-<a href="ProfiloUtente"><img src="img/user.png" class="icona-user" style="margin-top: 15px;"></a>
-<a href="Carrello"><img src="img/cart.png" class="icona-cart" style="margin-top: 15px;"></a>
-
-</div><!-- chiusura navbar body -->
 </nav><!-- chiusura navbar  -->
 
 
