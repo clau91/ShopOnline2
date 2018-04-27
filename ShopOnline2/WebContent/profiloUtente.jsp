@@ -5,16 +5,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Registrazione</title>
+<title>Profilo Utente</title>
 <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/gestioneForm.js"></script>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/stile.css">
 </head>
 <body>
-
 
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
 <% String scelta = (String) request.getParameter("form"); %>
@@ -51,8 +49,6 @@
 <li><a href="ListaAcquisti">Lista Acquisti</a></li>
 <li><a href="ListaOrdini">Lista Ordini</a></li>
 <li><a href="Logout">Logout</a></li>
-<li><a href="contatti.jsp">Contatti</a></li>
-
 <% } %>
 </ul>
 </div>
@@ -75,84 +71,14 @@
 <% } else if(scelta.equals("login")) { %>
 <!-- JUMBOTRON -->
 <div class="jumbotron">
-<h1>Effettua la login per procedere all'ordine !</h1>
+<h1>Profilo Utente !</h1>
 </div><!-- CHIUSURA JUMBOTRON -->
 <% } %>
 <!-- CONTAINER -->
 <div class="container">
 
-<% if(scelta.equals("registrazione")) { %>
-<!-- FORM REGISTRAZIONE -->
-<form action="Registrazione" method="post" class="form-horizontal"
-novalidate id="formRegistrazione">
 
-<!-- NOME -->
-<div class="form-group">
-<label class="col-md-4 control-label">Inserisci Nome</label>
-<div class="col-md-5">
-<input type ="text" name="nome" placeholder="inserisci nome" class="form-control" id="nome">
-</div>
-<span class="col-md-3"></span>
-</div>
-
-<!-- COGNOME -->
-<div class="form-group">
-<label class="col-md-4 control-label">Inserisci Cognome</label>
-<div class="col-md-5">
-<input type ="text" name="cognome" placeholder="inserisci cognome" class="form-control" id="cognome">
-</div>
-<span class="col-md-3"></span>
-</div>
-
-<!-- INDIRIZZO -->
-<div class="form-group">
-<label class="col-md-4 control-label">Inserisci Indirizzo</label>
-<div class="col-md-5">
-<input type ="text" name="indirizzo" placeholder="inserisci indirizzo" class="form-control" id="indirizzo">
-</div>
-<span class="col-md-3"></span>
-</div>
-
-<!-- USERNAME -->
-<div class="form-group">
-<label class="col-md-4 control-label">Inserisci Username</label>
-<div class="col-md-5">
-<input type ="text" name="username" placeholder="inserisci username" class="form-control" id="username">
-</div>
-<span class="col-md-3"></span>
-</div>
-
-<!-- PASSWORD -->
-<div class="form-group">
-<label class="col-md-4 control-label">Inserisci Password</label>
-<div class="col-md-5">
-<input type ="password" name="password" placeholder="inserisci password" class="form-control" id="password">
-</div>
-<span class="col-md-3"></span>
-</div>
-
-
-<!-- BOTTONI -->
-<div class="form-group">
-<span class="col-md-4"></span>
-<div class="col-md-5">
-<input type ="submit" value="Registrati" class="btn-primary">
-<input type ="reset" value="Reset" class="btn-warning">
-</div>
-<span class="col-md-3"></span>
-</div>
-</form><!-- CHIUSURA FORM REGISTRAZIONE -->
-
-<!-- LINK GIA REGISTRATO -->
-<div id="linkRegistrazione">
-<span class="col-md-4"></span>
-<div class="col-md-5 text-primary">
-<p>Sei già registrato ?</p>
-<p><a onclick="cambioForm()">Clicca qui</a> per la login</p>
-</div>
-<span class="col-md-3"></span>
-</div>
-<% } else if(scelta.equals("login")) { %>
+<% if(scelta.equals("login")) { %>
 
 
 <!-- FORM LOGIN -->
@@ -190,9 +116,7 @@ novalidate id="formLogin">
 </div>
 </form><!-- chiusura form login -->
 
-<script type="text/javascript">
-	$("#password").password('toggle');
-</script>
+
 
 <!-- LINK NON  REGISTRATO -->
 <div id="linkLogin">
@@ -213,7 +137,26 @@ novalidate id="formLogin">
 </div><!-- chiusura container -->
 
 
+<div class="container">
+<div class="table-responsive">
+<table class="table">
+<!-- table head -->
+<thead>
+<tr>
+<th>Nome</th>
+<th>Cognome</th>
+<th>Indirizzo </th>
+<th>Prodotti Acquisti</th>
+</tr>
+</thead>
+<!-- table body -->
+<tbody>
 
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 
 </body>
 </html>
