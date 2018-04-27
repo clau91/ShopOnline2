@@ -1,3 +1,4 @@
+<%@page import="it.accenture.model.Prodotto"%>
 <%@page import="it.accenture.model.Acquisto"%>
 <%@page import="java.util.List"%>
 <%@page import="it.accenture.model.Utente"%>
@@ -16,7 +17,7 @@
 <body>
 <% Utente utente =(Utente)session.getAttribute("utenteLoggato"); %>
 <% List<Acquisto> listaAcquisti =(List<Acquisto>) request.getAttribute("listaAcquisti");%>
-
+<%List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
 
 <!-- NAVBAR -->
 <nav class="nav navbar">
@@ -71,7 +72,7 @@
 
 <!-- JUMBOTRON -->
 <div class="jumbotron">
-<h1>WELCOME TO SPORTADDICTED</h1>
+<h1>CARRELLO</h1>
 <p></p>
 </div><!-- chiusura jumbotron -->
 
@@ -93,16 +94,19 @@
 </thead>
 <tbody>
 <% for(Acquisto acquisto : listaAcquisti) {%>
+<%for(Prodotto prodotto : listaProdotti){%>
 <tr>
 <td><%=acquisto.getIdAcquisto() %></td>
+<td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
 <td><%=acquisto.getTipoSpedizione()%></td>
 <td><%=acquisto.getDataInizio() %></td>
 <td><%=acquisto.getDataFine() %></td>
 <td><%=acquisto.getPrezzoDiSpedizione() %></td>
 <td><%=acquisto.getQuantitaAcquistata() %></td>
+
 </tr>
 <%} %>
-
+<%} %>
 </tbody>
 </table>
 </div>
