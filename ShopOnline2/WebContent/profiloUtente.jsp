@@ -1,5 +1,3 @@
-<%@page import="it.accenture.model.Prodotto"%>
-<%@page import="java.util.List"%>
 <%@page import="it.accenture.model.Utente"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -7,15 +5,18 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Lista Prodotti</title>
+<title>Profilo Utente</title>
 <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/gestioneForm.js"></script>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/stile.css">
 </head>
 <body>
+
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
-<%List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
+<% String scelta = (String) request.getParameter("form"); %>
+
 
 
 <!-- NAVBAR -->
@@ -48,8 +49,6 @@
 <li><a href="ListaAcquisti">Lista Acquisti</a></li>
 <li><a href="ListaOrdini">Lista Ordini</a></li>
 <li><a href="Logout">Logout</a></li>
-<li><a href="contatti.jsp">Contatti</a></li>
-
 <% } %>
 </ul>
 </div>
@@ -63,11 +62,12 @@
 
 </nav><!-- chiusura navbar  -->
 
+
 <!-- JUMBOTRON -->
 <div class="jumbotron">
-<h1>LISTA PRODOTTI</h1>
-<p></p>
-</div><!-- chiusura jumbotron -->
+<h1>Profilo Utente !</h1>
+</div><!-- CHIUSURA JUMBOTRON -->
+
 
 
 <div class="container">
@@ -77,46 +77,19 @@
 <thead>
 <tr>
 <th>Nome</th>
-<th>Marca</th>
-<th>Prezzo </th>
-<th>Quantità Disponibile</th>
-<th>Acquista</th>
+<th>Cognome</th>
+<th>Indirizzo </th>
+<th>Prodotti Acquisti</th>
 </tr>
 </thead>
 <!-- table body -->
 <tbody>
-<%for(Prodotto prodotto : listaProdotti){%>
-<tr>
-<td><%=prodotto.getNome() %></td>
-<td><%=prodotto.getMarca() %></td>
-<td><%=prodotto.getPrezzo() %></td>
-<td><%=prodotto.getQuantitaDisponibile()%></td>
-<td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
 
-<td>
-<form action="ListaProdotti" method="post">
-<input type="hidden" name="nome" value="<%=prodotto.getNome()%>">
-<input type="submit" value="Acquista"
-<%if(prodotto.getQuantitaDisponibile() > 0){%>
-class="btn btn-success"
-<% }else{%>
-class="btn btn-warning"
-<%} %>
-<%if(utente == null) {%>
-disabled
-<% }%>
->
-</form>
-
-</td>
 </tr>
-<%} %>
 </tbody>
-
 </table>
-
+</div>
 </div>
 
-</div><!-- chiusura container -->
 </body>
 </html>

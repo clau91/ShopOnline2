@@ -20,14 +20,7 @@
 <%List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
 
 <!-- NAVBAR -->
-<nav class="nav navbar">
-<div class="navbar-header div-icona-home" style="margin-top: 15px; margin-left: 25px;">
 
-<a href="index.jsp">
-<img src="img/home.png" class="icona-home">
-</a>
-
-</div><!-- navbar header -->
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-top: 15px; margin-left: 25px;">
 
@@ -57,6 +50,8 @@
 <li><a href="ListaAcquisti">Lista Acquisti</a></li>
 <li><a href="ListaOrdini">Lista Ordini</a></li>
 <li><a href="Logout">Logout</a></li>
+<li><a href="contatti.jsp">Contatti</a></li>
+
 <% } %>
 </ul>
 </div>

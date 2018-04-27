@@ -21,8 +21,6 @@ public class ListaProdottiInOfferta extends HttpServlet {
 		List<Prodotto> listaProdottiInOfferta = new ArrayList<>();
 		ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
 		listaProdottiInOfferta = prodottoService.getProdottiOfferta();
-		System.out.println(listaProdottiInOfferta);
-		System.out.println("Numero degli Prodotti in Offerta:" +listaProdottiInOfferta.size());
 		prodottoService.close();
 		req.setAttribute("listaProdottiInOfferta", listaProdottiInOfferta);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("listaProdottiInOfferta.jsp");

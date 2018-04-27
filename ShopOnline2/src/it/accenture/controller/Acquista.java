@@ -11,8 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import it.accenture.dao.AcquistoDaoImpl;
+import it.accenture.dao.ProdottoDaoImpl;
 import it.accenture.model.Acquisto;
-import it.accenture.model.Cliente;
 import it.accenture.model.Prodotto;
 import it.accenture.model.Spedizione;
 import it.accenture.model.Utente;
@@ -22,35 +23,40 @@ import it.accenture.model.Utente;
 
 
 public class Acquista extends HttpServlet {
-	
-	double prezzoTotale = 0;
-	
-	
-	
-	
+		
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Prodotto prodotto = new Prodotto();
-		Acquisto acquisto = new Acquisto();
+
 		int idAcquisto = Integer.parseInt(req.getParameter("idAcquisto"));
-		Spedizione tipoSpedizione = req.getParameter("tipoSpedizione");
-		String dataInizio = req.getParameter("dataInizio");
-		String dataFine = req.getParameter("dataFine"); 
-		double prezzoDiSpedizione = Double.parseDouble(req.getParameter("prezzoSpedizione"));
-		String quantitaAcquistata = req.getParameter("quantitaAcquistata");
+		String tipoSpedizione = req.getParameter("tipoSpedizione");
+		String dataInizioString = req.getParameter("dataInizio");
+		String dataFineString = req.getParameter("dataFine");
+		LocalDate dataInizio = LocalDate.parse(dataInizioString);
+		LocalDate dataFine = LocalDate.parse(dataFineString);
+		double prezzoDiSpedizione = Double.parseDouble(req.getParameter("prezzoDiSpedizione"));
+		int quantitaAcquistata = Integer.parseInt(req.getParameter("quantitaAcquistata"));
 		int idProdotto = Integer.parseInt(req.getParameter("idProdotto"));
-		String idUtente = req.getParameter("idUtente");
 		
-		double prezzoTotale = (prodotto.getPrezzo() * acquisto.getQuantitaAcquistata()) + 
-				acquisto.getTipoSpedizione().getPrezzoSpedizione(); 
+		Spedizione spedizione1 = Spedizione.valueOf(tipoSpedizione);
 		
 		HttpSession sessione = req.getSession();
 		Utente utenteLoggato = (Utente) sessione.getAttribute("utenteLoggato");
 		
+		Acquisto acquisto = new Acquisto();
+		acquisto.setTipoSpedizione(spedizione1);
+		acquisto.setDataInizio(dataInizio);
+		acquisto.setDataFine(dataFine);
+		acquisto.setPrezzoDiSpedizione(prezzoDiSpedizione);
+		acquisto.setQuantitaAcquistata(quantitaAcquistata);
 		acquisto.setIdProdotto(idProdotto);
-		acquisto.setIdAcquisto(idAcquisto);
 		acquisto.setIdUtente(utenteLoggato.getIdUtente());
-		acquisto.setTipoSpedizione(tipoSpedizione);
+
+		AcquistoDaoImpl acquistoService = new AcquistoDaoImpl();
+		acquistoService.acquistaProdotto(acquisto);
+		acquistoService.close();
+		
+		ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
+		
 				
 	}
 	
