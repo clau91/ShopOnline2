@@ -69,6 +69,26 @@
 
 <div align="center">
 <p style="font-size: 25px;">
+Sportaddicted nasce dall esperienza di quattro persone, Claudio, Daniele, Pavlin e Angelo, 
+<br>
+che da molto tempo condividono lavoro e passione per l'outdoor e per lo sport.
+<br>
+Sportaddicted propone ai propri clienti tutto quello che può essere utile o indispensabile 
+<br>
+per vivere il mondo outdoor in maniera piacevole, confortevole e rilassante senza tralasciare
+<br>
+chi lo pratica come challenger. Molti hanno la passione dello sport pur non gareggiando 
+<br>
+da professionisti e per loro Sportaddicted ha selezionato oggetti, accessori, modelli con questo tema e, 
+<br>
+siccome anche in città possiamo vivere in uno stile sportivo, Sportaddicted propone un abbigliamento 
+<br>
+sportivo in grado di incontrare i gusti di tutti e soddisfare ogni esigenza 
+<br>
+con la cortesia e competenza di sempre.
+<br>
+<br>
+<br>
 Sportaddicted s.r.l.
 <br>
 Via G. Washington 50, 20146 Milano(MI)
@@ -76,6 +96,22 @@ Via G. Washington 50, 20146 Milano(MI)
 Tel: 800123123
 <br>
 Email: info@sportaddicted.com
+<br>
+<br>
+ORARI DI APERTURA: 
+<br>
+Lun : 15,00-19,30
+<br>
+Mar - Ven : 9,30-19,30
+<br>
+Sab : 9,30-19,00
+<br>
+<br>
+Partita IVA: 012345612132
+<br>
+Iscritta al CCIAA MILANO
+<br>
+Nr. di Iscrizione: 12345678
 <br>
 <div id="map" style="width:400px;height:400px;background:yellow"></div>
 

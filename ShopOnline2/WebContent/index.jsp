@@ -1,3 +1,7 @@
+<%@page import="it.accenture.controller.ListaAcquisti"%>
+<%@page import="it.accenture.model.Acquisto"%>
+<%@page import="it.accenture.model.Prodotto"%>
+<%@page import="java.util.List"%>
 <%@page import="it.accenture.model.Utente"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -13,6 +17,7 @@
 </head>
 <body>
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
+<%List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
 
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-top: 15px; margin-left: 25px;">
@@ -110,6 +115,53 @@
 </div><!-- CHIUSURA CAROUSEL -->
 
 
+
+<!-- JUMBOTRON -->
+<br>
+<br>
+<div class="jumbotron">
+<h2>PRODOTTI PIU VENDUTI</h2>
+</div><!-- chiusura jumbotron -->
+
+
+<!-- CAROUSEL PRODOTTI PIU VENDUTI -->
+<div id="myCarousel2" class="carousel slide carousel-fade" data-ride="carousel" data-interval="4000">
+<!-- immagini -->
+<div class="carousel-inner">
+<div class="item active">
+<img class="img-carousel" src="img/bastoni.jpg" style="width: 500px; height: 500px;">
+</div>
+<div class="item">
+<img class="img-carousel" src="img/polo.jpg" style="width: 500px; height: 500px;">
+</div>
+<div class="item">
+<img class="img-carousel" src="img/racchetta.jpg" style="width: 500px; height: 500px;">
+</div>
+<div class="item">
+<img class="img-carousel" src="img/zaino.jpg>" style="width: 500px; height: 500px;">
+</div>
+<div class="item">
+<img class="img-carousel" src="img/completo.jpg" style="width: 500px; height: 500px;">
+</div>
+</div>
+<!-- INDICATORI -->
+<ol class="carousel-indicators">
+<li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
+<li data-target="#myCarousel2" data-slide-to="1"></li>
+<li data-target="#myCarousel2" data-slide-to="2"></li>
+<li data-target="#myCarousel2" data-slide-to="3"></li>
+<li data-target="#myCarousel2" data-slide-to="4"></li>
+
+</ol>
+<!-- FRECCE -->
+<a class="left carousel-control" href="#myCarousel2" data-slide="next">
+<span class="glyphicon glyphicon-chevron-left"></span>
+</a>
+<a class="right carousel-control" href="#myCarousel2" data-slide="prev">
+<span class="glyphicon glyphicon-chevron-right"></span>
+</a>
+
+</div><!-- CHIUSURA CAROUSEL PRODOTTI PIU VENDUTI -->
 
 </div><!-- CHIUSURA CONTAINER -->
 
