@@ -50,8 +50,12 @@
 
 <div align="right" style="margin-right: 30px;">
 <input type="text" placeholder="Cerca..." style="margin-top: 25px; margin-right: 20px;">
-<a href="ProfiloUtente"><img src="img/user.png" class="icona-user" style="margin-top: 15px;  margin-right: 15px;"></a>
+<% if (utente == null) { %>
+<a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona-user" style="margin-top: 15px;  margin-right: 15px;"></a>
+<% } else { %>
+<a href="profiloUtente.jsp"><img src="img/user.png" class="icona-user" style="margin-top: 15px;  margin-right: 15px;"></a>
 <a href="Carrello"><img src="img/cart.png" class="icona-cart" style="margin-top: 15px;  margin-right: 15px;"></a>
+<% } %>
 </div>
 
 

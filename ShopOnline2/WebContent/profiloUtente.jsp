@@ -63,78 +63,11 @@
 </nav><!-- chiusura navbar  -->
 
 
-<% if(scelta.equals("registrazione")) { %>
-<!-- JUMBOTRON -->
-<div class="jumbotron">
-<h1>Registrati per acquistare un prodotto !</h1>
-</div><!-- chiusura jombotron -->
-<% } else if(scelta.equals("login")) { %>
 <!-- JUMBOTRON -->
 <div class="jumbotron">
 <h1>Profilo Utente !</h1>
 </div><!-- CHIUSURA JUMBOTRON -->
-<% } %>
-<!-- CONTAINER -->
-<div class="container">
 
-
-<% if(scelta.equals("login")) { %>
-
-
-<!-- FORM LOGIN -->
-<form action="Login" method="post" class="form-horizontal"
-novalidate id="formLogin">
-
-<!-- USERNAME -->
-<div class="form-group">
-<label class="col-md-4 control-label">Inserisci Username</label>
-<div class="col-md-5">
-<input type ="text" name="username" placeholder="inserisci username" class="form-control" id="username">
-</div>
-<span class="col-md-3"></span>
-</div>
-
-<!-- PASSWORD -->
-<div class="form-group">
-<label class="col-md-4 control-label">Inserisci Password</label>
-<div class="col-md-5">
-<input type ="password" name="password" placeholder="inserisci password" class="form-control" id="myInput"><br>
-<input type="checkbox" onclick="myFunction()">Show Password
-
-</div>
-<span class="col-md-3"></span>
-</div>
-
-<!-- BOTTONI -->
-<div class="form-group">
-<span class="col-md-4"></span>
-<div class="col-md-5">
-<input type ="submit" value="Login" class="btn-primary">
-<input type ="reset" value="Reset" class="btn-warning">
-</div>
-<span class="col-md-3"></span>
-</div>
-</form><!-- chiusura form login -->
-
-
-
-<!-- LINK NON  REGISTRATO -->
-<div id="linkLogin">
-<span class="col-md-4"></span>
-<div class="col-md-5 text-primary">
-<p>Non sei registrato ?</p>
-<p><a onclick="cambioForm()">Clicca qui</a> per registrarti</p>
-</div>
-<span class="col-md-3"></span>
-</div>
-<% } %>
-
-<% if(request.getAttribute("errore") != null) { %>
-<div class="alert alert-danger text-center">
-<h3>Username o Password Sbagliati</h3>
-</div>
-<% } %>
-</div><!-- chiusura container -->
 
 
 <div class="container">
