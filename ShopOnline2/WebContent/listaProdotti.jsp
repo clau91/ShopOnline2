@@ -129,7 +129,7 @@ disabled
 </td>
 
 <td>
-<form action="Dettagli" method="post">
+<form action="Dettagli">
 <input type="hidden" name="nome2" value="<%=prodotto.getNome()%>">
 <input type="submit" value="Dettagli" class="btn btn-secondary">
 </form>
