@@ -117,7 +117,7 @@ disabled
 
 <FORM NAME="modulo" METHOD="get" ACTION="">
 <p>Prezzo Articolo =
-<INPUT NAME="prezzo" TYPE="TEXT" value="19.90" SIZE="5" maxlength="5" readonly id="prezzo"><br />
+<INPUT NAME="prezzo" TYPE="TEXT" value="<%prodotto.getPrezzo()%>;" SIZE="5" maxlength="5" readonly id="prezzo"><br />
 Numero Articoli =
 <select name="articoli" id="articoli" onChange="calcola();">
 <option value="1">1</option>
@@ -126,7 +126,7 @@ Numero Articoli =
 <option value="4">4</option>
 <option value="5">5</option>
 </select><br />
-Costo Totale = <INPUT NAME="somma" TYPE="TEXT" value="19.90" SIZE="5" maxlength="5">
+Costo Totale = <INPUT NAME="somma" TYPE="TEXT" value="<%prodotto.getPrezzo(); %>" SIZE="5" maxlength="5">
 </p>
 </FORM>
 
