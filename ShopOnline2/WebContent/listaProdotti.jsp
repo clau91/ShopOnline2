@@ -114,6 +114,21 @@ disabled
 >
 </form>
 
+<FORM NAME="modulo" METHOD="get" ACTION="">
+<p>Prezzo Articolo =
+<INPUT NAME="prezzo" TYPE="TEXT" value="19.90" SIZE="5" maxlength="5" readonly id="prezzo"><br />
+Numero Articoli =
+<select name="articoli" id="articoli" onChange="calcola();">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select><br />
+Costo Totale = <INPUT NAME="somma" TYPE="TEXT" value="19.90" SIZE="5" maxlength="5">
+</p>
+</FORM>
+
 </td>
 </tr>
 <%} %>

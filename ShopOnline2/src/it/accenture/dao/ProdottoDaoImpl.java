@@ -28,7 +28,7 @@ public class ProdottoDaoImpl implements ProdottoDao {
 	public List<Prodotto> getAllProdotti() {
 		List<Prodotto> listaProdotti = new ArrayList<>();
 		ResultSet rs = null;
-		String query = "select * from prodotto where quantita_disponibile > 0";
+		String query = "select * from prodotto";
 		try {
 			statement = connection.createStatement();
 			rs = statement.executeQuery(query);
