@@ -103,8 +103,8 @@
 <td>
 <form action="ListaProdotti" method="post">
 <input type="hidden" name="nome" value="<%=prodotto.getNome()%>">
-<input type="submit" value="Acquista"
-<%if(prodotto.isOfferta() == true){%>
+<input type="submit" value="Aggiungi al carrello"
+<%if(prodotto.getQuantitaDisponibile() > 0){%>
 class="btn btn-success"
 <% }else{%>
 class="btn btn-warning"
