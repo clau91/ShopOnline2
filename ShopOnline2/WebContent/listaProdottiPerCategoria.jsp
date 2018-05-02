@@ -84,9 +84,12 @@
 <th>Nome</th>
 <th>Marca</th>
 <th>Prezzo </th>
-<th>Quantità Disponibile</th>
+<th>Q.tà Disponibile</th>
 <th>Sconto(%)</th>
+<th></th>
+<th>Q.tà richiesta</th>
 <th>Acquista</th>
+<th>Dettagli</th>
 </tr>
 </thead>
 <!-- table body -->
@@ -100,6 +103,16 @@
 <td><%=prodotto.getSconto() %></td>
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
 
+<!-- Tendina Quantita -->
+<td align="center">
+<select name="articoli" id="articoli">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+</td>
 <td>
 <form action="ListaProdotti" method="post">
 <input type="hidden" name="nome" value="<%=prodotto.getNome()%>">
@@ -114,7 +127,13 @@ disabled
 <% }%>
 >
 </form>
-
+</td>
+<!-- Button Dettagli -->
+<td>
+<form action="Dettagli" method="post">
+<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
+<input type="submit" value="Dettagli" class="btn btn-secondary">
+</form>
 </td>
 </tr>
 <%} %>
@@ -126,7 +145,6 @@ disabled
 
 
 
-
-
+</div><!-- chiusura container -->
 </body>
 </html>

@@ -10,6 +10,7 @@
 <title>Dettagli</title>
 <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/gestioneForm.js"></script>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/stile.css">
 </head>
@@ -99,9 +100,18 @@
 
 </tbody>
 </table>
-<div align="center">
-<img src="<%=prodotto.getImmagine()%>" style="width: 500px; height: 500px;">
+<div class="img-magnifier-container">
+<img id="myimage" src="<%=prodotto.getImmagine()%>" style="width: 500px; height: 500px;">
+<br>
+<script>
+magnify("myimage", 2); 
+</script>
 </div>
+<div align="center">
+<input type="submit" value="Aggiungi al carrello">
+<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
+</div>
+
 </div>
 </div>
 </body>

@@ -75,7 +75,8 @@
 <h1>LISTA ORDINI</h1>
 <p></p>
 </div><!-- chiusura jumbotron -->
-
+<!-- DIV CONTAINER -->
+<div class="container">
 <!-- Tabella -->
 <div class="table responsive">
 <table class="table">
@@ -86,7 +87,7 @@
 <th>Data Ricevimento</th>
 <th>Data Evasione</th>
 <th>Prezzo Spedizione</th>
-<th>Quantità Acquistata</th>
+<th>Q.tà Acquistata</th>
 </tr>
 </thead>
 <tbody>

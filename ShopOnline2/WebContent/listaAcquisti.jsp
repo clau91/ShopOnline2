@@ -73,7 +73,7 @@
 
 <!-- JUMBOTRON -->
 <div class="jumbotron">
-<h1>CARRELLO</h1>
+<h1>LISTA ACQUISTI</h1>
 <p></p>
 </div><!-- chiusura jumbotron -->
 

@@ -108,3 +108,81 @@ insert into prodotto values (prodotto_sequence.nextval, 'pantaloncini', 'BASKET'
 insert into prodotto values (prodotto_sequence.nextval, 'scarpe', 'BASKET', 'tarmak', 49.99, 'false',0, 15, 'img/scarpe4.jpg');
 
 insert into prodotto values (prodotto_sequence.nextval, 'borraccia', 'BASKET', 'kipsta', 5.99, 'false',0, 12, 'img/borraccia.jpg');
+
+
+
+
+
+
+
+
+
+
+insert into utente values (utente_sequence.nextval, 'cesare', 'colombani', 'cesare', 'cesare', 'Via Roma 27');
+
+insert into utente values (utente_sequence.nextval, 'Cecilia', 'Bersani', 'cecilia', 'cecilia', 'Via Trento e Trieste 68');
+
+insert into utente values (utente_sequence.nextval, 'Federica', 'Parenti', 'federica', 'federica', 'Via Torricella 19');
+
+insert into utente values (utente_sequence.nextval, 'Franco', 'Battiato', 'franco', 'franco', 'Via De Gasperi 42 Roma');
+
+insert into utente values (utente_sequence.nextval, 'Francesco', 'Gritti', 'francesco', 'francesco', 'Via Don Giovanni 21 MIlano');
+
+insert into utente values (utente_sequence.nextval, 'Camillla', 'Camplani', 'camilla', 'camilla', 'Via Fibonacci 38 Parma');
+
+insert into utente values (utente_sequence.nextval, 'Clotilde', 'Cento', 'clotilde', 'clotilde', 'Via addis abeba 79 Firenze');
+
+insert into utente values (utente_sequence.nextval, 'Bono', 'Vox', 'bono', 'bono', 'Viale Europa 54 Milano');
+
+insert into utente values (utente_sequence.nextval, 'Lucio', 'Battisti', 'lucio', 'lucio', 'Via Circo Massimo 12 Roma');
+
+insert into utente values (utente_sequence.nextval, 'Elena', 'Vinciguerra', 'elena', 'elena', 'Via Quattro Fontane 68 Pisa');
+
+
+
+
+insert into recensione values ('Un classico', 'Ottimo pallone dimensione 4 (quella che ho preso) per il calcetto
+Lo consiglio a tutti materiale come al solito buono Magari era gradito anche la pipetta per gonfiarlo insieme ', 21, 18);
+
+insert into recensione values  ('Senza Infamia', 'A primo impatto il borsone mi è parso poco resistente in quanto il tessuto 
+è molto leggero. Tuttavia nella sua semplicità le rifiniture sono curate le zip si aprono e chiudono fluidamente e
+ha due cursori sulla tasca principale i quali si possono unire tramite i tiretti con un lucchetto questo è ottimo per quando in palestra 
+si lascia il borsone incustodito Aprendo la tasca principale presenta sul fondo una placca di plastica amovibile nel tentativo di renderlo 
+più rigido ma a mio parere oltre ad essere grezza si sposta troppo e la sua utilità è scarsa
+ La tracolla non è possibile toglierla in quanto cucita alla struttura del borsone inoltre il salvaspalla non attenua la pressione 
+ sulla spalla e rende la tracolla scomoda
+ La forma delle tasche laterali non è stata una scelta felice sono piccole e ridicole entra a malapena portafoglio e cellulare
+Tutto sommato il rapporto qualità prezzo è adeguato un borsone da palestra semplice e senza pretese', 22, 19);
+
+
+insert into recensione values ('Buon Prodotto', 'Calza benissimo e la misura è perfetta. Ottima per fare sport o palestra.
+Tempi di consegna rapidissimi(arrivata il giorno successivo). La consiglio vivamente a chiunque.', 22, 25);
+
+insert into recensione values ('Wow', 'freschi ,anche dopo una partita non si sentono e sono leggerissimi prezzo giusto
+retina molto elastica e comoda veramente soddisfatto', 23, 34);
+
+insert into recensione values ('Da comprare', 'Da acquistare ad occhi chiusi Leggo nelle recensioni precedenti che qualcuno scrive che questa 
+racchetta è junior ma quale junior! Ha soltanto il piatto leggermente più grande per andare incontro alle esigenze di un dilettante che si 
+affaccia a questo sport Racchetta perfetta bellissima Niente da ridire Venditore affidabile e Amazon sempre il top Consigliatissima Ma 
+dove la trovate una head con la custodia a questo prezzo Compratela Fidatevi', 24, 5);
+
+insert into recensione values ('Veste Dritta', 'La polo è di buona qualità ma la L che solitamente veste mio marito andava larga 
+Solo questo il motivo per cui l ho resa Bello il blu abbinato all arancio.Veste dritta e non è aderente ', 25, 7);
+
+
+insert into recensione values ('Tutto quello che', 'Buono zaino x camminate ha tutto quanto serve e l ingombro non è eccessivo
+È piuttosto comodo tasche a sufficienza predisposizione x sistema con sacca idrica telo x pioggia integrato abbastanza leggero 
+bel materiale anche l estetica mi piace con l apposita zip si possono anche recuperare altri tre litri comodo x l autunno in quanto 
+mi serve più spazio 4 stelle perché non è adatto alla corsa nel senso che le cinghie vanno bene x camminate ma non x correre ma non è stato
+progettato x fare quello comunque avrei gradito cinghie più avvolgenti', 27, 10);
+
+insert into recensione values ('Completini Fluo', 'Il completino è all altezza delle aspettative il tessuto si asciuga subito mentre si gioca 
+anche dopo 90 intensi minuti I colori sono molto belli  e molto intensi La taglia è regolare ed è molto comodo leggero e traspirante 
+nonostante sia completamente acrilico. Vivamente consigliato', 28, 28);
+
+insert into recensione values ('Come Da Negozio', 'arrivate in un giorno scarpa senza nessun tipo di problema uguale a quella vista in negozio
+Consiglio senza problemi prezzo leggermente meglio di quello che ho visto nei negozi. Ovvio che non è una scarpe in pelle Ricordatevi 
+che parliamo di 60 euro di scarpe da calcio per adulti', 29, 16);
+
+insert into recensione values ('Regalo Apprezzato', 'ho comprato questa borsa come regalo di Pasqua tempi di spedizione molto rapidi e ben
+imballata l unica cosa è che mi immaginavo un po più di spazio', 30, 32);
