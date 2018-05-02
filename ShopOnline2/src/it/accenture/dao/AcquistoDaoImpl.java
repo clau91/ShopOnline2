@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import it.accenture.model.Acquisto;
+import it.accenture.model.Categoria;
+import it.accenture.model.Prodotto;
 import it.accenture.model.Spedizione;
 import it.accenture.utilities.DBUtilityConnection;
 
@@ -137,4 +139,41 @@ public class AcquistoDaoImpl implements AcquistoDao {
 		return listaOrdini;
 	}
 
+	@Override
+	public List<Acquisto> getAllByUtente(int idUtente) {
+		List<Acquisto> listaCarrello = new ArrayList<>();
+		String query = "select * from prodotto where id_utente = " + idUtente;
+		ResultSet rs = null;
+		try {
+			statement = connection.createStatement();
+			rs = statement.executeQuery(query);
+			while (rs.next()) {
+				Acquisto acquisto = new Acquisto();
+				acquisto.setIdAcquisto(rs.getInt(1));
+				acquisto.setTipoSpedizione(Spedizione.valueOf(rs.getString(2)));
+				acquisto.setDataInizio(rs.getDate(3).toLocalDate());
+				acquisto.setDataFine(rs.getDate(4).toLocalDate());
+				acquisto.setPrezzoDiSpedizione(rs.getDouble(5));
+				acquisto.setQuantitaAcquistata(rs.getInt(6));
+				acquisto.setIdProdotto(rs.getInt(7));
+				acquisto.setIdUtente(idUtente);
+				listaCarrello.add(acquisto);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(rs!=null) {
+					rs.close();
+				} 
+				if(statement!=null) {
+					statement.close();
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+				}
+			}
+		return listaCarrello;
+	}
+	
 }

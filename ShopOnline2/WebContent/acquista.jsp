@@ -77,8 +77,8 @@
 <p></p>
 </div><!-- chiusura jumbotron -->
 
-<form action="Acquista" method="post" onsubmit="return controlloDate()" class="form-horizontal form-prenotazione">
-<input type="hidden" name="prezzo" value="<%=prodotto.getPrezzo() %>">
+<form action="Carrello" method="get" class="form-horizontal form-prenotazione">
+<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto() %>">
 
 <!-- formula -->
 <div class="form-group">

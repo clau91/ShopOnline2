@@ -8,15 +8,15 @@ public enum Spedizione {
 	
 
 
-	private int numeroGiorni;
-	private double prezzoSpedizione;
+	private static int numeroGiorni;
+	private static double prezzoSpedizione;
 
 	
 	private Spedizione(int numeroGiorni, double prezzoSpedizione) {
-		this.numeroGiorni = numeroGiorni;
+	
 	}
 	
-	public double getPrezzoSpedizione() {
+	public static double getPrezzoSpedizione() {
 		return prezzoSpedizione;
 	}
 
@@ -24,7 +24,7 @@ public enum Spedizione {
 		this.prezzoSpedizione = prezzoSpedizione;
 	}
 
-	public int getNumeroGiorni() {
+	public static int getNumeroGiorni() {
 		return numeroGiorni;
 	}
 

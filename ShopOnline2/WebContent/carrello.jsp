@@ -18,9 +18,9 @@
 <body>
 
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
-<% List<Acquisto> listaAcquisti =(List<Acquisto>) request.getAttribute("listaAcquisti");%>
-<%List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
-<%List<Acquisto> carrello =(List<Acquisto>) request.getAttribute("listaAcquisti");%>
+<% List<Acquisto> listaAcquisti =(List<Acquisto>) request.getAttribute("listaAcquisti"); %>
+<% List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
+
 
 <!-- navbar -->
 <nav class="nav navbar">
@@ -78,35 +78,5 @@
 <p></p>
 </div><!-- chiusura jumbotron -->
 
-<div class="table responsive">
-<table class="table">
-<thead>
-<tr>
-<th>Id Acquisto</th>
-<th>Tipo Spedizione</th>
-<th>Data Partenza</th>
-<th>Data Arrivo</th>
-<th>Prezzo Spedizione</th>
-<th>Quantità Acquistata</th>
-</tr>
-</thead>
-<tbody>
-<% for(Acquisto acquisto : carrello) {%>
-<%for(Prodotto prodotto : listaProdotti){%>
-<tr>
-<td><%=acquisto.getIdAcquisto() %></td>
-<td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
-<td><%=acquisto.getTipoSpedizione()%></td>
-<td><%=acquisto.getDataInizio() %></td>
-<td><%=acquisto.getDataFine() %></td>
-<td><%=acquisto.getPrezzoDiSpedizione() %></td>
-<td><%=acquisto.getQuantitaAcquistata() %></td>
-
-</tr>
-<%} %>
-<%} %>
-</tbody>
-</table>
-</div>
 </body>
 </html>

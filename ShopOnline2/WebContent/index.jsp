@@ -125,29 +125,23 @@
 <!-- JUMBOTRON -->
 <br>
 <br>
+<div>
 <div class="jumbotron">
-<h2>PRODOTTI PIU VENDUTI</h2>
+<h4>PRODOTTI PIU VENDUTI</h4>
 </div><!-- chiusura jumbotron -->
-
 
 <!-- CAROUSEL PRODOTTI PIU VENDUTI -->
 <div id="myCarousel2" class="carousel slide carousel-fade" data-ride="carousel" data-interval="4000">
 <!-- immagini -->
 <div class="carousel-inner">
 <div class="item active">
-<img class="img-carousel" src="img/bastoni.jpg" style="width: 500px; height: 500px;">
+<img class="img-carousel" src="img/bastoni.jpg" style="width: 300px; height: 300px;">
 </div>
 <div class="item">
-<img class="img-carousel" src="img/polo.jpg" style="width: 500px; height: 500px;">
+<img class="img-carousel" src="img/polo.jpg" style="width: 300px; height: 300px;">
 </div>
 <div class="item">
-<img class="img-carousel" src="img/racchetta.jpg" style="width: 500px; height: 500px;">
-</div>
-<div class="item">
-<img class="img-carousel" src="img/zaino.jpg>" style="width: 500px; height: 500px;">
-</div>
-<div class="item">
-<img class="img-carousel" src="img/completo.jpg" style="width: 500px; height: 500px;">
+<img class="img-carousel" src="img/racchetta.jpg" style="width: 300px; height: 300px;">
 </div>
 </div>
 <!-- INDICATORI -->
@@ -155,8 +149,6 @@
 <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
 <li data-target="#myCarousel2" data-slide-to="1"></li>
 <li data-target="#myCarousel2" data-slide-to="2"></li>
-<li data-target="#myCarousel2" data-slide-to="3"></li>
-<li data-target="#myCarousel2" data-slide-to="4"></li>
 
 </ol>
 <!-- FRECCE -->
@@ -168,7 +160,7 @@
 </a>
 
 </div><!-- CHIUSURA CAROUSEL PRODOTTI PIU VENDUTI -->
-
+</div>
 </div><!-- CHIUSURA CONTAINER -->
 
 </body>

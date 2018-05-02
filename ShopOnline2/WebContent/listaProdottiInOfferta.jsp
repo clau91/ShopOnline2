@@ -87,6 +87,7 @@
 <th>Prezzo </th>
 <th>Quantità Disponibile</th>
 <th>Sconto(%)</th>
+<th></th>
 <th>Acquista</th>
 </tr>
 </thead>

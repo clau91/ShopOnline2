@@ -2,6 +2,7 @@ package it.accenture.dao;
 
 import java.util.List;
 
+import it.accenture.model.Acquisto;
 import it.accenture.model.Categoria;
 import it.accenture.model.Prodotto;
 
