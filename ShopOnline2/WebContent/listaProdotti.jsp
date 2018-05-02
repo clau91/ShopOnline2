@@ -81,11 +81,13 @@
 <table class="table">
 <!-- table head -->
 <thead>
-<tr>
+<tr align="center">
 <th>Nome</th>
 <th>Marca</th>
 <th>Prezzo </th>
-<th>Quantità Disponibile</th>
+<th>Q.tà Disponibile</th>
+<th></th>
+<th>Q.tà richiesta</th>
 <th>Acquista</th>
 </tr>
 </thead>
@@ -99,6 +101,15 @@
 <td><%=prodotto.getQuantitaDisponibile()%></td>
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
 
+<td align="center">
+<select name="articoli" id="articoli">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+</td>
 <td>
 <form action="ListaProdotti" method="post">
 <input type="hidden" name="nome" value="<%=prodotto.getNome()%>">
@@ -115,20 +126,10 @@ disabled
 >
 </form>
 
-<FORM NAME="modulo" METHOD="get" ACTION="">
-<p>Prezzo Articolo =
-<INPUT NAME="prezzo" TYPE="TEXT" value="19.90" SIZE="5" maxlength="5" readonly id="prezzo"><br />
-Numero Articoli =
-<select name="articoli" id="articoli" onChange="calcola();">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-</select><br />
-Costo Totale = <INPUT NAME="somma" TYPE="TEXT" value="19.90" SIZE="5" maxlength="5">
-</p>
-</FORM>
+
+
+
+
 
 </td>
 </tr>
