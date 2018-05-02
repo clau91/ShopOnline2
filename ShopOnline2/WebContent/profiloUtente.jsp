@@ -76,8 +76,6 @@
 <h1>User Account</h1>
 </div><!-- CHIUSURA JUMBOTRON -->
 
-
-
 <div class="container"  style="margin-left:80px">
 
 <h3>Nome: <%=utente.getNome() %></h3>
