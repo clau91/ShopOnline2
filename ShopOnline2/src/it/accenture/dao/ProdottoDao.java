@@ -9,6 +9,8 @@ public interface ProdottoDao {
 	
 	public List<Prodotto> getAllProdotti();
 	
+	public Prodotto getProdottoById(int idProdotto);
+	
 	public List<Prodotto> getProdottiOfferta();
 	
 	public List<Prodotto> getProdottiPerCategoria(Categoria categoria);

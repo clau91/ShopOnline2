@@ -35,9 +35,9 @@ public class ListaProdotti extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Categoria categoria = (Categoria) req.getAttribute("categoria");
+		int idProdotto = Integer.parseInt(req.getParameter("idProdotto"));
 		ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
-		List<Prodotto> prodotto = (List<Prodotto>) prodottoService.getProdottiPerCategoria(categoria);
+		Prodotto prodotto = prodottoService.getProdottoById(idProdotto);
 		System.out.println(prodotto);
 		req.setAttribute("prodotto", prodotto);
 		prodottoService.close();

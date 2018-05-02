@@ -15,8 +15,10 @@
 </head>
 <body>
 
-<% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
+<%Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
 <%List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
+<%Prodotto prodotto = (Prodotto) request.getAttribute("prodotto"); %>
+
 
 <!-- navbar -->
 <nav class="nav navbar">
@@ -75,7 +77,40 @@
 <p></p>
 </div><!-- chiusura jumbotron -->
 
+<form action="Prenota" method="post" onsubmit="return controlloDate()" class="form-horizontal form-prenotazione">
+<input type="hidden" name="prezzo" value="<%=prodotto.getPrezzo() %>">
 
+
+
+<!-- formula -->
+<div class="form-group">
+<label class="control-label col-md-5">Scegli il tipo di spedizione</label>
+<div class="col-md-4">
+<input type="radio" name="tipo_spedizione" value="PRIORITARIA" checked>
+Prioritaria
+<br>
+<input type="radio" name="tipo_spedizione" value="RAPIDA">
+Rapida
+<br>
+<input type="radio" name="tipo_spedizione" value="ORDINARIA">
+Ordinaria
+<br>
+</div>
+<span class="col-md-3"></span>
+</div>
+
+<!-- bottoni -->
+<div class="form-group">
+<span class="col-md-5"></span>
+<div class="col-md-4">
+<input type="submit" class="btn btn-primary" value="Acquista">
+<input type="reset" class="btn btn-warning" value="Resetta">
+</div>
+<span class="col-md-3"></span>
+</div>
+
+
+</form>
 
 </body>
 </html>
