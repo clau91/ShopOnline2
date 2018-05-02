@@ -101,7 +101,7 @@
 <td><%=prodotto.getSconto() %></td>
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
 
-<td>
+<!-- Tendina Quantita -->
 <td align="center">
 <select name="articoli" id="articoli">
 <option value="1">1</option>
@@ -125,12 +125,13 @@ disabled
 <% }%>
 >
 </form>
+</td>
+<!-- Button Dettagli -->
 <td>
 <form action="Dettagli" method="post">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
 <input type="submit" value="Dettagli" class="btn btn-secondary">
 </form>
-</td>
 </td>
 </tr>
 <%} %>
@@ -142,7 +143,6 @@ disabled
 
 
 
-
-
+</div><!-- chiusura container -->
 </body>
 </html>

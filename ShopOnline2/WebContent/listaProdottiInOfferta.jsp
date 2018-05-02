@@ -79,6 +79,7 @@
 <div class="container">
 <div class="table-responsive">
 <table class="table">
+
 <!-- table head -->
 <thead>
 <tr>
@@ -91,6 +92,7 @@
 <th>Dettagli</th>
 </tr>
 </thead>
+
 <!-- table body -->
 <tbody>
 <%for(Prodotto prodotto : listaProdottiInOfferta){%>
@@ -102,7 +104,7 @@
 <td><%=prodotto.getSconto() %></td>
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
 
-<td>
+<!-- Tendina Quantita -->
 <td align="center">
 <select name="articoli" id="articoli">
 <option value="1">1</option>
@@ -112,7 +114,6 @@
 <option value="5">5</option>
 </select>
 </td>
-<td>
 <td>
 <form action="ListaProdotti" method="post">
 <input type="hidden" name="nome" value="<%=prodotto.getNome()%>">
@@ -128,16 +129,15 @@ disabled
 >
 
 </form>
-
+</td>
+<!-- Button Dettagli -->
 <td>
 <form action="Dettagli" method="post">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
 <input type="submit" value="Dettagli" class="btn btn-secondary">
 </form>
 </td>
-</td>
 </tr>
-
 </tr>
 <%} %>
 </tbody>
@@ -145,6 +145,6 @@ disabled
 </table>
 
 </div>
-
+</div><!-- chiusura container -->
 </body>
 </html>
