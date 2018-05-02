@@ -75,7 +75,7 @@
 <p></p>
 </div><!-- chiusura jumbotron -->
 
-
+<!-- Tabella -->
 <div class="container">
 <div class="table-responsive">
 <table class="table">
@@ -86,8 +86,11 @@
 <th>Nome</th>
 <th>Marca</th>
 <th>Prezzo </th>
-<th>Quantità Disponibile</th>
+<th>Q.tà Disponibile</th>
+
 <th>Sconto(%)</th>
+<th></th>
+<th>Q.tà richiesta</th>
 <th>Acquista</th>
 <th>Dettagli</th>
 </tr>
