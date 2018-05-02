@@ -31,7 +31,7 @@ public class UpdateAccount extends HttpServlet {
 		utente.setPassword(password);
 		utente.setIndirizzo(indirizzo);
 		UtenteDaoImpl utenteService = new UtenteDaoImpl();
-		
+		utenteService.updateUtente(utente);
 		System.out.println("utente aggiornato");
 		utenteService.close();
 	    RequestDispatcher dispatcher = req.getRequestDispatcher("profiloUtente.jsp?form=updateAccount");

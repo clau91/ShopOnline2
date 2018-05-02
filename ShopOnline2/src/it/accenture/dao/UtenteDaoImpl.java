@@ -108,7 +108,7 @@ public class UtenteDaoImpl implements UtenteDao {
 		
 		try {
 			prepared = connection.prepareStatement(query);
-			
+			rs = prepared.executeUpdate();
 			if(rs.next()) {
 				utente = new Utente();
 				utente.setNome(rs.getString(2));
