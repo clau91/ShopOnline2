@@ -73,7 +73,7 @@
 
 <!-- JUMBOTRON -->
 <div class="jumbotron">
-<h1>Profilo Utente !</h1>
+<h1>IL MIO ACCOUNT </h1>
 </div><!-- CHIUSURA JUMBOTRON -->
 
 
@@ -86,16 +86,31 @@
 <tr>
 <th>Nome</th>
 <th>Cognome</th>
+<th>Username</th>
+<th>Password</th>
 <th>Indirizzo </th>
-<th>Prodotti Acquisti</th>
+<th>Lista Ordini</th>
+<th>Lista Acquisto</th>
 </tr>
 </thead>
 <!-- table body -->
 <tbody>
-
+<tr>
+<td><%=utente.getNome()%></td>
+<td><%=utente.getCognome()%></td>
+<td><%=utente.getUsername()%></td>
+<td><%=utente.getPassword()%></td>
+<td><%=utente.getIndirizzo()%></td>
+<td><%=utente.getListaOrdini()%></td>
+<td><%=utente.getListaAcquisti()%></td>
 </tr>
 </tbody>
 </table>
+<div class="col-md-5 text-primary">
+<p>Clicca <a onclick="update()">qui</a> per modificare i tuoi dati</p>
+</div>
+</span class="col-md-3"></span>
+</div>
 </div>
 </div>
 
