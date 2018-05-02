@@ -88,6 +88,7 @@
 <th>Quantità Disponibile</th>
 <th>Sconto(%)</th>
 <th>Acquista</th>
+<th>Dettagli</th>
 </tr>
 </thead>
 <!-- table body -->
@@ -102,6 +103,17 @@
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
 
 <td>
+<td align="center">
+<select name="articoli" id="articoli">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+</td>
+<td>
+<td>
 <form action="ListaProdotti" method="post">
 <input type="hidden" name="nome" value="<%=prodotto.getNome()%>">
 <input type="submit" value="Aggiungi al carrello"
@@ -114,9 +126,18 @@ class="btn btn-warning"
 disabled
 <% }%>
 >
+
 </form>
 
+<td>
+<form action="Dettagli" method="post">
+<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
+<input type="submit" value="Dettagli" class="btn btn-secondary">
+</form>
 </td>
+</td>
+</tr>
+
 </tr>
 <%} %>
 </tbody>
