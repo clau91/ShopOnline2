@@ -47,26 +47,5 @@ function myMap() {
     });
 }
 
-function carrello(){
-sessionStorage.setItem( "total", 120 );
 
-var total = sessionStorage.getItem( "total" );
-console.log( total ); // 120
 
-var total = parseInt( sessionStorage.getItem( "total" ), 10 );
-var quantity = 2;
-var updatedTotal = total * quantity;
-sessionStorage.setItem( "total", updatedTotal );
-
-var cart = {
-		  item: "Product 1",
-		                price: 35.50,
-		                qty: 2
-		};
-		var jsonStr = JSON.stringify( cart );
-		sessionStorage.setItem( "cart", jsonStr );
-		// ora cart è {"item":"Product 1","price":35.50,"qty":2}
-		var cartValue = sessionStorage.getItem( "cart" );
-		var cartObj = JSON.parse( cartValue );
-		// oggetto originale
-}
