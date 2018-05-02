@@ -71,31 +71,27 @@
 </nav><!-- chiusura navbar  -->
 
 
-<!-- JUMBOTRON -->
-<div class="jumbotron">
-<h1>Profilo Utente !</h1>
+
+<div class="jumbotron" >
+<h1>User Account</h1>
 </div><!-- CHIUSURA JUMBOTRON -->
 
 
 
-<div class="container">
-<div class="table-responsive">
-<table class="table">
-<!-- table head -->
-<thead>
-<tr>
-<th>Nome</th>
-<th>Cognome</th>
-<th>Indirizzo </th>
-<th>Prodotti Acquisti</th>
-</tr>
-</thead>
-<!-- table body -->
-<tbody>
+<div class="container"  style="margin-left:80px">
 
-</tr>
-</tbody>
-</table>
+<h3>Nome: <%=utente.getNome() %></h3>
+<h3>Cognome: <%=utente.getCognome() %></h3>
+<h3>Username: <%=utente.getUsername() %></h3>
+<h3>Password: <%=utente.getPassword() %></h3>
+<h3>Indirizzo: <%=utente.getIndirizzo() %></h3>
+<h3>Prodotti Acquisti: <%=utente.getListaAcquisti() %></h3>
+<h3>Prodotti Ordinati: <%=utente.getListaOrdini() %></h3>
+<br>
+
+<p><a onclick="updateAccount()">Clicca qui</a> per modificare User Account</p>
+
+
 </div>
 </div>
 

@@ -10,6 +10,8 @@ public interface UtenteDao {
 	
 	public Utente login(String username, String password);
 	
+	public void updateUtente(int idUtente);
+	
 	public void close();
 	
 	
