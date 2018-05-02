@@ -87,7 +87,6 @@
 <th>Marca</th>
 <th>Prezzo </th>
 <th>Q.tà Disponibile</th>
-
 <th>Sconto(%)</th>
 <th></th>
 <th>Q.tà richiesta</th>
