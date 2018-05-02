@@ -1,3 +1,5 @@
+<%@page import="it.accenture.controller.ListaAcquisti"%>
+<%@page import="it.accenture.model.Acquisto"%>
 <%@page import="it.accenture.model.Prodotto"%>
 <%@page import="java.util.List"%>
 <%@page import="it.accenture.model.Utente"%>
@@ -7,18 +9,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Lista Prodotti</title>
+<title>Carrello</title>
 <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/stile.css">
 </head>
 <body>
+
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
+<% List<Acquisto> listaAcquisti =(List<Acquisto>) request.getAttribute("listaAcquisti");%>
 <%List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
 
-
-<!-- NAVBAR -->
+<!-- navbar -->
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-left: 25px;">
 
@@ -68,91 +71,41 @@
 
 
 </nav><!-- chiusura navbar  -->
-
 <!-- JUMBOTRON -->
 <div class="jumbotron">
-<h1>LISTA PRODOTTI</h1>
+<h1>WELCOME TO SPORTADDICTED</h1>
 <p></p>
 </div><!-- chiusura jumbotron -->
 
-
-<div class="container">
-<div class="table-responsive">
+<div class="table responsive">
 <table class="table">
-<!-- table head -->
 <thead>
 <tr>
-<th>Nome</th>
-<th>Marca</th>
-<th>Prezzo </th>
-<th>Quantità Disponibile</th>
-<th>Acquista</th>
-<th>Dettagli</th>
+<th>Id Acquisto</th>
+<th>Tipo Spedizione</th>
+<th>Data Partenza</th>
+<th>Data Arrivo</th>
+<th>Prezzo Spedizione</th>
+<th>Quantità Acquistata</th>
 </tr>
 </thead>
-<!-- table body -->
 <tbody>
+<% for(Acquisto acquisto : listaAcquisti) {%>
 <%for(Prodotto prodotto : listaProdotti){%>
 <tr>
-<td><%=prodotto.getNome() %></td>
-<td><%=prodotto.getMarca() %></td>
-<td><%=prodotto.getPrezzo() %></td>
-<td><%=prodotto.getQuantitaDisponibile()%></td>
+<td><%=acquisto.getIdAcquisto() %></td>
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
-
-<td>
-<form action="ListaProdotti" method="post">
-<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
-<input type="submit" value="Aggiungi al carrello"
-<%if(prodotto.getQuantitaDisponibile() > 0){%>
-class="btn btn-success"
-<% }else{%>
-class="btn btn-warning"
-disabled
-<%} %>
-<%if(utente == null) {%>
-disabled
-<% }%>
->
-</form>
-<<<<<<< HEAD
-=======
-
-<FORM NAME="modulo" METHOD="get" ACTION="">
-<p>Prezzo Articolo =
-<INPUT NAME="prezzo" TYPE="TEXT" value="<%prodotto.getPrezzo()%>;" SIZE="5" maxlength="5" readonly id="prezzo"><br />
-Numero Articoli =
-<select name="articoli" id="articoli" onChange="calcola();">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-</select><br />
-Costo Totale = <INPUT NAME="somma" TYPE="TEXT" value="<%prodotto.getPrezzo(); %>" SIZE="5" maxlength="5">
-</p>
-</FORM>
-
->>>>>>> branch 'master' of https://github.com/clau91/ShopOnline2
-</td>
-
-<td>
-<form action="Dettagli" method="post">
-<input type="hidden" name="nome2" value="<%=prodotto.getNome()%>">
-<input type="submit" value="Dettagli" class="btn btn-secondary">
-</form>
-</td>
+<td><%=acquisto.getTipoSpedizione()%></td>
+<td><%=acquisto.getDataInizio() %></td>
+<td><%=acquisto.getDataFine() %></td>
+<td><%=acquisto.getPrezzoDiSpedizione() %></td>
+<td><%=acquisto.getQuantitaAcquistata() %></td>
 
 </tr>
-<% }%>
+<%} %>
+<%} %>
 </tbody>
-
 </table>
-
-
-
 </div>
-
-</div><!-- chiusura container -->
 </body>
 </html>
