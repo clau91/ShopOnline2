@@ -87,7 +87,7 @@
 <h3>Prodotti Ordinati: <%=utente.getListaOrdini() %></h3>
 <br>
 
-<p><a onclick="updateAccount()">Clicca qui</a> per modificare User Account</p>
+<p><a href="updateAccount.jsp">Click here </a> to modify User Account</p>
 
 
 </div>
