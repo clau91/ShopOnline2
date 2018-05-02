@@ -115,5 +115,15 @@
   <servlet-name>Carrello</servlet-name>
   <url-pattern>/Carrello</url-pattern>
   </servlet-mapping>
+  
+   <!-- DETTAGLI -->
+  <servlet>
+  <servlet-name>Dettagli</servlet-name>
+  <servlet-class>it.accenture.controller.Dettagli</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Dettagli</servlet-name>
+  <url-pattern>/Dettagli</url-pattern>
+  </servlet-mapping>
 
 </web-app>
