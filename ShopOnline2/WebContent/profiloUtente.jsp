@@ -80,6 +80,7 @@
 
 <div class="container"  style="margin-left:80px">
 
+
 <h3>Nome: <%=utente.getNome() %></h3>
 <h3>Cognome: <%=utente.getCognome() %></h3>
 <h3>Username: <%=utente.getUsername() %></h3>
