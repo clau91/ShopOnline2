@@ -102,11 +102,11 @@
 </table>
 <div class="img-magnifier-container">
 <img id="myimage" src="<%=prodotto.getImmagine()%>" style="width: 500px; height: 500px;">
-<br>
 <script>
 magnify("myimage", 2); 
 </script>
 </div>
+<br>
 <div align="center">
 <input type="submit" value="Aggiungi al carrello">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">

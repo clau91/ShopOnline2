@@ -70,6 +70,8 @@
 
 </nav><!-- chiusura navbar  -->
 
+
+
 <!-- JUMBOTRON -->
 <div class="jumbotron">
 <h1>WELCOME TO SPORTADDICTED</h1>
