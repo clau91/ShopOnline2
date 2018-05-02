@@ -37,7 +37,8 @@ public class UpdateAccount extends HttpServlet {
 	    RequestDispatcher dispatcher = req.getRequestDispatcher("profiloUtente.jsp?form=updateAccount");
 	    dispatcher.forward(req, resp);
 		
-			
+		
+	    
 		
 		}
 	}
