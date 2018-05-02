@@ -17,7 +17,7 @@
 
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
 <%List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
-
+<% Prodotto prodotto = (Prodotto) request.getAttribute("prodotto"); %>
 <!-- navbar -->
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-left: 25px;">
@@ -74,8 +74,34 @@
 <h3>ACQUISTA</h3>
 <p></p>
 </div><!-- chiusura jumbotron -->
+<div class="container">
+<div class="table-responsive">
+<table class="table">
+<!-- table head -->
+<thead>
+<tr>
+<th>Nome</th>
+<th>Marca</th>
+<th>Prezzo </th>
+<th>Quantità Disponibile</th>
+<th>Sconto(%)</th>
+<th>Acquista</th>
+</tr>
+</thead>
+<!-- table body -->
+<tbody>
+<tr>
+<td><%=prodotto.getNome() %></td>
+<td><%=prodotto.getMarca() %></td>
+<td><%=prodotto.getPrezzo() %></td>
+<td><%=prodotto.getQuantitaDisponibile()%></td>
+<td><%=prodotto.getSconto() %></td>
+<td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
+</tr>
 
-
-
+</tbody>
+</table>
+</div>
+</div>
 </body>
 </html>

@@ -13,21 +13,22 @@ import javax.servlet.http.HttpSession;
 
 import it.accenture.dao.AcquistoDaoImpl;
 import it.accenture.model.Acquisto;
+import it.accenture.model.Prodotto;
 import it.accenture.model.Utente;
 
 public class Carrello extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Acquisto> listaOrdini = new ArrayList<>();
+		List<Acquisto> carrello = new ArrayList<>(); 
 		AcquistoDaoImpl acquistoService = new AcquistoDaoImpl();
 		HttpSession sessione = req.getSession();
 		Utente utenteLoggato = (Utente) sessione.getAttribute("utenteLoggato");
-		listaOrdini = acquistoService.getListaOrdini(utenteLoggato.getIdUtente());
-		for(Acquisto acquisto : listaOrdini){
+		carrello = acquistoService.getListaOrdini(utenteLoggato.getIdUtente());
+		for(Acquisto acquisto : carrello){
 			System.out.println(acquisto);
 		}
-		req.setAttribute("listaOrdini", listaOrdini);
+		req.setAttribute("carrello", carrello);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("carrello.jsp");
 		dispatcher.forward(req, resp);
 	}

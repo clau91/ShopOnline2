@@ -117,7 +117,7 @@
 <input type="submit" value="Aggiungi al carrello"
 <%if(prodotto.getQuantitaDisponibile() > 0){%>
 class="btn btn-success"
-<% }else{%>
+<%}else{%>
 class="btn btn-warning"
 disabled
 <%} %>
@@ -129,7 +129,7 @@ disabled
 </td>
 
 <td>
-<form action="Dettagli" method="post">
+<form action="dettagli.jsp">
 <input type="hidden" name="nome2" value="<%=prodotto.getNome()%>">
 <input type="submit" value="Dettagli" class="btn btn-secondary">
 </form>
