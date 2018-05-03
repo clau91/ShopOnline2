@@ -143,6 +143,7 @@
 <div class="item">
 <img class="img-carousel" src="img/racchetta.jpg" style="width: 300px; height: 300px;">
 </div>
+
 </div>
 <!-- INDICATORI -->
 <ol class="carousel-indicators">
@@ -162,6 +163,7 @@
 </div><!-- CHIUSURA CAROUSEL PRODOTTI PIU VENDUTI -->
 </div>
 </div><!-- CHIUSURA CONTAINER -->
+
 
 </body>
 </html>
