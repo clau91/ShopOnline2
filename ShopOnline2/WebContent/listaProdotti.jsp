@@ -15,7 +15,8 @@
 </head>
 <body>
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
-<%List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
+<% List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
+<% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 
 
 <!-- NAVBAR -->
@@ -62,7 +63,13 @@
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
 <% } else { %>
 <a href="profiloUtente.jsp"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
-<a href="Carrello"><img src="img/cart.png" class="icona" ></a>
+<a href="carrello.jsp"><img src="img/cart.png" class="icona" >
+<% if (listaCarrello != null) { %>
+<%= listaCarrello.size() %>
+<%} else { %>
+0
+<% } %>
+</a>
 <% } %>
 </div>
 
@@ -99,7 +106,7 @@
 <tr>
 <td><%=prodotto.getNome() %></td>
 <td><%=prodotto.getMarca() %></td>
-<td><%=prodotto.getPrezzo() %></td>
+<td><%=prodotto.getPrezzo() %> &euro;</td>
 <td><%=prodotto.getQuantitaDisponibile()%></td>
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
 
@@ -114,9 +121,9 @@
 </select>
 </td>
 <td>
-<form action="ListaProdotti" method="post">
+<form action="Carrello" method="get">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
-<input type="submit" value="Aggiungi al carrello"
+<input type="submit" value="Aggiungi al carrello" id="Carrello"
 <%if(prodotto.getQuantitaDisponibile() > 0){%>
 class="btn btn-success"
 <%}else{%>

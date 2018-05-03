@@ -26,9 +26,8 @@ public class RecensioniDaoImpl implements RecensioniDao{
 	@Override
 	public void insertRecensione(Recensioni recensioni) {
 		
-		String query = "insert into recensioni vales "
-				+ "(recensioni_sequence.nextval,?,?,?,?)";
-		
+		String query = "insert into recensione values "
+				+ "(?,?,?,?)";
 		try {
 			prepared = connection.prepareStatement(query);
 			prepared.setString(1, recensioni.getTitolo());

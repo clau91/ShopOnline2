@@ -21,20 +21,29 @@ public class Carrello extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		HttpSession sessione = req.getSession();
-		Utente utenteLoggato = (Utente) sessione.getAttribute("utenteLoggato");
 		
-		Prodotto prodotto = new Prodotto();
+		HttpSession session = req.getSession();
+		Utente utenteLoggato = (Utente) session.getAttribute("utenteLoggato");
+		
 		int idProdotto = Integer.parseInt(req.getParameter("idProdotto"));
-		
-		List<Prodotto> listaCarrello = new ArrayList<>();
-		
-		if(utenteLoggato != null) {
-			ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
-			prodottoService.getProdottoById(idProdotto);
-			listaCarrello.add(prodotto);
-		}
-	}
-			
+		List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello");
 
+		
+		if (listaCarrello == null) {
+			listaCarrello = new ArrayList<>();
+		}
+		
+		ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
+		Prodotto prodotto = new Prodotto();
+		prodotto = prodottoService.getProdottoById(idProdotto);
+		prodottoService.close();
+		listaCarrello.add(prodotto);
+		
+		System.out.println("Prodotto aggiunto");
+		System.out.println(listaCarrello);
+					
+		session.setAttribute("listaCarrello", listaCarrello);
+		resp.sendRedirect("ListaProdotti");
+
+		}
 }
