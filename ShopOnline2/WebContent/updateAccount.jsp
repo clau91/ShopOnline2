@@ -1,5 +1,3 @@
-<%@page import="it.accenture.model.Prodotto"%>
-<%@page import="java.util.List"%>
 <%@page import="it.accenture.model.Utente"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -7,16 +5,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>LISTA PRODOTTI IN OFFERTA</title>
+<title>UPDATE ACCOUNT</title>
 <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/gestioneForm.js"></script>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/stile.css">
 </head>
 <body>
 
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
-<% List<Prodotto> listaProdottiInOfferta = (List<Prodotto>) request.getAttribute("listaProdottiInOfferta"); %>
+<% String scelta = (String) request.getParameter("form"); %>
+
+
 
 <!-- NAVBAR -->
 <nav class="nav navbar">
@@ -37,7 +38,7 @@
   <li><a href="ListaProdottiPerCategoria?categoria=BASKET">BASKET</a></li>
   <li><a href="ListaProdottiPerCategoria?categoria=TENNIS">TENNIS</a></li>
   <li><a href="ListaProdottiPerCategoria?categoria=NUOTO">NUOTO</a></li>
-  <li><a href="ListaProdottiPerCategoria?categoria=TREKKING">TREKKING</a></li>  
+  <li><a href="ListaProdottiPerCategoria?categoria=TREKKING">TREKKING</a></li>   
 </ul>
 </li>
 <% if (utente == null) { %>
@@ -66,87 +67,75 @@
 <% } %>
 </div>
 
-
 </nav><!-- chiusura navbar  -->
 
-<!-- JUMBOTRON -->
-<div class="jumbotron">
-<h1>PRODOTTI IN OFFERTA</h1>
-<p></p>
-</div><!-- chiusura jumbotron -->
+<div class="jumbotron" >
+<h1>Modificare i campi sotto riportati</h1>
+</div><!-- CHIUSURA JUMBOTRON -->
 
-<!-- Tabella -->
-<div class="container">
-<div class="table-responsive">
-<table class="table">
+<!-- UPDATE FORM -->
+<form action="UpdateAccount" method="post" class="form-horizontal"
+novalidate id="formUpdate">
+<input type="hidden" value="<%=utente.getIdUtente()%>" name="idUtente">
 
-<!-- table head -->
-<thead>
-<tr>
-<th>Nome</th>
-<th>Marca</th>
-<th>Prezzo </th>
-<th>Q.tà Disponibile</th>
-<th>Sconto(%)</th>
-<th></th>
-<th>Q.tà richiesta</th>
-<th>Acquista</th>
-<th>Dettagli</th>
-</tr>
-</thead>
-
-<!-- table body -->
-<tbody>
-<%for(Prodotto prodotto : listaProdottiInOfferta){%>
-<tr>
-<td><%=prodotto.getNome() %></td>
-<td><%=prodotto.getMarca() %></td>
-<td><%=prodotto.getPrezzo() %></td>
-<td><%=prodotto.getQuantitaDisponibile()%></td>
-<td><%=prodotto.getSconto() %></td>
-<td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
-
-<!-- Tendina Quantita -->
-<td align="center">
-<select name="articoli" id="articoli">
-<option value="1">1</option>
-<option value="2">2</option>
-<option value="3">3</option>
-<option value="4">4</option>
-<option value="5">5</option>
-</select>
-</td>
-<td>
-<form action="ListaProdotti" method="post">
-<input type="hidden" name="nome" value="<%=prodotto.getNome()%>">
-<input type="submit" value="Aggiungi al carrello"
-<%if(prodotto.getQuantitaDisponibile() > 0){%>
-class="btn btn-success"
-<% }else{%>
-class="btn btn-warning"
-<%} %>
-<%if(utente == null) {%>
-disabled
-<% }%>
->
-
-</form>
-</td>
-<!-- Button Dettagli -->
-<td>
-<form action="Dettagli" method="post">
-<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
-<input type="submit" value="Dettagli" class="btn btn-secondary">
-</form>
-</td>
-</tr>
-</tr>
-<%} %>
-</tbody>
-
-</table>
-
+<!-- NOME -->
+<div class="form-group">
+<label class="col-md-4 control-label">Nome</label>
+<div class="col-md-5">
+<input type ="text" name="nome" placeholder="inserisci nuovo nome" class="form-control" id="nome">
 </div>
-</div><!-- chiusura container -->
+<span class="col-md-3"></span>
+</div>
+
+<!-- COGNOME -->
+<div class="form-group">
+<label class="col-md-4 control-label">Cognome</label>
+<div class="col-md-5">
+<input type ="text" name="cognome" placeholder="inserisci nuovo cognome" class="form-control" id="cognome">
+</div>
+<span class="col-md-3"></span>
+</div>
+
+<!-- INDIRIZZO -->
+<div class="form-group">
+<label class="col-md-4 control-label">Indirizzo</label>
+<div class="col-md-5">
+<input type ="text" name="indirizzo" placeholder="inserisci nuovo indirizzo" class="form-control" id="indirizzo">
+</div>
+<span class="col-md-3"></span>
+</div>
+
+<!-- USERNAME -->
+<div class="form-group">
+<label class="col-md-4 control-label">Username</label>
+<div class="col-md-5">
+<input type ="text" name="username" placeholder="inserisci nuovo username" class="form-control" id="username">
+</div>
+<span class="col-md-3"></span>
+</div>
+
+<!-- PASSWORD -->
+<div class="form-group">
+<label class="col-md-4 control-label">Password</label>
+<div class="col-md-5">
+<input type ="password" name="password" placeholder="inserisci password" class="form-control" id="myInput">
+<input type="checkbox" onclick="myFunction()">Mostra password
+</div>
+<span class="col-md-3"></span>
+</div>
+
+<br>
+<!-- BOTTONI -->
+<div class="form-group">
+<span class="col-md-4"></span>
+<div class="col-md-5">
+<input type ="submit" value="Save" class="btn-primary">
+<input type ="reset" value="Reset" class="btn-warning">
+</div>
+<span class="col-md-3"></span>
+</div>
+
+</form>
+
 </body>
 </html>

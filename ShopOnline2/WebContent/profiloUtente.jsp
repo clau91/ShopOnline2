@@ -19,13 +19,12 @@
 
 
 
-<!-- NAVBAR -->
+<!-- navbar -->
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-left: 25px;">
 
 <a href="index.jsp">
 <img src="img/home.png" class="icona">
-</a>
 </a>
 </div>
 <div align="center">
@@ -38,7 +37,7 @@
   <li><a href="ListaProdottiPerCategoria?categoria=BASKET">BASKET</a></li>
   <li><a href="ListaProdottiPerCategoria?categoria=TENNIS">TENNIS</a></li>
   <li><a href="ListaProdottiPerCategoria?categoria=NUOTO">NUOTO</a></li>
-  <li><a href="ListaProdottiPerCategoria?categoria=TREKKING">TREKKING</a></li>   
+  <li><a href="ListaProdottiPerCategoria?categoria=TREKKING">TREKKING</a></li>  
 </ul>
 </li>
 <% if (utente == null) { %>
@@ -73,31 +72,25 @@
 
 <!-- JUMBOTRON -->
 <div class="jumbotron">
-<h1>Profilo Utente !</h1>
-</div><!-- CHIUSURA JUMBOTRON -->
+<h1>WELCOME TO SPORTADDICTED</h1>
+<p></p>
+</div><!-- chiusura jumbotron -->
 
 
+<div class="container"  style="margin-left:80px">
 
-<div class="container">
-<div class="table-responsive">
-<table class="table">
-<!-- table head -->
-<thead>
-<tr>
-<th>Nome</th>
-<th>Cognome</th>
-<th>Indirizzo </th>
-<th>Prodotti Acquisti</th>
-</tr>
-</thead>
-<!-- table body -->
-<tbody>
+<h3>Nome: <%=utente.getNome() %></h3>
+<h3>Cognome: <%=utente.getCognome() %></h3>
+<h3>Username: <%=utente.getUsername() %></h3>
+<h3>Password: <%=utente.getPassword() %></h3>
+<h3>Indirizzo: <%=utente.getIndirizzo() %></h3>
 
-</tr>
-</tbody>
-</table>
+<br>
+
+<p><a href="updateAccount.jsp">Clicca qui</a> per modificare i dati</p>
+
 </div>
-</div>
+
 
 </body>
 </html>

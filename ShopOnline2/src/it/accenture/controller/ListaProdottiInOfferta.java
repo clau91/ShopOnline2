@@ -27,5 +27,4 @@ public class ListaProdottiInOfferta extends HttpServlet {
 		dispatcher.forward(req, resp);
 		
 	}
-
 }

@@ -26,7 +26,7 @@
 <a href="index.jsp">
 <img src="img/home.png" class="icona">
 </a>
-</a>
+
 </div>
 <div align="center">
 <ul class="nav navbar-nav" >

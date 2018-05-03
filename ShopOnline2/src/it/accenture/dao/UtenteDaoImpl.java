@@ -21,8 +21,7 @@ public class UtenteDaoImpl implements UtenteDao {
 	@Override
 	public void registrazione(Utente utente) {
 		String query ="insert into utente values "
-				+ "(utente_sequence.nextval,?,?,?,?,?)";
-		
+				+ "(utente_sequence.nextval,?,?,?,?,?)";	
 		try {
 			prepared = connection.prepareStatement(query);
 			prepared.setString(1, utente.getNome());
@@ -53,7 +52,6 @@ public class UtenteDaoImpl implements UtenteDao {
 		ResultSet rs = null;
 		String query = "select * from utente where username = ?"
 				+ "and password = ?";
-		
 		try {
 			prepared = connection.prepareStatement(query);
 			prepared.setString(1, username);
@@ -87,7 +85,6 @@ public class UtenteDaoImpl implements UtenteDao {
 	}
 	
 	
-
 	@Override
 	public void close() {
 		
@@ -95,6 +92,31 @@ public class UtenteDaoImpl implements UtenteDao {
 			connection.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}
+	}
+
+	
+	@Override
+	public void updateUtente (Utente utenteLoggato) {
+		String query ="update utente set nome = ? , cognome = ?, username = ?, password = ?, indirizzo = ? where id_utente = " + utenteLoggato.getIdUtente();
+		try {
+			prepared = connection.prepareStatement(query);
+			prepared.setString(1, utenteLoggato.getNome());
+			prepared.setString(2, utenteLoggato.getCognome());
+			prepared.setString(3, utenteLoggato.getUsername());
+			prepared.setString(4, utenteLoggato.getPassword());
+			prepared.setString(5, utenteLoggato.getIndirizzo());
+			prepared.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if(prepared != null) {
+					prepared.close();
+				}
+			}catch(SQLException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 }

@@ -9,8 +9,8 @@ public interface UtenteDao {
 	public void registrazione(Utente utente);
 	
 	public Utente login(String username, String password);
-	
-	
+
+	public void updateUtente(Utente utenteLoggato);
 	
 	public void close();
 	

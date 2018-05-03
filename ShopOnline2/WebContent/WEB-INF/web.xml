@@ -126,4 +126,14 @@
   <url-pattern>/Dettagli</url-pattern>
   </servlet-mapping>
 
+ <!-- Update Account -->
+  <servlet>
+  <servlet-name>UpdateAccount</servlet-name>
+  <servlet-class>it.accenture.controller.UpdateAccount</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>UpdateAccount</servlet-name>
+  <url-pattern>/UpdateAccount</url-pattern>
+  </servlet-mapping>
+
 </web-app>
