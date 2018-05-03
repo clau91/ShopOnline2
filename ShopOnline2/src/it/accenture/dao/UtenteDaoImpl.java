@@ -95,7 +95,6 @@ public class UtenteDaoImpl implements UtenteDao {
 		}
 	}
 
-	
 	@Override
 	public void updateUtente (Utente utenteLoggato) {
 		String query ="update utente set nome = ? , cognome = ?, username = ?, password = ?, indirizzo = ? where id_utente = " + utenteLoggato.getIdUtente();
