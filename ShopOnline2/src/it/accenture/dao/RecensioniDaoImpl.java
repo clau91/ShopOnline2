@@ -27,12 +27,8 @@ public class RecensioniDaoImpl implements RecensioniDao{
 	@Override
 	public void insertRecensione(Recensioni recensioni) {
 		
-		String query = "insert into recensione values "
-				+ "(?,?,?,?)";
-<<<<<<< HEAD
-=======
-		
->>>>>>> branch 'master' of https://github.com/clau91/ShopOnline2
+		String query = "insert into recensione values (?,?,?,?)";
+
 		try {
 			prepared = connection.prepareStatement(query);
 			prepared.setString(1, recensioni.getTitolo());

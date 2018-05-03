@@ -84,6 +84,7 @@
 </div><!-- chiusura jumbotron -->
 
 <!-- TABELLA -->
+<% if (listaCarrello != null) { %>
 <div class="table-responsive">
 <table class="table">
 <thead>
@@ -92,6 +93,7 @@
 <th>Marca</th>
 <th>Prezzo </th>
 <th>Q.tà Disponibile</th>
+<th></th>
 <th></th>
 </tr>
 </thead>
@@ -104,11 +106,18 @@
 <td><%=prodotto.getPrezzo() %></td>
 <td><%=prodotto.getQuantitaDisponibile()%></td>
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
+<td><form action="RimuoviProdotto" method="get">
+<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
+<input type="submit" value="Rimuovi" class="btn btn-secondary">
+</form></td>
 </tr>
 <% } %>
 </tbody>
 </table>
 </div>
+<%} else { %>
+<h3>Nessun prodotto nel carrello</h3>
+<% } %>
 
 
 </body>

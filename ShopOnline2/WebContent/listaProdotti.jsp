@@ -138,7 +138,7 @@ disabled
 </td>
 <!-- Button Dettagli -->
 <td>
-<form action="Dettagli" method="post">
+<form action="Dettagli" method="get">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
 <input type="submit" value="Dettagli" class="btn btn-secondary">
 </form>

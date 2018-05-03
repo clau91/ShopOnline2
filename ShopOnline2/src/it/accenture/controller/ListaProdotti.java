@@ -25,7 +25,6 @@ public class ListaProdotti extends HttpServlet {
 		List<Prodotto> listaProdotti = new ArrayList<>();
 		ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
 		listaProdotti = prodottoService.getAllProdotti();
-		System.out.println("numero prodotti : " + listaProdotti.size());
 		prodottoService.close();
 		req.setAttribute("listaProdotti", listaProdotti);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("listaProdotti.jsp");

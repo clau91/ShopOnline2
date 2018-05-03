@@ -142,7 +142,7 @@ insert into utente values (utente_sequence.nextval, 'Elena', 'Vinciguerra', 'ele
 
 
 insert into recensione values ('Un classico', 'Ottimo pallone dimensione 4 (quella che ho preso) per il calcetto
-Lo consiglio a tutti materiale come al solito buono Magari era gradito anche la pipetta per gonfiarlo insieme ', 21, 18);
+Lo consiglio a tutti materiale come al solito buono Magari era gradito anche la pipetta per gonfiarlo insieme ', 22, 14);
 
 insert into recensione values  ('Senza Infamia', 'A primo impatto il borsone mi è parso poco resistente in quanto il tessuto 
 è molto leggero. Tuttavia nella sua semplicità le rifiniture sono curate le zip si aprono e chiudono fluidamente e

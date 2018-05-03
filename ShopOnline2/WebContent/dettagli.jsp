@@ -18,17 +18,10 @@
 <body>
 
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
-<<<<<<< HEAD
 <% List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
-=======
->>>>>>> branch 'master' of https://github.com/clau91/ShopOnline2
 <% Prodotto prodotto = (Prodotto) request.getAttribute("prodotto"); %>
-<<<<<<< HEAD
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
-
-=======
 <%List<Recensioni> listaRecensioni = (List<Recensioni>) request.getAttribute("listaRecensioni"); %>
->>>>>>> branch 'master' of https://github.com/clau91/ShopOnline2
 <!-- navbar -->
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-left: 25px;">
@@ -91,8 +84,8 @@
 <h3>Dettagli prodotto</h3>
 <p></p>
 </div><!-- chiusura jumbotron -->
+
 <div class="container">
-<div class="table-responsive">
 <table class="table">
 <!-- table head -->
 <thead>
@@ -128,19 +121,27 @@ magnify("myimage", 2);
 <input type="submit" value="Aggiungi al carrello">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
 </div>
+<br>
+<div  align="center">
 <%for(Recensioni recensioni : listaRecensioni) {%>
 <%=recensioni.getTitolo() %>
 <br>
 <%=recensioni.getContenuto() %>
 
 <%}%>
-</div>
-</div>
-<form method="post" action="submit">
+
+
+<form action="Dettagli" method="post">
+<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
 Lascia una recensione<br>
-  <textarea name="commento" rows="5" cols="30"></textarea>
-  <br>
-  <input type="submit" name="invia" value="Invia i dati">
-  </form>
+<textarea name="commento" rows="1" cols="30" name="titolo" placeholder="inserisci titolo" id="titolo" ></textarea>
+<br>
+<textarea name="commento" rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
+<br>
+<input type="submit" name="invia" value="Invia i dati">
+</form>
+</div>
+</div>
+
 </body>
 </html>
