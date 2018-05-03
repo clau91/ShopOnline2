@@ -49,7 +49,7 @@ create sequence prodotto_sequence start with 1 increment by 1;
 
 create sequence acquisto_sequence start with 1 increment by 1;
 
-
+create sequence recensione_sequence start with 1 increment bt 1;
 
 insert into prodotto values (prodotto_sequence.nextval, 'racchetta', 'TENNIS', 'head', 50, 'true',10, 15, 'img/racchetta.jpg');
 
@@ -186,3 +186,5 @@ che parliamo di 60 euro di scarpe da calcio per adulti', 29, 16);
 
 insert into recensione values ('Regalo Apprezzato', 'ho comprato questa borsa come regalo di Pasqua tempi di spedizione molto rapidi e ben
 imballata l unica cosa è che mi immaginavo un po più di spazio', 30, 32);
+
+create sequence recensione_sequence start with 1 increment bt 1;

@@ -11,7 +11,7 @@ public interface RecensioniDao {
 	public List<Recensioni> getAllByIdUtente(int IdUtente);
 	
 	public List<Recensioni> getAllByIdProdotto(int idProdotto);
-	
+	 
 	public void close();
 
 }

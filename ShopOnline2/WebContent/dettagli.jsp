@@ -1,3 +1,4 @@
+<%@page import="it.accenture.model.Recensioni"%>
 <%@page import="it.accenture.model.Prodotto"%>
 <%@page import="java.util.List"%>
 <%@page import="it.accenture.model.Utente"%>
@@ -17,10 +18,17 @@
 <body>
 
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
+<<<<<<< HEAD
 <% List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
+=======
+>>>>>>> branch 'master' of https://github.com/clau91/ShopOnline2
 <% Prodotto prodotto = (Prodotto) request.getAttribute("prodotto"); %>
+<<<<<<< HEAD
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 
+=======
+<%List<Recensioni> listaRecensioni = (List<Recensioni>) request.getAttribute("listaRecensioni"); %>
+>>>>>>> branch 'master' of https://github.com/clau91/ShopOnline2
 <!-- navbar -->
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-left: 25px;">
@@ -108,8 +116,9 @@
 
 </tbody>
 </table>
+
 <div class="img-magnifier-container">
-<img id="myimage" src="<%=prodotto.getImmagine()%>" style="width: 500px; height: 500px;">
+<img id="myimage" src="<%=prodotto.getImmagine()%>" style="width: 400px; height: 400px;">
 <script>
 magnify("myimage", 2); 
 </script>
@@ -119,8 +128,19 @@ magnify("myimage", 2);
 <input type="submit" value="Aggiungi al carrello">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
 </div>
+<%for(Recensioni recensioni : listaRecensioni) {%>
+<%=recensioni.getTitolo() %>
+<br>
+<%=recensioni.getContenuto() %>
 
+<%}%>
 </div>
 </div>
+<form method="post" action="submit">
+Lascia una recensione<br>
+  <textarea name="commento" rows="5" cols="30"></textarea>
+  <br>
+  <input type="submit" name="invia" value="Invia i dati">
+  </form>
 </body>
 </html>
