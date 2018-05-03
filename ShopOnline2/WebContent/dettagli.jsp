@@ -1,3 +1,4 @@
+<%@page import="it.accenture.model.Recensioni"%>
 <%@page import="it.accenture.model.Prodotto"%>
 <%@page import="java.util.List"%>
 <%@page import="it.accenture.model.Utente"%>
@@ -19,6 +20,7 @@
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
 <%List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
 <% Prodotto prodotto = (Prodotto) request.getAttribute("prodotto"); %>
+<%Recensioni recensioni = (Recensioni) request.getAttribute("recensioni"); %>
 <!-- navbar -->
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-left: 25px;">
@@ -100,6 +102,11 @@
 
 </tbody>
 </table>
+<%=recensioni.getTitolo() %>
+<%=recensioni.getContenuto() %>
+<%=recensioni.getIdUtente() %>
+<%=recensioni.getIdProdotto() %>
+
 <div class="img-magnifier-container">
 <img id="myimage" src="<%=prodotto.getImmagine()%>" style="width: 500px; height: 500px;">
 <script>
