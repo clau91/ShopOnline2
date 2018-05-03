@@ -17,8 +17,7 @@
 <body>
 <% Utente utente =(Utente)session.getAttribute("utenteLoggato"); %>
 <% List<Acquisto> listaOrdini = (List<Acquisto>) request.getAttribute("listaOrdini"); %>
-<% List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
-<% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
+<%List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
 
 <!-- NAVBAR -->
 <nav class="nav navbar">
@@ -64,13 +63,7 @@
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
 <% } else { %>
 <a href="profiloUtente.jsp"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
-<a href="carrello.jsp"><img src="img/cart.png" class="icona" >
-<% if (listaCarrello != null) { %>
-<%= listaCarrello.size() %>
-<%} else { %>
-0
-<% } %>
-</a>
+<a href="Carrello"><img src="img/cart.png" class="icona" ></a>
 <% } %>
 </div>
 
@@ -95,6 +88,7 @@
 <th>Data Evasione</th>
 <th>Prezzo Spedizione</th>
 <th>Q.tà Acquistata</th>
+<th>Avanzamento Spedizione</th>
 </tr>
 </thead>
 <tbody>
@@ -108,12 +102,23 @@
 <td><%=acquisto.getDataFine() %></td>
 <td><%=acquisto.getPrezzoDiSpedizione() %></td>
 <td><%=acquisto.getQuantitaAcquistata() %></td>
+<td><div class="progress">
+ <div class="progress-bar progress-bar-striped active" role="progressbar"
+  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+    40%
+ </div></td>
+<%} %>
+<%} %>
+
 
 </tr>
-<%} %>
-<%} %>
-</tbody>
-</table>
+
+
 </div>
+
+</tbody>
+
+</table>
+
 </body>
 </html>
