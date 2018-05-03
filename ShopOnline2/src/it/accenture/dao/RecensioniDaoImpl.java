@@ -29,7 +29,10 @@ public class RecensioniDaoImpl implements RecensioniDao{
 		
 		String query = "insert into recensione values "
 				+ "(?,?,?,?)";
+<<<<<<< HEAD
+=======
 		
+>>>>>>> branch 'master' of https://github.com/clau91/ShopOnline2
 		try {
 			prepared = connection.prepareStatement(query);
 			prepared.setString(1, recensioni.getTitolo());

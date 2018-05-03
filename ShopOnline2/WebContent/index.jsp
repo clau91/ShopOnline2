@@ -17,7 +17,8 @@
 </head>
 <body>
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
-<%List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
+<% List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
+<% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 
 <!-- navbar -->
 <nav class="nav navbar">
@@ -63,7 +64,13 @@
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
 <% } else { %>
 <a href="profiloUtente.jsp"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
-<a href="Carrello"><img src="img/cart.png" class="icona" ></a>
+<a href="carrello.jsp"><img src="img/cart.png" class="icona" >
+<% if (listaCarrello != null) { %>
+<%= listaCarrello.size() %>
+<%} else { %>
+0
+<% } %>
+</a>
 <% } %>
 </div>
 
@@ -143,6 +150,7 @@
 <div class="item">
 <img class="img-carousel" src="img/racchetta.jpg" style="width: 300px; height: 300px;">
 </div>
+
 </div>
 <!-- INDICATORI -->
 <ol class="carousel-indicators">
@@ -162,6 +170,7 @@
 </div><!-- CHIUSURA CAROUSEL PRODOTTI PIU VENDUTI -->
 </div>
 </div><!-- CHIUSURA CONTAINER -->
+
 
 </body>
 </html>

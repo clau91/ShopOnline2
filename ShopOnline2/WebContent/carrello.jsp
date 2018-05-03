@@ -18,8 +18,7 @@
 <body>
 
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
-<% List<Acquisto> listaAcquisti =(List<Acquisto>) request.getAttribute("listaAcquisti"); %>
-<% List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
+<% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 
 
 <!-- navbar -->
@@ -66,17 +65,51 @@
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
 <% } else { %>
 <a href="profiloUtente.jsp"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
-<a href="Carrello"><img src="img/cart.png" class="icona" ></a>
+<a href="carrello.jsp"><img src="img/cart.png" class="icona" >
+<% if (listaCarrello != null) { %>
+<%= listaCarrello.size() %>
+<%} else { %>
+0
+<% } %>
+</a>
 <% } %>
 </div>
 
-
 </nav><!-- chiusura navbar  -->
+
 <!-- JUMBOTRON -->
 <div class="jumbotron">
-<h1>WELCOME TO SPORTADDICTED</h1>
+<h1>CARRELLO</h1>
 <p></p>
 </div><!-- chiusura jumbotron -->
+
+<!-- TABELLA -->
+<div class="table-responsive">
+<table class="table">
+<thead>
+<tr>
+<th>Nome</th>
+<th>Marca</th>
+<th>Prezzo </th>
+<th>Q.tà Disponibile</th>
+<th></th>
+</tr>
+</thead>
+
+<tbody>
+<% for(Prodotto prodotto : listaCarrello) { %>
+<tr>
+<td><%=prodotto.getNome() %></td>
+<td><%=prodotto.getMarca() %></td>
+<td><%=prodotto.getPrezzo() %></td>
+<td><%=prodotto.getQuantitaDisponibile()%></td>
+<td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
+</tr>
+<% } %>
+</tbody>
+</table>
+</div>
+
 
 </body>
 </html>

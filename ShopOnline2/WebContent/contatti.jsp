@@ -1,3 +1,5 @@
+<%@page import="it.accenture.model.Prodotto"%>
+<%@page import="java.util.List"%>
 <%@page import="it.accenture.model.Utente"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
@@ -14,6 +16,7 @@
 </head>
 <body>
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
+<% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-left: 25px;">
@@ -58,7 +61,13 @@
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
 <% } else { %>
 <a href="profiloUtente.jsp"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
-<a href="Carrello"><img src="img/cart.png" class="icona" ></a>
+<a href="carrello.jsp"><img src="img/cart.png" class="icona" >
+<% if (listaCarrello != null) { %>
+<%= listaCarrello.size() %>
+<%} else { %>
+0
+<% } %>
+</a>
 <% } %>
 </div>
 
