@@ -108,16 +108,12 @@ public class UtenteDaoImpl implements UtenteDao {
 		
 		try {
 			prepared = connection.prepareStatement(query);
-			rs = prepared.executeUpdate();
-			if(rs.next()) {
-				utente = new Utente();
-				utente.setNome(rs.getString(2));
-				utente.setCognome(rs.getString(3));
-				utente.setUsername(rs.getString(4));
-				utente.setPassword(rs.getString(5));
-				utente.setIndirizzo(rs.getString(6));	
-			}
-				
+			prepared.setString(2,rs.getString(2));
+			prepared.setString(3,rs.getString(3));
+			prepared.setString(4,rs.getString(4));
+			prepared.setString(5,rs.getString(5));
+			prepared.setString(6,rs.getString(6));
+			prepared.executeUpdate();	
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

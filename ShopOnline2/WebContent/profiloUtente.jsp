@@ -70,16 +70,9 @@
 
 </nav><!-- chiusura navbar  -->
 
-
-<<<<<<< HEAD
-
-<div class="jumbotron" >
-<h1>User Account</h1>
-=======
 <!-- JUMBOTRON -->
 <div class="jumbotron">
 <h1>IL MIO ACCOUNT </h1>
->>>>>>> branch 'master' of https://github.com/clau91/ShopOnline2
 </div><!-- CHIUSURA JUMBOTRON -->
 
 <div class="container"  style="margin-left:80px">
@@ -92,46 +85,12 @@
 <h3>Prodotti Acquisti: <%=utente.getListaAcquisti() %></h3>
 <h3>Prodotti Ordinati: <%=utente.getListaOrdini() %></h3>
 <br>
-
-<p><a href="updateAccount.jsp">Click here </a> to modify User Account</p>
-
-
-<<<<<<< HEAD
-=======
-<div class="container">
-<div class="table-responsive">
-<table class="table">
-<!-- table head -->
-<thead>
-<tr>
-<th>Nome</th>
-<th>Cognome</th>
-<th>Username</th>
-<th>Password</th>
-<th>Indirizzo </th>
-<th>Lista Ordini</th>
-<th>Lista Acquisto</th>
-</tr>
-</thead>
-<!-- table body -->
-<tbody>
-<tr>
-<td><%=utente.getNome()%></td>
-<td><%=utente.getCognome()%></td>
-<td><%=utente.getUsername()%></td>
-<td><%=utente.getPassword()%></td>
-<td><%=utente.getIndirizzo()%></td>
-<td><%=utente.getListaOrdini()%></td>
-<td><%=utente.getListaAcquisti()%></td>
-</tr>
-</tbody>
-</table>
 <div class="col-md-5 text-primary">
 <p>Clicca <a onclick="update()">qui</a> per modificare i tuoi dati</p>
 </div>
 </span class="col-md-3"></span>
 </div>
->>>>>>> branch 'master' of https://github.com/clau91/ShopOnline2
+
 </div>
 </div>
 

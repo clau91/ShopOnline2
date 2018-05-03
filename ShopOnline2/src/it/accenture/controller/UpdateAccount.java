@@ -16,6 +16,7 @@ public class UpdateAccount extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		int idUtente = 0;
 		
 		String nome = req.getParameter("nome");
 		String cognome = req.getParameter("cognome");
@@ -31,7 +32,7 @@ public class UpdateAccount extends HttpServlet {
 		utente.setPassword(password);
 		utente.setIndirizzo(indirizzo);
 		UtenteDaoImpl utenteService = new UtenteDaoImpl();
-		utenteService.updateUtente(utente);
+		utenteService.updateUtente(idUtente);
 		System.out.println("utente aggiornato");
 		utenteService.close();
 	    RequestDispatcher dispatcher = req.getRequestDispatcher("profiloUtente.jsp?form=updateAccount");
