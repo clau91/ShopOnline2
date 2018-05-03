@@ -20,6 +20,8 @@
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
 <% Prodotto prodotto = (Prodotto) request.getAttribute("prodotto"); %>
 <%List<Recensioni> listaRecensioni = (List<Recensioni>) request.getAttribute("listaRecensioni"); %>
+
+
 <!-- navbar -->
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-left: 25px;">
@@ -120,12 +122,12 @@ magnify("myimage", 2);
 
 <%}%>
 </div>
-</div>
 <form method="post" action="submit">
 Lascia una recensione<br>
   <textarea name="commento" rows="5" cols="30"></textarea>
   <br>
   <input type="submit" name="invia" value="Invia i dati">
+  </div>
   </form>
 </body>
 </html>

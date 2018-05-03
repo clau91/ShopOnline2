@@ -25,8 +25,10 @@ public class Dettagli extends HttpServlet {
 		RecensioniDaoImpl recensioniService = new RecensioniDaoImpl();
 		Prodotto prodotto = prodottoService.getProdottoById(idProdotto);
 		List<Recensioni> listaRecensioni = (List<Recensioni>) recensioniService.getAllByIdProdotto(idProdotto); 
+		recensioniService.insertRecensione(recensioni);
 		System.out.println(listaRecensioni.size());
 		System.out.println(prodotto);
+		req.setAttribute("recensioni", recensioni);
 		req.setAttribute("prodotto", prodotto);
 		req.setAttribute("listaRecensioni", listaRecensioni);
 		prodottoService.close();
