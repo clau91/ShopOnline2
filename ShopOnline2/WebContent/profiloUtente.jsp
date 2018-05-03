@@ -82,11 +82,11 @@
 <h3>Username: <%=utente.getUsername() %></h3>
 <h3>Password: <%=utente.getPassword() %></h3>
 <h3>Indirizzo: <%=utente.getIndirizzo() %></h3>
-<h3>Prodotti Acquisti: <%=utente.getListaAcquisti() %></h3>
+<h3>Prodotti Acquistati: <%=utente.getListaAcquisti() %></h3>
 <h3>Prodotti Ordinati: <%=utente.getListaOrdini() %></h3>
 <br>
 <div class="col-md-5 text-primary">
-<p>Clicca <a onclick="update()">qui</a> per modificare i tuoi dati</p>
+<p>Clicca <a href="updateAccount.jsp" onclick="update()">qui</a> per modificare i tuoi dati</p>
 </div>
 </span class="col-md-3"></span>
 </div>
