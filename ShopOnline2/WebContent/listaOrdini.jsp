@@ -96,7 +96,7 @@
 <th>Id Acquisto</th>
 <th>Tipo Spedizione</th>
 <th>Data Partenza</th>
-<th>Data Arrivo</th>
+<th>Data di Arrivo</th>
 <th>Prezzo Spedizione</th>
 <th>Quantità Acquistata</th>
 <th>Avanzamento Spedizione</th>
