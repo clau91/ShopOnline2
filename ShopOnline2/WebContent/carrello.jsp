@@ -106,7 +106,7 @@
 <td><%=prodotto.getPrezzo() %></td>
 <td><%=prodotto.getQuantitaDisponibile()%></td>
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
-<td><form action="RimuoviProdotto" method="get">
+<td><form action="RimuoviDaCarrello" method="get">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
 <input type="submit" value="Rimuovi" class="btn btn-secondary">
 </form></td>

@@ -116,6 +116,16 @@
   <url-pattern>/Carrello</url-pattern>
   </servlet-mapping>
   
+  <!-- Rimuovi da carrello -->
+  <servlet>
+  <servlet-name>RimuoviDaCarrello</servlet-name>
+  <servlet-class>it.accenture.controller.RimuoviDaCarrello</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>RimuoviDaCarrello</servlet-name>
+  <url-pattern>/RimuoviDaCarrello</url-pattern>
+  </servlet-mapping>
+  
    <!-- DETTAGLI -->
   <servlet>
   <servlet-name>Dettagli</servlet-name>

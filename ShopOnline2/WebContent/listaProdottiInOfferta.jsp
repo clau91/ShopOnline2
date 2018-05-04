@@ -124,20 +124,21 @@
 </select>
 </td>
 <td>
-<form action="ListaProdotti" method="post">
-<input type="hidden" name="nome" value="<%=prodotto.getNome()%>">
-<input type="submit" value="Aggiungi al carrello"
+<form action="Carrello" method="get">
+<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
+<input type="submit" value="Aggiungi al carrello" id="Carrello"
 <%if(prodotto.getQuantitaDisponibile() > 0){%>
 class="btn btn-success"
-<% }else{%>
+<%}else{%>
 class="btn btn-warning"
+disabled
 <%} %>
 <%if(utente == null) {%>
 disabled
 <% }%>
 >
-
 </form>
+
 </td>
 <!-- Button Dettagli -->
 <td>

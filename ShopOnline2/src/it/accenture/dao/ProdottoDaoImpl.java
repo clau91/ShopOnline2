@@ -14,13 +14,13 @@ import it.accenture.model.Prodotto;
 import it.accenture.utilities.DBUtilityConnection;
 
 public class ProdottoDaoImpl implements ProdottoDao {
-	
+
 	private Connection connection;
 	private Statement statement;
 	private PreparedStatement prepared;
-	
+
 	public ProdottoDaoImpl() {
-		connection=DBUtilityConnection.getConnection();
+		connection = DBUtilityConnection.getConnection();
 		statement = null;
 		prepared = null;
 	}
@@ -33,7 +33,7 @@ public class ProdottoDaoImpl implements ProdottoDao {
 		try {
 			statement = connection.createStatement();
 			rs = statement.executeQuery(query);
-			while(rs.next()) {
+			while (rs.next()) {
 				Prodotto prodotto = new Prodotto();
 				prodotto.setIdProdotto(rs.getInt(1));
 				prodotto.setNome(rs.getString(2));
@@ -50,20 +50,17 @@ public class ProdottoDaoImpl implements ProdottoDao {
 			e.printStackTrace();
 		} finally {
 			try {
-				if(rs!=null) {
+				if (rs != null) {
 					rs.close();
 				}
-				if(statement!=null)
+				if (statement != null)
 					statement.close();
 			} catch (SQLException e) {
-					e.printStackTrace();
-				}
+				e.printStackTrace();
 			}
-			return listaProdotti;
 		}
-		
-				
-	
+		return listaProdotti;
+	}
 
 	@Override
 	public List<Prodotto> getProdottiOfferta() {
@@ -73,7 +70,7 @@ public class ProdottoDaoImpl implements ProdottoDao {
 		try {
 			statement = connection.createStatement();
 			rs = statement.executeQuery(query);
-			while(rs.next()) {
+			while (rs.next()) {
 				Prodotto prodotto = new Prodotto();
 				prodotto.setIdProdotto(rs.getInt(1));
 				prodotto.setNome(rs.getString(2));
@@ -90,17 +87,17 @@ public class ProdottoDaoImpl implements ProdottoDao {
 			e.printStackTrace();
 		} finally {
 			try {
-				if(rs!=null) {
+				if (rs != null) {
 					rs.close();
 				}
-				if(statement!=null)
+				if (statement != null)
 					statement.close();
 			} catch (SQLException e) {
-					e.printStackTrace();
-				}
+				e.printStackTrace();
 			}
-			return listaProdottiOfferta;
-		}	
+		}
+		return listaProdottiOfferta;
+	}
 
 	@Override
 	public List<Prodotto> getProdottiPerCategoria(Categoria categoria) {
@@ -110,7 +107,7 @@ public class ProdottoDaoImpl implements ProdottoDao {
 		try {
 			statement = connection.createStatement();
 			rs = statement.executeQuery(query);
-			while(rs.next()) {
+			while (rs.next()) {
 				Prodotto prodotto = new Prodotto();
 				prodotto.setIdProdotto(rs.getInt(1));
 				prodotto.setNome(rs.getString(2));
@@ -127,21 +124,22 @@ public class ProdottoDaoImpl implements ProdottoDao {
 			e.printStackTrace();
 		} finally {
 			try {
-				if(rs!=null) {
+				if (rs != null) {
 					rs.close();
 				}
-				if(statement!=null)
+				if (statement != null)
 					statement.close();
 			} catch (SQLException e) {
-					e.printStackTrace();
-				}
+				e.printStackTrace();
 			}
-			return listaProdottiPerCategoria;
 		}
+		return listaProdottiPerCategoria;
+	}
 
 	@Override
 	public void updateQuantitaDisponibile(int idProdotto) {
-		String query = "update prodotto set quantita_disponibile = (quantita_disponibile - 1) where id_prodotto = " + idProdotto;
+		String query = "update prodotto set quantita_disponibile = (quantita_disponibile - 1) where id_prodotto = "
+				+ idProdotto;
 		try {
 			statement = connection.createStatement();
 			statement.executeQuery(query);
@@ -154,14 +152,12 @@ public class ProdottoDaoImpl implements ProdottoDao {
 				e.printStackTrace();
 			}
 		}
-		
-	
-		
+
 	}
 
 	@Override
 	public void close() {
-		
+
 		try {
 			connection.close();
 		} catch (SQLException e) {
@@ -177,7 +173,7 @@ public class ProdottoDaoImpl implements ProdottoDao {
 		try {
 			statement = connection.createStatement();
 			rs = statement.executeQuery(query);
-			if(rs.next()) {
+			if (rs.next()) {
 				prodotto = new Prodotto();
 				prodotto.setIdProdotto(idProdotto);
 				prodotto.setNome(rs.getString(2));
@@ -194,10 +190,11 @@ public class ProdottoDaoImpl implements ProdottoDao {
 		} finally {
 			try {
 				if (rs != null) {
-				rs.close();
-				} if (statement != null) {
-				statement.close();
-				}			
+					rs.close();
+				}
+				if (statement != null) {
+					statement.close();
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -205,14 +202,4 @@ public class ProdottoDaoImpl implements ProdottoDao {
 		return prodotto;
 	}
 
-	
-		
-
-
-
-
-	
-
-	
-	
 }
