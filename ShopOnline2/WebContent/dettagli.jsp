@@ -134,9 +134,9 @@ magnify("myimage", 2);
 <form action="Dettagli" method="post">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
 Lascia una recensione<br>
-<textarea name="commento" rows="1" cols="30" name="titolo" placeholder="inserisci titolo" id="titolo" ></textarea>
+<textarea  rows="1" cols="30" name="titolo" placeholder="inserisci titolo" id="titolo" ></textarea>
 <br>
-<textarea name="commento" rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
+<textarea  rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
 <br>
 <input type="submit" name="invia" value="Invia i dati">
 </form>

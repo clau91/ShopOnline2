@@ -21,7 +21,7 @@ public class Login extends HttpServlet {
 		String password = req.getParameter("password");
 		UtenteDaoImpl utenteService = new UtenteDaoImpl();
 		Utente utente = utenteService.login(username, password);
-		System.out.println(utente);
+		
 		
 		if(utente == null) {
 			System.out.println("Credenziali Sbagliate");
@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
 			dispatcher.forward(req, resp);
 			
 		} else {
-			System.out.println("Login Effettuato");
+			
 			HttpSession sessione = req.getSession();
 			sessione.setAttribute("utenteLoggato", utente);
 			resp.sendRedirect("index.jsp");
