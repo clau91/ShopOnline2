@@ -80,8 +80,10 @@
 <h1>CONTATTI</h1>
 <p></p>
 </div><!-- chiusura jumbotron -->
+
+
 </body>
-</html>
+
 
 <div style="text-align:justify; margin-top: 100px; margin-left: 140px; margin-right: 140px;">
 <p style="font-size: 20px;">
@@ -127,3 +129,6 @@ Nr. di Iscrizione: 12345678
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD6eXrAKjxJBoACBt2Rhb6fbhqCTrmz1c&callback=myMap"></script></p>
 </div>
+
+
+</html>

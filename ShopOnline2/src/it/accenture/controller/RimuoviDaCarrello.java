@@ -14,34 +14,30 @@ import it.accenture.dao.ProdottoDaoImpl;
 import it.accenture.model.Prodotto;
 import it.accenture.model.Utente;
 
-public class RimuoviDaCarrello extends HttpServlet{
-	
+public class RimuoviDaCarrello extends HttpServlet {
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-	
-	HttpSession session = req.getSession();
-	Utente utenteLoggato = (Utente) session.getAttribute("utenteLoggato");
-	
-	int idProdotto = Integer.parseInt(req.getParameter("idProdotto"));
-	List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello");
+		HttpSession session = req.getSession();
+		
 
-	
-	ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
-	Prodotto prodotto = new Prodotto();
-	prodotto = prodottoService.getProdottoById(idProdotto);
-	listaCarrello.remove(prodotto);
-	prodottoService.close();
-	System.out.println(listaCarrello);
-	
-	
-	
-	
-				
-	session.setAttribute("listaCarrello", listaCarrello);
-	resp.sendRedirect("carrello.jsp");
+		int idProdotto = Integer.parseInt(req.getParameter("idProdotto"));
+		List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello");
+
+		
+		Prodotto prodotto = new Prodotto();
+		ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
+		prodotto = prodottoService.getProdottoById(idProdotto);
+		prodottoService.close();
+		System.out.println(
+		listaCarrello.remove(prodotto));
+		
+
+		System.out.println(listaCarrello);
+
+		session.setAttribute("listaCarrello", listaCarrello);
+		resp.sendRedirect("carrello.jsp");
 
 	}
-	
-	
 
 }

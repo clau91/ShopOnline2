@@ -23,7 +23,7 @@ public class Carrello extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		HttpSession session = req.getSession();
-		Utente utenteLoggato = (Utente) session.getAttribute("utenteLoggato");
+		
 		
 		int idProdotto = Integer.parseInt(req.getParameter("idProdotto"));
 		List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello");
