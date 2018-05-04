@@ -18,6 +18,7 @@ public class UtenteDaoImpl implements UtenteDao {
 		prepared= null;
 	}
 	
+	
 	@Override
 	public void registrazione(Utente utente) {
 		String query ="insert into utente values "
@@ -36,9 +37,9 @@ public class UtenteDaoImpl implements UtenteDao {
 		} finally {
 			if(prepared !=null)
 				try {
-						prepared.close();
+					prepared.close();
 				} catch (SQLException e) {
-						e.printStackTrace();
+					e.printStackTrace();
 				}
 			}
 		}

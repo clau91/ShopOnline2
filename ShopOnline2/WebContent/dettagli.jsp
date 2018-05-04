@@ -133,6 +133,7 @@ magnify("myimage", 2);
 
 <form action="Dettagli" method="post">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
+<br>
 Lascia una recensione<br>
 <textarea name="commento" rows="1" cols="30" name="titolo" placeholder="inserisci titolo" id="titolo" ></textarea>
 <br>
@@ -140,6 +141,7 @@ Lascia una recensione<br>
 <br>
 <input type="submit" name="invia" value="Invia i dati">
 </form>
+
 </div>
 </div>
 

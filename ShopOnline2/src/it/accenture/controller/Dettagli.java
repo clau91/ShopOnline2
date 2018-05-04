@@ -53,14 +53,14 @@ public class Dettagli extends HttpServlet {
 		recensioni.setIdProdotto(idProdotto);
 		
 		RecensioniDaoImpl recensioniService = new RecensioniDaoImpl();
-		recensioniService.insertRecensione(recensioni);
-		
+		recensioniService.insertRecensione(utenteLoggato.getIdUtente(), idProdotto);
+		recensioniService.close();
+
 		List<Recensioni> listaRecensioni = (List<Recensioni>) recensioniService.getAllByIdProdotto(idProdotto); 
 
 		listaRecensioni.add(recensioni);
 		
 		req.setAttribute("listaRecensioni", listaRecensioni);
-		recensioniService.close();
 		resp.sendRedirect("Dettagli?idProdotto=" + idProdotto);
 	}
 }
