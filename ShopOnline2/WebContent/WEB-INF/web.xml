@@ -145,5 +145,15 @@
   <servlet-name>UpdateAccount</servlet-name>
   <url-pattern>/UpdateAccount</url-pattern>
   </servlet-mapping>
+  
+   <!-- Ricerca -->
+  <servlet>
+  <servlet-name>Ricerca</servlet-name>
+  <servlet-class>it.accenture.controller.Ricerca</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Ricerca</servlet-name>
+  <url-pattern>/Ricerca</url-pattern>
+  </servlet-mapping>
 
 </web-app>

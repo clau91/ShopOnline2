@@ -58,7 +58,9 @@
 </div>
 
 <div align="right" style="margin-right: 40px;">
-<input type="text2" name="search" placeholder="Cerca...">
+<form action="Ricerca" method="get">
+<input type="text2" name="keyword" placeholder="Cerca...">
+</form>
 
 
 
@@ -133,11 +135,20 @@ magnify("myimage", 2);
 
 <form action="Dettagli" method="post">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
+<<<<<<< HEAD
+=======
+Lascia una recensione<br>
+<textarea  rows="1" cols="30" name="titolo" placeholder="inserisci titolo" id="titolo" ></textarea>
+>>>>>>> branch 'master' of https://github.com/clau91/ShopOnline2
 <br>
+<<<<<<< HEAD
 Lascia una recensione<br>
 <textarea rows="1" cols="30" name="titolo" placeholder="inserisci titolo" id="titolo" ></textarea>
 <br>
 <textarea rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
+=======
+<textarea  rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
+>>>>>>> branch 'master' of https://github.com/clau91/ShopOnline2
 <br>
 <input type="submit" name="invia" value="Invia i dati">
 </form>
