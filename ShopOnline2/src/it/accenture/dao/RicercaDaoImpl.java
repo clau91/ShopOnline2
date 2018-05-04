@@ -29,7 +29,7 @@ public class RicercaDaoImpl implements RicercaDao{
 	
 		List<Prodotto> listaProdottiByKeyword = new ArrayList<>();
 		ResultSet rs = null;
-		String query = "select * from prodotto where nome like " + "'" + keyword + "'";
+		String query = "select * from prodotto where nome= " + "'" + keyword + "'";
 		try{
 		statement = connection.createStatement();
 		rs = statement.executeQuery(query);
