@@ -12,6 +12,7 @@
 <title>HOME</title>
 <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type=”text/javascript” src=”caption.js”></script>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/stile.css">
 </head>
@@ -55,8 +56,22 @@
 </ul>
 </div>
 
-<div align="right" style="margin-right: 40px;">
-<input type="text2" name="search" placeholder="Cerca...">
+<!--  <div align="right" style="margin-right: 40px;">
+<input type="text2" name="search" placeholder="Cerca...">-->
+
+<div>
+<form id="search" action="Ricerca" method="get">
+<fieldset>
+<legend>Cerca nel sito</legend>
+<input type="text" id="search-in" value="Cerca..." name="keyword"> 
+<button><img src="img/search1.png" alt="Cerca" title="avvia la ricerca"></button>
+</fieldset>
+</form>
+
+
+
+
+
 
 
 
