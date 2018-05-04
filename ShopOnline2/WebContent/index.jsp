@@ -55,25 +55,11 @@
 <% } %>
 </ul>
 </div>
-
-<!--  <div align="right" style="margin-right: 40px;">
-<input type="text2" name="search" placeholder="Cerca...">-->
-
-<div>
-<form id="search" action="Ricerca" method="get">
-<fieldset>
-<legend>Cerca nel sito</legend>
-<input type="text" id="search-in" value="Cerca..." name="keyword"> 
-<button><img src="img/search1.png" alt="Cerca" title="avvia la ricerca"></button>
-</fieldset>
+<!-- Bottone Ricerca -->
+<div align="right" style="margin-right: 40px;">
+<form action="Ricerca" method="get">
+<input type="text2" name="keyword" placeholder="Cerca...">
 </form>
-
-
-
-
-
-
-
 
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>

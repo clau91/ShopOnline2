@@ -58,7 +58,9 @@
 </div>
 
 <div align="right" style="margin-right: 40px;">
-<input type="text2" name="search" placeholder="Cerca...">
+<form action="Ricerca" method="get">
+<input type="text2" name="keyword" placeholder="Cerca...">
+</form>
 
 
 

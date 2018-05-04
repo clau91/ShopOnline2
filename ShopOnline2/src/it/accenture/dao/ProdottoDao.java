@@ -17,6 +17,8 @@ public interface ProdottoDao {
 	public List<Prodotto> getProdottiPerCategoria(Categoria categoria);
 	
 	public void updateQuantitaDisponibile(int idProdotto);
+	
+	public List<Prodotto> getProdottiByKeyword(String keyword);
 		
 	public void close();
 

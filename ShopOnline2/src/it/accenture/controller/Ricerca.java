@@ -10,7 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import it.accenture.dao.RicercaDaoImpl;
+import it.accenture.dao.ProdottoDaoImpl;
+
 import it.accenture.model.Prodotto;
 
 public class Ricerca extends HttpServlet{
@@ -21,7 +22,7 @@ public class Ricerca extends HttpServlet{
 		String keyword=req.getParameter("keyword");
 		System.out.println(keyword);
 		List<Prodotto> listaProdottiByKeyword = new ArrayList<>();
-		RicercaDaoImpl ricercaService = new RicercaDaoImpl();
+		ProdottoDaoImpl ricercaService = new ProdottoDaoImpl();
 		listaProdottiByKeyword = ricercaService.getProdottiByKeyword(keyword);
 		ricercaService.close();
 		System.out.println(listaProdottiByKeyword);
