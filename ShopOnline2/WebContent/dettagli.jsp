@@ -129,7 +129,7 @@ magnify("myimage", 2);
 <%=recensioni.getTitolo() %>
 <br>
 <%=recensioni.getContenuto() %>
-
+<br>
 <%}%>
 
 
