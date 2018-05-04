@@ -16,8 +16,9 @@
 <body>
 
 <%Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
-<%List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
 <%Prodotto prodotto = (Prodotto) request.getAttribute("prodotto"); %>
+<% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
+
 
 
 <!-- navbar -->
@@ -77,38 +78,47 @@
 <p></p>
 </div><!-- chiusura jumbotron -->
 
-<form action="Carrello" method="get" class="form-horizontal form-prenotazione">
-<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto() %>">
-
-<!-- formula -->
-<div class="form-group">
-<label class="control-label col-md-5">Scegli il tipo di spedizione</label>
-<div class="col-md-4">
-<input type="radio" name="tipo_spedizione" value="PRIORITARIA" checked>
+<form action="Acquista" method="post" class="form-horizontal">
+<!-- spedizione -->
+<div class="form-group" align="center">
+<label class="control-label">Scegli il tipo di spedizione</label>
+</div>
+<div align="center">
+<input type="radio" name="tipoSpedizione" value="PRIORITARIA" checked>
 Prioritaria
 <br>
-<input type="radio" name="tipo_spedizione" value="RAPIDA">
+<input type="radio" name="tipoSpedizione" value="RAPIDA">
 Rapida
 <br>
-<input type="radio" name="tipo_spedizione" value="ORDINARIA">
+<input type="radio" name="tipoSpedizione" value="ORDINARIA">
 Ordinaria
 <br>
 </div>
-<span class="col-md-3"></span>
+<span ></span>
+<br>
+
+<div class="form-group" align="center">
+<label class="control-label">Inserisci la quantità</label>
 </div>
+<div align="center">
+<input type="text" name="quantitaAcquistata">
+</div>
+<br>
+<br>
+
 
 <!-- bottoni -->
-<div class="form-group">
+<div class="form-group" >
 <span class="col-md-5"></span>
 <div class="col-md-4">
-<input type="submit" class="btn btn-primary" value="Acquista">
-<input type="reset" class="btn btn-warning" value="Resetta">
+<input  type="submit" class="btn btn-primary" value="Acquista" >
+<input  type="submit" class="btn btn-warning" value="Indietro">
 </div>
 <span class="col-md-3"></span>
 </div>
-
-
 </form>
+
+
 
 </body>
 </html>

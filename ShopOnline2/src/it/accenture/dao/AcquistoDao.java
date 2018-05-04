@@ -3,10 +3,11 @@ package it.accenture.dao;
 import java.util.List;
 
 import it.accenture.model.Acquisto;
+import it.accenture.model.Prodotto;
 
 public interface AcquistoDao {
 
-	public void acquistaProdotto(Acquisto acquisto);
+	public void acquistaProdotto(List<Acquisto> listaAcquisti);
 	
 	public List<Acquisto> getAllByUtente(int idUtente);
 	

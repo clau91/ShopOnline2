@@ -17,7 +17,6 @@
 <body>
 <% Utente utente =(Utente)session.getAttribute("utenteLoggato"); %>
 <% List<Acquisto> listaAcquisti =(List<Acquisto>) request.getAttribute("listaAcquisti");%>
-<% List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 
 <!-- NAVBAR -->
@@ -102,10 +101,8 @@
 </thead>
 <tbody>
 <% for(Acquisto acquisto : listaAcquisti) {%>
-<%for(Prodotto prodotto : listaProdotti){%>
 <tr>
 <td><%=acquisto.getIdAcquisto() %></td>
-<td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
 <td><%=acquisto.getTipoSpedizione()%></td>
 <td><%=acquisto.getDataInizio() %></td>
 <td><%=acquisto.getDataFine() %></td>
@@ -114,7 +111,7 @@
 
 </tr>
 <%} %>
-<%} %>
+
 </tbody>
 </table>
 </div>

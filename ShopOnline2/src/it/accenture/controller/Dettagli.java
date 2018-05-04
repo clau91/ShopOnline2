@@ -44,21 +44,23 @@ public class Dettagli extends HttpServlet {
 		String titolo = (req.getParameter("titolo"));
 		String contenuto = (req.getParameter("contenuto"));
 		int idProdotto = Integer.parseInt(req.getParameter("idProdotto"));
+		int idUtente = utenteLoggato.getIdUtente();
 
 		
 		Recensioni recensioni = new Recensioni();
 		recensioni.setTitolo(titolo);
 		recensioni.setContenuto(contenuto);
-		recensioni.setIdUtente(utenteLoggato.getIdUtente());
+		recensioni.setIdUtente(idUtente);
 		recensioni.setIdProdotto(idProdotto);
 		
 		RecensioniDaoImpl recensioniService = new RecensioniDaoImpl();
-		recensioniService.insertRecensione(utenteLoggato.getIdUtente(), idProdotto);
-		recensioniService.close();
-
+		recensioniService.insertRecensione(recensioni);
 		List<Recensioni> listaRecensioni = (List<Recensioni>) recensioniService.getAllByIdProdotto(idProdotto); 
-
+		recensioniService.close();
+		
 		listaRecensioni.add(recensioni);
+		
+		System.out.println(recensioni);
 		
 		req.setAttribute("listaRecensioni", listaRecensioni);
 		resp.sendRedirect("Dettagli?idProdotto=" + idProdotto);

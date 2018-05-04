@@ -19,15 +19,15 @@ public class ListaOrdini extends HttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Acquisto> listaOrdini = new ArrayList<>();
+		List<Acquisto> listaAcquisti = new ArrayList<>();
 		AcquistoDaoImpl acquistoService = new AcquistoDaoImpl();
 		HttpSession sessione = req.getSession();
 		Utente utenteLoggato = (Utente) sessione.getAttribute("utenteLoggato");
-		listaOrdini = acquistoService.getListaOrdini(utenteLoggato.getIdUtente());
-		for(Acquisto acquisto : listaOrdini){
+		listaAcquisti = acquistoService.getListaAcquisti(utenteLoggato.getIdUtente());
+		for(Acquisto acquisto : listaAcquisti) {
 			System.out.println(acquisto);
 		}
-		req.setAttribute("listaOrdini", listaOrdini);
+		req.setAttribute("listaAcquisti", listaAcquisti);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("listaOrdini.jsp");
 		dispatcher.forward(req, resp);
 	}

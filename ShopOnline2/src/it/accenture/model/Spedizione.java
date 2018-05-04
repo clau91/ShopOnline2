@@ -3,20 +3,21 @@ package it.accenture.model;
 public enum Spedizione {
 	
 	PRIORITARIA(1, 10),
-	RAPIDA(2, 5),
-	ORDINARIA(3, 3);
+	RAPIDA(3, 5),
+	ORDINARIA(5, 3);
 	
 
 
-	private static int numeroGiorni;
-	private static double prezzoSpedizione;
+	private int numeroGiorni;
+	private double prezzoSpedizione;
 
 	
 	private Spedizione(int numeroGiorni, double prezzoSpedizione) {
-	
+		this.numeroGiorni = numeroGiorni;
+		this.prezzoSpedizione = prezzoSpedizione;
 	}
 	
-	public static double getPrezzoSpedizione() {
+	public  double getPrezzoSpedizione() {
 		return prezzoSpedizione;
 	}
 
@@ -24,7 +25,7 @@ public enum Spedizione {
 		this.prezzoSpedizione = prezzoSpedizione;
 	}
 
-	public static int getNumeroGiorni() {
+	public int getNumeroGiorni() {
 		return numeroGiorni;
 	}
 

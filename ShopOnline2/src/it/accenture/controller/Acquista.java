@@ -2,8 +2,10 @@ package it.accenture.controller;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -36,24 +38,31 @@ public class Acquista extends HttpServlet {
 	}
 	
 	
-	
-	
-		
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
+		
+		HttpSession session = req.getSession();
+		Utente utenteLoggato = (Utente) session.getAttribute("utenteLoggato");
+		
+		List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello");
+		List<Acquisto> listaOrdini = new ArrayList<>();
+		
+		for (Prodotto prodotto : listaCarrello) {
+			
 		String tipoSpedizione = req.getParameter("tipoSpedizione");
-		LocalDate dataInizio = LocalDate.now();
-		LocalDate dataFine = dataInizio.plusDays(Spedizione.getNumeroGiorni());
-		double prezzoDiSpedizione = Spedizione.getPrezzoSpedizione();
-		int quantitaAcquistata = Integer.parseInt(req.getParameter("quantitaAcquistata"));
-		int idProdotto = Integer.parseInt(req.getParameter("idProdotto"));
-		
 		Spedizione spedizione = Spedizione.valueOf(tipoSpedizione);
-		
-		HttpSession sessione = req.getSession();
-		Utente utenteLoggato = (Utente) sessione.getAttribute("utenteLoggato");
+		System.out.println(spedizione);
+		System.out.println(spedizione.getPrezzoSpedizione());
+		System.out.println(spedizione.getNumeroGiorni());
+
+		LocalDate dataInizio = LocalDate.now();
+		LocalDate dataFine = dataInizio.plusDays(spedizione.getNumeroGiorni());
+		double prezzoDiSpedizione = spedizione.getPrezzoSpedizione();
+		int quantitaAcquistata = Integer.parseInt(req.getParameter("quantitaAcquistata"));
+		int idUtente = utenteLoggato.getIdUtente();
+		int idProdotto = (prodotto.getIdProdotto());
+				
+
 		
 		Acquisto acquisto = new Acquisto();
 		acquisto.setTipoSpedizione(spedizione);
@@ -62,17 +71,22 @@ public class Acquista extends HttpServlet {
 		acquisto.setPrezzoDiSpedizione(prezzoDiSpedizione);
 		acquisto.setQuantitaAcquistata(quantitaAcquistata);
 		acquisto.setIdProdotto(idProdotto);
-		acquisto.setIdUtente(utenteLoggato.getIdUtente());
+		acquisto.setIdUtente(idUtente);
 
+		listaOrdini.add(acquisto);
+		
+		} 
+		
 		AcquistoDaoImpl acquistoService = new AcquistoDaoImpl();
-		acquistoService.acquistaProdotto(acquisto);
+		acquistoService.acquistaProdotto(listaOrdini);
 		acquistoService.close();
 		
-		ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
-		prodottoService.updateQuantitaDisponibile(idProdotto);
-		prodottoService.close();
 		
-		resp.sendRedirect("carrello.jsp");
+		System.out.println("Acquisto effettuato");
+		System.out.println(listaOrdini);
+		
+	//	session.setAttribute("listaAcquisti", listaAcquisti);
+		resp.sendRedirect("ListaOrdini");
 
 	}
 	

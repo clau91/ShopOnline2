@@ -115,9 +115,21 @@
 </tbody>
 </table>
 </div>
+
+<div align="center">
+<form action="acquista.jsp" >
+<input type="hidden">
+<input type="submit" value="Procedi all'acquisto" class="btn btn-secondary">
+</form>
+</div>
+
 <%} else { %>
 <h3>Nessun prodotto nel carrello</h3>
 <% } %>
+
+
+
+
 
 
 </body>

@@ -6,7 +6,7 @@ import it.accenture.model.Recensioni;
 
 public interface RecensioniDao {
 	
-	public void insertRecensione(int idUtente, int idProdotto);
+	public void insertRecensione(Recensioni recensioni);
 	
 	public List<Recensioni> getAllByIdUtente(int IdUtente);
 	

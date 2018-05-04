@@ -1,7 +1,7 @@
 <%@page import="it.accenture.model.Prodotto"%>
-<%@page import="it.accenture.model.Utente"%>
 <%@page import="it.accenture.model.Acquisto"%>
 <%@page import="java.util.List"%>
+<%@page import="it.accenture.model.Utente"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -12,14 +12,15 @@
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/stile.css">
-<title>Lista Ordini</title>
+<title>Lista Acquisti</title>
 </head>
 <body>
 <% Utente utente =(Utente)session.getAttribute("utenteLoggato"); %>
-<% List<Acquisto> listaOrdini = (List<Acquisto>) request.getAttribute("listaOrdini"); %>
-<%List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
+<% List<Acquisto> listaAcquisti =(List<Acquisto>) request.getAttribute("listaAcquisti");%>
+<% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 
 <!-- NAVBAR -->
+
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-left: 25px;">
 
@@ -63,7 +64,13 @@
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
 <% } else { %>
 <a href="profiloUtente.jsp"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
-<a href="Carrello"><img src="img/cart.png" class="icona" ></a>
+<a href="carrello.jsp"><img src="img/cart.png" class="icona" >
+<% if (listaCarrello != null) { %>
+<%= listaCarrello.size() %>
+<%} else { %>
+0
+<% } %>
+</a>
 <% } %>
 </div>
 
@@ -75,50 +82,38 @@
 <h1>LISTA ORDINI</h1>
 <p></p>
 </div><!-- chiusura jumbotron -->
+
 <!-- DIV CONTAINER -->
 <div class="container">
+
 <!-- Tabella -->
 <div class="table responsive">
 <table class="table">
 <thead>
 <tr>
-<th>Id Ordine</th>
+<th>Id Acquisto</th>
 <th>Tipo Spedizione</th>
-<th>Data Ricevimento</th>
-<th>Data Evasione</th>
+<th>Data Partenza</th>
+<th>Data Arrivo</th>
 <th>Prezzo Spedizione</th>
-<th>Q.tà Acquistata</th>
-<th>Avanzamento Spedizione</th>
+<th>Quantità Acquistata</th>
 </tr>
 </thead>
 <tbody>
-<% for(Acquisto acquisto : listaOrdini) {%>
-<%for(Prodotto prodotto : listaProdotti){%>
+<% for(Acquisto acquisto : listaAcquisti) {%>
 <tr>
 <td><%=acquisto.getIdAcquisto() %></td>
-<td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
 <td><%=acquisto.getTipoSpedizione()%></td>
 <td><%=acquisto.getDataInizio() %></td>
 <td><%=acquisto.getDataFine() %></td>
 <td><%=acquisto.getPrezzoDiSpedizione() %></td>
 <td><%=acquisto.getQuantitaAcquistata() %></td>
-<td><div class="progress">
- <div class="progress-bar progress-bar-striped active" role="progressbar"
-  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-    40%
- </div></td>
-<%} %>
-<%} %>
-
 
 </tr>
-
-
-</div>
+<%} %>
 
 </tbody>
-
 </table>
-
+</div>
 </body>
 </html>

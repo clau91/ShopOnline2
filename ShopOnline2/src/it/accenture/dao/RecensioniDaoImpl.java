@@ -25,15 +25,14 @@ public class RecensioniDaoImpl implements RecensioniDao{
 	}
 	
 	@Override
-	public void insertRecensione(int idUtente, int idProdotto) {
-		Recensioni recensioni = new Recensioni();
-		String query = "insert into recensione values (?,?,?,?) where id_prodotto = " + idProdotto;
+	public void insertRecensione(Recensioni recensioni) {
+		String query = "insert into recensione values (?,?,?,?)";
 		try {
 			prepared = connection.prepareStatement(query);
 			prepared.setString(1, recensioni.getTitolo());
 			prepared.setString(2, recensioni.getContenuto());
-			prepared.setInt(3, idUtente);
-			prepared.setInt(4, idProdotto);
+			prepared.setInt(3, recensioni.getIdUtente());
+			prepared.setInt(4, recensioni.getIdProdotto());
 			prepared.executeQuery();
 		} catch (SQLException e) {
 			e.printStackTrace();

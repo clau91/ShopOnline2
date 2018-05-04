@@ -2,6 +2,7 @@ package it.accenture.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -20,23 +21,19 @@ public class RimuoviDaCarrello extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 	
 	HttpSession session = req.getSession();
-	Utente utenteLoggato = (Utente) session.getAttribute("utenteLoggato");
 	
 	int idProdotto = Integer.parseInt(req.getParameter("idProdotto"));
 	List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello");
-
 	
 	ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
 	Prodotto prodotto = new Prodotto();
 	prodotto = prodottoService.getProdottoById(idProdotto);
-	listaCarrello.remove(prodotto);
 	prodottoService.close();
+
+	listaCarrello.remove(prodotto);
+	
 	System.out.println(listaCarrello);
 	
-	
-	
-	
-				
 	session.setAttribute("listaCarrello", listaCarrello);
 	resp.sendRedirect("carrello.jsp");
 

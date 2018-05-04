@@ -29,19 +29,20 @@ public class AcquistoDaoImpl implements AcquistoDao {
 	}
 	
 	@Override
-	public void acquistaProdotto(Acquisto acquisto) {
+	public void acquistaProdotto (List<Acquisto> listaAcquisti) {
+		for (Acquisto acquisto : listaAcquisti) {
 		String query = "insert into acquisto values ("
 				+ "acquisto_sequence.nextval,?,?,?,?,?,?,?)";
 		try {
 			prepared = connection.prepareStatement(query);
-			prepared.setString(1, acquisto.getTipoSpedizione().toString());
+			prepared.setString(1, acquisto.getTipoSpedizione().toString().toLowerCase());
 			prepared.setDate(2, Date.valueOf(acquisto.getDataInizio()));
 			prepared.setDate(3, Date.valueOf(acquisto.getDataFine()));
 			prepared.setDouble(4, acquisto.getPrezzoDiSpedizione());
 			prepared.setInt(5, acquisto.getQuantitaAcquistata());
-			prepared.setInt(6, acquisto.getIdProdotto());
-			prepared.setInt(7, acquisto.getIdUtente());
-			prepared.executeQuery();
+			prepared.setInt(6, acquisto.getIdUtente());
+			prepared.setInt(7, acquisto.getIdProdotto());
+			prepared.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {
@@ -51,7 +52,8 @@ public class AcquistoDaoImpl implements AcquistoDao {
 				} catch (SQLException e) {
 					e.printStackTrace();
 				}
-		}
+			}
+		}	
 	}
 
 
@@ -75,7 +77,7 @@ public class AcquistoDaoImpl implements AcquistoDao {
 			while(rs.next()) {
 				Acquisto acquisto = new Acquisto();
 				acquisto.setIdAcquisto(rs.getInt(1));
-				acquisto.setTipoSpedizione(Spedizione.valueOf(rs.getString(2)));
+				acquisto.setTipoSpedizione(Spedizione.valueOf(rs.getString(2).toUpperCase()));
 				acquisto.setDataInizio(rs.getDate(3).toLocalDate());
 				acquisto.setDataFine(rs.getDate(4).toLocalDate());
 				acquisto.setPrezzoDiSpedizione(rs.getDouble(5));
