@@ -59,8 +59,10 @@
 
 <!-- Bottone Ricerca -->
 <div align="right" style="margin-right: 30px;">
-<form action="Ricerca" method="get">
-<input type="text2" name="keyword" placeholder="Cerca...">
+<form autocomplete="off" action="Ricerca" method="get">
+<input id="myInput" type="text" name="keyword" placeholder="Cerca...">
+<input type="submit" value="clicca">
+<script> autocomplete(document.getElementById("myInput"));</script>
 
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
@@ -142,8 +144,6 @@ Lascia una recensione<br>
 <textarea rows="1" cols="30" name="titolo" placeholder="inserisci titolo" id="titolo" ></textarea>
 <br>
 <textarea rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
-<br>
-<textarea  rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
 <br>
 <input type="submit" name="invia" value="Invia i dati">
 </form>

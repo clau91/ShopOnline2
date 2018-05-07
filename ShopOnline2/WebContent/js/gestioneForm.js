@@ -108,3 +108,93 @@ function magnify(imgID, zoom) {
 	  }
 	}
 
+function cambioForm(){
+	console.log(window.location.href);
+	var indirizzo = window.location.href;
+	var split = window.location.href.split('=');
+	if(indirizzo.includes("form=registrazione")) {
+		//console.log('siamo su registrazione');
+		var nuovoIndirizzo = split[0] + "=login";
+		//console.log(nuovoIndirizzo);
+		window.location.href = nuovoIndirizzo;
+	} else if (indirizzo.includes("form=login")) {
+		//console.log('siamo su login');
+		var nuovoIndirizzo = split[0] + "=registrazione";
+		//console.log(nuovoIndirizzo);
+		window.location.href = nuovoIndirizzo;
+	}
+
+}
+
+//autocomplete form
+var prodotti = ["bastoni","borraccia", "borsa","boxer", "canotta", "completo", "cuffia","maglietta", "occhialini", "pallone", 
+	"pantaloncini", "parastinchi", "polo", "racchetta", "scarpe", "tappanaso", "t-shirt", "zaino"];
+function autocomplete(inp) {
+	  var currentFocus;
+	  inp.addEventListener("input", function(e) {
+	      var a, b, i, val = this.value;
+	      closeAllLists();
+	      if (!val) { return false;}
+	      currentFocus = -1;
+	      a = document.createElement("DIV");
+	      a.setAttribute("id", this.id + "autocomplete-list");
+	      a.setAttribute("class", "autocomplete-items");
+	      this.parentNode.appendChild(a);
+	      for (i = 0; i < prodotti.length; i++) {
+	        if (prodotti[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+	          b = document.createElement("DIV");
+	          //b.setAttribute("id", "ricerca"+i+);
+	          b.innerHTML = "<strong>" + prodotti[i].substr(0, val.length) + "</strong>";
+	          b.innerHTML += prodotti[i].substr(val.length);
+	          b.innerHTML += "<input type='hidden' value='" + prodotti[i] + "' id='ricerca"+i+"'>";
+	          b.setAttribute("onclick", "window.location.href='/ShopOnline2/Ricerca?keyword=" + prodotti[i] + "'");
+	              b.addEventListener("click", function(e) {
+	              inp.value = this.getElementsByTagName("input")[0].value;
+	              closeAllLists();
+	          });
+	          a.appendChild(b);
+	        }
+	      }
+	  });
+	  inp.addEventListener("keydown", function(e) {
+	      var x = document.getElementById(this.id + "autocomplete-list");
+	      if (x) x = x.getElementsByTagName("div");
+	      if (e.keyCode == 40) {
+	        currentFocus++;
+	        addActive(x);
+	      } else if (e.keyCode == 38) { //up
+	        currentFocus--;
+	        addActive(x);
+	      } else if (e.keyCode == 13) {
+	        e.preventDefault();
+	        if (currentFocus > -1) {
+	          if (x) x[currentFocus].click();
+	        }
+	      }
+	  });
+	  function addActive(x) {
+	    if (!x) return false;
+	    removeActive(x);
+	    if (currentFocus >= x.length) currentFocus = 0;
+	    if (currentFocus < 0) currentFocus = (x.length - 1);
+	    x[currentFocus].classList.add("autocomplete-active");
+	  }
+	  function removeActive(x) {
+	    for (var i = 0; i < x.length; i++) {
+	      x[i].classList.remove("autocomplete-active");
+	    }
+	  }
+	  function closeAllLists(elmnt) {
+	    var x = document.getElementsByClassName("autocomplete-items");
+	    for (var i = 0; i < x.length; i++) {
+	      if (elmnt != x[i] && elmnt != inp) {
+	      x[i].parentNode.removeChild(x[i]);
+	    }
+	  }
+	}
+	document.addEventListener("click", function (e) {
+	    closeAllLists(e.target);
+	});
+	}
+
+
