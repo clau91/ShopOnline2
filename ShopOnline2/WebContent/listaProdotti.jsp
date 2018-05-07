@@ -10,6 +10,7 @@
 <title>Lista Prodotti</title>
 <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/gestioneForm.js"></script>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/stile.css">
 </head>
@@ -56,8 +57,12 @@
 
 <!-- Bottone Ricerca -->
 <div align="right" style="margin-right: 30px;">
-<form action="Ricerca" method="get">
-<input type="text2" name="keyword" placeholder="Cerca...">
+<form autocomplete="off" action="Ricerca" method="get">
+<input id="myInput" type="text" name="keyword" placeholder="Cerca...">
+</form>
+<input type="submit" value="clicca">
+<script> autocomplete(document.getElementById("myInput"));</script>
+
 
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
@@ -71,7 +76,7 @@
 <% } %>
 </a>
 <% } %>
-</form>
+
 </div>
 
 
