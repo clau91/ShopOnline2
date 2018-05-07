@@ -13,6 +13,7 @@
 <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <script type=”text/javascript” src=”caption.js”></script>
+<script type="text/javascript" src="js/gestioneForm.js"></script>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/stile.css">
 </head>
@@ -59,8 +60,11 @@
 
 <!-- Bottone Ricerca -->
 <div align="right" style="margin-right: 30px;">
-<form action="Ricerca" method="get">
-<input type="text2" name="keyword" placeholder="Cerca..." >
+
+<form autocomplete="off" action="Ricerca" method="get">
+<input id="myInput" type="text" name="keyword" placeholder="Cerca...">
+<input type="submit" value="cerca">
+<script> autocomplete(document.getElementById("myInput"));</script>
 
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
@@ -150,9 +154,8 @@
 <img class="img-carousel" src="img/polo.jpg" style="width: 300px; height: 300px;">
 </div>
 <div class="item">
-<img class="img-carousel" src="img/racchetta.jpg" style="width: 300px; height: 300px;">
+<img class="img-carousel" src="img/racchetta.jpg" style="width: 300px; height: 300px;" >
 </div>
-
 </div>
 <!-- INDICATORI -->
 <ol class="carousel-indicators">

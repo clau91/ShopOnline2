@@ -62,8 +62,10 @@
 
 <!-- Bottone Ricerca -->
 <div align="right" style="margin-right: 30px;">
-<form action="Ricerca" method="get">
-<input type="text2" name="keyword" placeholder="Cerca...">
+<form autocomplete="off" action="Ricerca" method="get">
+<input id="myInput" type="text" name="keyword" placeholder="Cerca...">
+<input type="submit" value="clicca">
+<script> autocomplete(document.getElementById("myInput"));</script>
 
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
@@ -179,7 +181,7 @@ novalidate id="formLogin">
 <div class="form-group">
 <label class="col-md-4 control-label">Username</label>
 <div class="col-md-5">
-<input type ="text" name="username" placeholder="inserisci username" class="form-control" id="username">
+<input type ="username" name="username" placeholder="inserisci username" class="form-control" id="username">
 </div>
 <span class="col-md-3"></span>
 </div>
@@ -188,7 +190,7 @@ novalidate id="formLogin">
 <div class="form-group">
 <label class="col-md-4 control-label">Password</label>
 <div class="col-md-5">
-<input type ="password" name="password" placeholder="inserisci password" class="form-control" id="myInput"><br>
+<input type ="password" name="password" placeholder="inserisci password" class="form-control" id="myInput2"><br>
 <input type="checkbox" onclick="myFunction()">Mostra password
 
 

@@ -11,6 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/gestioneForm.js"></script>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/stile.css">
 <title>Lista Acquisti</title>
@@ -19,8 +20,6 @@
 <% Utente utente =(Utente)session.getAttribute("utenteLoggato"); %>
 <% List<Acquisto> listaOrdini =(List<Acquisto>) request.getAttribute("listaOrdini");%>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
-<% Prodotto prodotto = (Prodotto) request.getAttribute("prodotto"); %>
-<% double sommaTotale = (double) request.getAttribute("sommaTotale"); %>
 
 <!-- NAVBAR -->
 
@@ -60,8 +59,10 @@
 
 <!-- Bottone Ricerca -->
 <div align="right" style="margin-right: 30px;">
-<form action="Ricerca" method="get">
-<input type="text2" name="keyword" placeholder="Cerca...">
+<form autocomplete="off" action="Ricerca" method="get">
+<input id="myInput" type="text" name="keyword" placeholder="Cerca...">
+<input type="submit" value="clicca">
+<script> autocomplete(document.getElementById("myInput"));</script>
 
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
@@ -97,12 +98,8 @@
 <tr>
 <th>Id Acquisto</th>
 <th>Quantità Acquistata</th>
-<th>Tipo Spedizione</th>
-<th>Data Partenza</th>
-<th>Data di Arrivo</th>
-<th>Prezzo Spedizione</th>
-<th>Prezzo Totale</th>
-<th>Avanzamento Spedizione</th>
+
+
 </tr>
 </thead>
 <tbody>
@@ -111,20 +108,18 @@
 
 <td><%=acquisto.getIdAcquisto() %></td>
 <td><%=acquisto.getQuantitaAcquistata() %></td>
-<td><%=acquisto.getTipoSpedizione()%></td>
-<td><%=acquisto.getDataInizio() %></td>
-<td><%=acquisto.getDataFine() %></td>
-<td><%=acquisto.getPrezzoDiSpedizione() %></td>
+<td><div class="progress-bar progress-bar-success" role="progressbar">
+ <progress value="<%=LocalDate.now().getDayOfMonth()%>" max="<%=acquisto.getDataFine().getDayOfMonth()%>" >
+ </progress>
+ </div>
+<form action="DettagliAcquisti" method="get">
+<input type="hidden" name="idAcquisto" value="<%=acquisto.getIdAcquisto()%>">
+<input type="submit" value="Dettagli Acquisti" class="btn btn-secondary">
 
-<td><%=sommaTotale%>
 
-<td><div class="progress">
-<div class="progress-bar progress-bar-striped active" role="progressbar"
-aria-valuemin="<%=(acquisto.getDataInizio().toEpochDay()) %>" aria-valuemax="<%=(acquisto.getDataFine().toEpochDay())%>" 
-style="width:<%=LocalDate.now().toEpochDay()%>%"> 
-</div></td>
 
 </tr>
+ 
 
 </div>
 <%} %>
