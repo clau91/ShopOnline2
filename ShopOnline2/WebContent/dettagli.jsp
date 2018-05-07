@@ -61,7 +61,7 @@
 <div align="right" style="margin-right: 30px;">
 <form autocomplete="off" action="Ricerca" method="get">
 <input id="myInput" type="text" name="keyword" placeholder="Cerca...">
-<input type="submit" name="clicca "value="clicca">
+<input type="submit" value="clicca">
 <script> autocomplete(document.getElementById("myInput"));</script>
 
 <% if (utente == null) { %>
@@ -121,7 +121,7 @@ magnify("myimage", 2);
 </div>
 <br>
 <div align="center">
-<input type="submit" name="carrello" value="Aggiungi al carrello">
+<input type="submit" value="Aggiungi al carrello">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
 </div>
 <br>
