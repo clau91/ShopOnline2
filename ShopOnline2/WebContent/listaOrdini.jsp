@@ -113,7 +113,7 @@
  </div>
 <form action="DettagliAcquisti" method="get">
 <input type="hidden" name="idAcquisto" value="<%=acquisto.getIdAcquisto()%>">
-<input type="submit" value="DettagliAcquisti" class="btn btn-secondary">
+<input type="submit" value="Dettagli Acquisti" class="btn btn-secondary">
 
 </form>
 </td>

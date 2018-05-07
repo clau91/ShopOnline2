@@ -91,6 +91,7 @@
 
 <div class="container">
 <table class="table">
+<div class="table-responsive">
 <!-- table head -->
 <thead>
 <tr>

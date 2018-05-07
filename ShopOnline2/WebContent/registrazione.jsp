@@ -181,7 +181,7 @@ novalidate id="formLogin">
 <div class="form-group">
 <label class="col-md-4 control-label">Username</label>
 <div class="col-md-5">
-<input type ="text" name="username" placeholder="inserisci username" class="form-control" id="username">
+<input type ="username" name="username" placeholder="inserisci username" class="form-control" id="username">
 </div>
 <span class="col-md-3"></span>
 </div>
