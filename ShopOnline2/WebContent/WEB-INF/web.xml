@@ -135,6 +135,16 @@
   <servlet-name>Dettagli</servlet-name>
   <url-pattern>/Dettagli</url-pattern>
   </servlet-mapping>
+  
+  <!-- DETTAGLI acquisti -->
+  <servlet>
+  <servlet-name>DettagliAcquisti</servlet-name>
+  <servlet-class>it.accenture.controller.DettagliAcquisti</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>DettagliAcquisti</servlet-name>
+  <url-pattern>/DettagliAcquisti</url-pattern>
+  </servlet-mapping>
 
  <!-- Update Account -->
   <servlet>

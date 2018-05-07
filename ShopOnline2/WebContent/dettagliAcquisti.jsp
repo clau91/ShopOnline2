@@ -1,27 +1,31 @@
-<%@page import="java.time.LocalDate"%>
-<%@page import="it.accenture.model.Prodotto"%>
 <%@page import="it.accenture.model.Acquisto"%>
+<%@page import="it.accenture.model.Prodotto"%>
 <%@page import="java.util.List"%>
 <%@page import="it.accenture.model.Utente"%>
+<%@page import="it.accenture.model.Recensioni"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Dettagli Acquisti</title>
 <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/gestioneForm.js"></script>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/stile.css">
-<title>Lista Acquisti</title>
 </head>
 <body>
-<% Utente utente =(Utente)session.getAttribute("utenteLoggato"); %>
-<% List<Acquisto> listaOrdini =(List<Acquisto>) request.getAttribute("listaOrdini");%>
+
+<% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
+<% List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
+<% Prodotto prodotto = (Prodotto) request.getAttribute("prodotto"); %>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
+<%List<Recensioni> listaRecensioni = (List<Recensioni>) request.getAttribute("listaRecensioni"); %>
+<% Acquisto acquisto = (Acquisto) request.getAttribute("acquisto"); %>
 
-<!-- NAVBAR -->
-
+<!-- navbar -->
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-left: 25px;">
 
@@ -40,7 +44,7 @@
   <li><a href="ListaProdottiPerCategoria?categoria=BASKET">BASKET</a></li>
   <li><a href="ListaProdottiPerCategoria?categoria=TENNIS">TENNIS</a></li>
   <li><a href="ListaProdottiPerCategoria?categoria=NUOTO">NUOTO</a></li>
-  <li><a href="ListaProdottiPerCategoria?categoria=TREKKING">TREKKING</a></li>   
+  <li><a href="ListaProdottiPerCategoria?categoria=TREKKING">TREKKING</a></li>  
 </ul>
 </li>
 <% if (utente == null) { %>
@@ -81,48 +85,74 @@
 
 <!-- JUMBOTRON -->
 <div class="jumbotron">
-<h1>LISTA ORDINI</h1>
+<h3>Dettagli prodotto</h3>
 <p></p>
 </div><!-- chiusura jumbotron -->
 
-<!-- DIV CONTAINER -->
 <div class="container">
-
-<!-- Tabella -->
-<div class="table responsive">
 <table class="table">
+<!-- table head -->
 <thead>
 <tr>
-<th>Id Acquisto</th>
-<th>Quantità Acquistata</th>
-
+<th>Nome</th>
+<th>Marca</th>
+<th>Prezzo </th>
+<th>Quantità Disponibile</th>
+<th>Sconto(%)</th>
 </tr>
 </thead>
+<!-- table body -->
 <tbody>
-<% for(Acquisto acquisto : listaOrdini) {%>
 <tr>
-
-<td><%=acquisto.getIdAcquisto() %></td>
-<td><%=acquisto.getQuantitaAcquistata() %></td>
-<td><div class="progress-bar progress-bar-success" role="progressbar">
- <progress value="<%=LocalDate.now().getDayOfMonth()%>" max="<%=acquisto.getDataFine().getDayOfMonth()%>" >
- </progress>
- </div>
-<form action="DettagliAcquisti" method="get">
-<input type="hidden" name="idAcquisto" value="<%=acquisto.getIdAcquisto()%>">
-<input type="submit" value="DettagliAcquisti" class="btn btn-secondary">
-
-</form>
-</td>
-
+<td><%=prodotto.getNome() %></td>
+<td><%=prodotto.getMarca() %></td>
+<td><%=prodotto.getPrezzo() %></td>
+<td><%=prodotto.getQuantitaDisponibile()%></td>
+<td><%=prodotto.getSconto() %></td>
 </tr>
- 
-
-</div>
-<%} %>
 
 </tbody>
 </table>
+
+<div class="img-magnifier-container">
+<img id="myimage" src="<%=prodotto.getImmagine()%>" style="width: 400px; height: 400px;">
+<script>
+magnify("myimage", 2); 
+</script>
 </div>
+<br>
+<div align="center">
+<input type="submit" value="Aggiungi al carrello">
+<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
+</div>
+<br>
+<div  align="center">
+<%for(Recensioni recensioni : listaRecensioni) {%>
+<%=recensioni.getTitolo() %>
+<br>
+<%=recensioni.getContenuto() %>
+<br>
+<%}%>
+
+
+<form action="DettagliAcquisti" method="post">
+<input type="hidden" name="idAcquisto" value="<%=acquisto.getIdAcquisto()%>">
+<br>
+
+
+
+Lascia una recensione<br>
+<textarea rows="1" cols="30" name="titolo" placeholder="inserisci titolo" id="titolo" ></textarea>
+<br>
+<textarea rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
+<br>
+<textarea  rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
+<br>
+<input type="submit" name="invia" value="Invia i dati">
+</form>
+
+</div>
+</div>
+
 </body>
 </html>

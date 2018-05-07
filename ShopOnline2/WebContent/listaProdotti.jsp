@@ -104,6 +104,7 @@
 <!-- table body -->
 <tbody>
 <%for(Prodotto prodotto : listaProdotti){%>
+
 <tr>
 <td><%=prodotto.getNome() %></td>
 <td><%=prodotto.getMarca() %></td>
@@ -137,15 +138,19 @@ disabled
 >
 </form>
 </td>
+
 <!-- Button Dettagli -->
 <td>
 <form action="Dettagli" method="get">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
 <input type="submit" value="Dettagli" class="btn btn-secondary">
+
 </form>
 </td>
+
 </tr>
 <% }%>
+
 </tbody>
 
 </table>
@@ -154,6 +159,7 @@ disabled
 
 </div>
 
+</table>
 </div><!-- chiusura container -->
 </body>
 </html>

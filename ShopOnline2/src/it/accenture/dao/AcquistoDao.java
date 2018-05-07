@@ -15,6 +15,8 @@ public interface AcquistoDao {
 	
 	public List<Acquisto> getListaOrdini(int idUtente);
 	
+	public Acquisto getAcquistoById(int idAcquisto);
+	
 	public void close();
 	
 	

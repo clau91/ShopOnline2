@@ -13,6 +13,7 @@
 <script type="text/javascript" src="jquery/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
 <script type=”text/javascript” src=”caption.js”></script>
+<script type="text/javascript" src="js/gestioneForm.js"></script>
 <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 <link rel="stylesheet" href="css/stile.css">
 </head>
@@ -150,9 +151,8 @@
 <img class="img-carousel" src="img/polo.jpg" style="width: 300px; height: 300px;">
 </div>
 <div class="item">
-<img class="img-carousel" src="img/racchetta.jpg" style="width: 300px; height: 300px;">
+<img class="img-carousel" src="img/racchetta.jpg" style="width: 300px; height: 300px;" >
 </div>
-
 </div>
 <!-- INDICATORI -->
 <ol class="carousel-indicators">
