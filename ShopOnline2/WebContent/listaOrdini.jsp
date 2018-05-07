@@ -1,3 +1,4 @@
+<%@page import="java.time.LocalDate"%>
 <%@page import="it.accenture.model.Prodotto"%>
 <%@page import="it.accenture.model.Acquisto"%>
 <%@page import="java.util.List"%>
@@ -18,6 +19,8 @@
 <% Utente utente =(Utente)session.getAttribute("utenteLoggato"); %>
 <% List<Acquisto> listaOrdini =(List<Acquisto>) request.getAttribute("listaOrdini");%>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
+<% Prodotto prodotto = (Prodotto) request.getAttribute("prodotto"); %>
+<% double sommaTotale = Double.parseDouble("sommaTotale"); %>
 
 <!-- NAVBAR -->
 
@@ -98,7 +101,7 @@
 <th>Data Partenza</th>
 <th>Data di Arrivo</th>
 <th>Prezzo Spedizione</th>
-<th>Quantità Acquistata</th>
+<th>Prezzo Totale</th>
 <th>Avanzamento Spedizione</th>
 </tr>
 </thead>
@@ -113,12 +116,13 @@
 <td><%=acquisto.getDataFine() %></td>
 <td><%=acquisto.getPrezzoDiSpedizione() %></td>
 
-<td><%=acquisto.getQuantitaAcquistata() %></td>
+<td><%=sommaTotale%>
+
 <td><div class="progress">
-  <div class="progress-bar progress-bar-striped active" role="progressbar"
-  aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
-    40%
-  </div></td>
+<div class="progress-bar progress-bar-striped active" role="progressbar"
+aria-valuemin="<%=(acquisto.getDataInizio().toEpochDay()) %>" aria-valuemax="<%=(acquisto.getDataFine().toEpochDay())%>" 
+style="width:<%=LocalDate.now().toEpochDay()%>%"> 
+</div></td>
 
 </tr>
 

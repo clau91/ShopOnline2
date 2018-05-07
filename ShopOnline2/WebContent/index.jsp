@@ -60,7 +60,7 @@
 <!-- Bottone Ricerca -->
 <div align="right" style="margin-right: 30px;">
 <form action="Ricerca" method="get">
-<input type="text2" name="keyword" placeholder="Cerca...">
+<input type="text2" name="keyword" placeholder="Cerca..." >
 
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>

@@ -93,7 +93,7 @@
 <th>Nome</th>
 <th>Marca</th>
 <th>Prezzo </th>
-<th>Q.tà Disponibile</th>
+<th>Quantità</th>
 <th></th>
 <th></th>
 </tr>
@@ -105,7 +105,7 @@
 <td><%=prodotto.getNome() %></td>
 <td><%=prodotto.getMarca() %></td>
 <td><%=prodotto.getPrezzo() %></td>
-<td><%=prodotto.getQuantitaDisponibile()%></td>
+<td><%=session.getAttribute("quantita")%></td>
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
 <td><form action="RimuoviDaCarrello" method="get">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">

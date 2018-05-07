@@ -137,8 +137,8 @@ public class ProdottoDaoImpl implements ProdottoDao {
 	}
 
 	@Override
-	public void updateQuantitaDisponibile(int idProdotto) {
-		String query = "update prodotto set quantita_disponibile = (quantita_disponibile - 1) where id_prodotto = "
+	public void updateQuantitaDisponibile(int idProdotto, int quantita) {
+		String query = "update prodotto set quantita_disponibile = " + quantita + " where id_prodotto = "
 				+ idProdotto;
 		try {
 			statement = connection.createStatement();

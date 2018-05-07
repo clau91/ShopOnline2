@@ -100,7 +100,7 @@
 <th>Quantità Acquistata</th>
 </tr>
 </thead>
-<tbody>
+<tbody ">
 <% for(Acquisto acquisto : listaAcquisti) {%>
 <tr>
 <td><%=acquisto.getIdAcquisto() %></td>
@@ -109,7 +109,6 @@
 <td><%=acquisto.getDataFine() %></td>
 <td><%=acquisto.getPrezzoDiSpedizione() %></td>
 <td><%=acquisto.getQuantitaAcquistata() %></td>
-
 </tr>
 <%} %>
 

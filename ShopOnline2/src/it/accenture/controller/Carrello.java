@@ -26,6 +26,8 @@ public class Carrello extends HttpServlet {
 
 		int idProdotto = Integer.parseInt(req.getParameter("idProdotto"));
 		List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello");
+		int quantitaAcquistata = Integer.parseInt(req.getParameter("quantitaAcquistata"));
+		List<Integer> listaQuantita = (List<Integer>) session.getAttribute("listaQuantita");
 
 		
 		if (listaCarrello == null) {
@@ -38,9 +40,17 @@ public class Carrello extends HttpServlet {
 		prodottoService.close();
 		listaCarrello.add(prodotto);
 		
+		if (listaQuantita == null) {
+			listaQuantita = new ArrayList<>();
+		}
+		
+		listaQuantita.add(quantitaAcquistata);
+		
+		System.out.println(listaQuantita);
 		System.out.println("Prodotto aggiunto");
 		System.out.println(listaCarrello);
-					
+				
+		session.setAttribute("listaQuantita", listaQuantita);
 		session.setAttribute("listaCarrello", listaCarrello);
 		resp.sendRedirect("ListaProdotti");
 		}

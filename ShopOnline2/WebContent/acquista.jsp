@@ -103,13 +103,6 @@ Ordinaria
 </div>
 <span ></span>
 <br>
-
-<div class="form-group" align="center">
-<label class="control-label">Inserisci la quantità</label>
-</div>
-<div align="center">
-<input type="text" name="quantitaAcquistata">
-</div>
 <br>
 <br>
 
