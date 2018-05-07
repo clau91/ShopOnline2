@@ -20,7 +20,7 @@
 <% List<Acquisto> listaOrdini =(List<Acquisto>) request.getAttribute("listaOrdini");%>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 <% Prodotto prodotto = (Prodotto) request.getAttribute("prodotto"); %>
-<% double sommaTotale = Double.parseDouble("sommaTotale"); %>
+<% double sommaTotale = (double) request.getAttribute("sommaTotale"); %>
 
 <!-- NAVBAR -->
 
