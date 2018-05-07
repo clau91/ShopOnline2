@@ -16,7 +16,7 @@ function cambioForm(){
 }
 
 function myFunction() {
-    var x = document.getElementById("myInput");
+    var x = document.getElementById("myInput2");
     if (x.type === "password") {
         x.type = "text";
     } else {

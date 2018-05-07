@@ -129,7 +129,7 @@ novalidate id="formUpdate">
 <div class="form-group">
 <label class="col-md-4 control-label">Password</label>
 <div class="col-md-5">
-<input type ="password" name="password" placeholder="inserisci password" class="form-control" id="myInput">
+<input type ="password" name="password" placeholder="inserisci password" class="form-control" id="myInput2">
 <input type="checkbox" onclick="myFunction()">Mostra password
 </div>
 <span class="col-md-3"></span>

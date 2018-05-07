@@ -190,7 +190,7 @@ novalidate id="formLogin">
 <div class="form-group">
 <label class="col-md-4 control-label">Password</label>
 <div class="col-md-5">
-<input type ="password" name="password" placeholder="inserisci password" class="form-control" id="myInput"><br>
+<input type ="password" name="password" placeholder="inserisci password" class="form-control" id="myInput2"><br>
 <input type="checkbox" onclick="myFunction()">Mostra password
 
 
