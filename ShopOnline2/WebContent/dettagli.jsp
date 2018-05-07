@@ -145,8 +145,6 @@ Lascia una recensione<br>
 <br>
 <textarea rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
 <br>
-<textarea  rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
-<br>
 <input type="submit" name="invia" value="Invia i dati">
 </form>
 
