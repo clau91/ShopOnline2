@@ -121,7 +121,7 @@ magnify("myimage", 2);
 </div>
 <br>
 <div align="center">
-<input type="submit" value="Aggiungi al carrello">
+<input type="submit" name="carrello" value="Aggiungi al carrello">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
 </div>
 <br>
