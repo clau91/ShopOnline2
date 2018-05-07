@@ -74,18 +74,18 @@ public class Acquista extends HttpServlet {
 		acquisto.setIdUtente(idUtente);
 
 		listaOrdini.add(acquisto);
+
 		
 		} 
 		
 		AcquistoDaoImpl acquistoService = new AcquistoDaoImpl();
 		acquistoService.acquistaProdotto(listaOrdini);
 		acquistoService.close();
-		
+			
 		
 		System.out.println("Acquisto effettuato");
 		System.out.println(listaOrdini);
 		
-	//	session.setAttribute("listaAcquisti", listaAcquisti);
 		resp.sendRedirect("ListaOrdini");
 
 	}

@@ -56,12 +56,10 @@
 </ul>
 </div>
 
-<div align="right" style="margin-right: 40px;">
+<!-- Bottone Ricerca -->
+<div align="right" style="margin-right: 30px;">
 <form action="Ricerca" method="get">
 <input type="text2" name="keyword" placeholder="Cerca...">
-</form>
-
-
 
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
@@ -75,6 +73,7 @@
 <% } %>
 </a>
 <% } %>
+</form>
 </div>
 
 </nav><!-- chiusura navbar  -->
@@ -126,7 +125,7 @@
 </div>
 
 <%} else { %>
-<h3>Nessun prodotto nel carrello</h3>
+<h3 align="center">Nessun prodotto nel carrello</h3>
 <% } %>
 
 

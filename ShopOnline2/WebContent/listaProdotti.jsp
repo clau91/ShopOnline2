@@ -54,12 +54,10 @@
 </ul>
 </div>
 
-<div align="right" style="margin-right: 40px;">
+<!-- Bottone Ricerca -->
+<div align="right" style="margin-right: 30px;">
 <form action="Ricerca" method="get">
 <input type="text2" name="keyword" placeholder="Cerca...">
-</form>
-
-
 
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
@@ -73,6 +71,7 @@
 <% } %>
 </a>
 <% } %>
+</form>
 </div>
 
 
@@ -114,7 +113,7 @@
 
 <!-- Tendina Quantita -->
 <td align="center">
-<select name="articoli" id="articoli">
+<select name="quantitaAcquistata" id="quantitaAcquistata">
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>

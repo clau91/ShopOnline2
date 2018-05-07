@@ -69,7 +69,7 @@ public class AcquistoDaoImpl implements AcquistoDao {
 	@Override
 	public List<Acquisto> getListaAcquisti(int idUtente) {
 		List<Acquisto> listaAcquisti = new ArrayList<>();
-		String query = "select * from acquisto where id_utente = " + idUtente;
+		String query = "select * from acquisto where where sysdate >= data_fine and id_utente = " + idUtente;
 		ResultSet rs = null;
 		try {
 			statement=connection.createStatement();
@@ -115,7 +115,7 @@ public class AcquistoDaoImpl implements AcquistoDao {
 			while(rs.next()) {
 				Acquisto acquisto = new Acquisto();
 				acquisto.setIdAcquisto(rs.getInt(1));
-				acquisto.setTipoSpedizione(Spedizione.valueOf(rs.getString(2)));
+				acquisto.setTipoSpedizione(Spedizione.valueOf(rs.getString(2).toUpperCase()));
 				acquisto.setDataInizio(rs.getDate(3).toLocalDate());
 				acquisto.setDataFine(rs.getDate(4).toLocalDate());
 				acquisto.setPrezzoDiSpedizione(rs.getDouble(5));

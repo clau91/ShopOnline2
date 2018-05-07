@@ -16,7 +16,7 @@
 </head>
 <body>
 <% Utente utente =(Utente)session.getAttribute("utenteLoggato"); %>
-<% List<Acquisto> listaAcquisti =(List<Acquisto>) request.getAttribute("listaAcquisti");%>
+<% List<Acquisto> listaOrdini =(List<Acquisto>) request.getAttribute("listaOrdini");%>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 
 <!-- NAVBAR -->
@@ -55,12 +55,10 @@
 </ul>
 </div>
 
-<div align="right" style="margin-right: 40px;">
+<!-- Bottone Ricerca -->
+<div align="right" style="margin-right: 30px;">
 <form action="Ricerca" method="get">
 <input type="text2" name="keyword" placeholder="Cerca...">
-</form>
-
-
 
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
@@ -74,6 +72,7 @@
 <% } %>
 </a>
 <% } %>
+</form>
 </div>
 
 
@@ -94,22 +93,24 @@
 <thead>
 <tr>
 <th>Id Acquisto</th>
+<th>Quantità Acquistata</th>
 <th>Tipo Spedizione</th>
 <th>Data Partenza</th>
 <th>Data Arrivo</th>
 <th>Prezzo Spedizione</th>
-<th>Quantità Acquistata</th>
 </tr>
 </thead>
 <tbody>
-<% for(Acquisto acquisto : listaAcquisti) {%>
+<% for(Acquisto acquisto : listaOrdini) {%>
 <tr>
+
 <td><%=acquisto.getIdAcquisto() %></td>
+<td><%=acquisto.getQuantitaAcquistata() %></td>
 <td><%=acquisto.getTipoSpedizione()%></td>
 <td><%=acquisto.getDataInizio() %></td>
 <td><%=acquisto.getDataFine() %></td>
 <td><%=acquisto.getPrezzoDiSpedizione() %></td>
-<td><%=acquisto.getQuantitaAcquistata() %></td>
+
 
 </tr>
 <%} %>

@@ -56,17 +56,24 @@
 </ul>
 </div>
 
-<div align="right" style="margin-right: 40px;">
-<input type="text2" name="search" placeholder="Cerca...">
-
-
+<!-- Bottone Ricerca -->
+<div align="right" style="margin-right: 30px;">
+<form action="Ricerca" method="get">
+<input type="text2" name="keyword" placeholder="Cerca...">
 
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
 <% } else { %>
 <a href="profiloUtente.jsp"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
-<a href="Carrello"><img src="img/cart.png" class="icona" ></a>
+<a href="carrello.jsp"><img src="img/cart.png" class="icona" >
+<% if (listaCarrello != null) { %>
+<%= listaCarrello.size() %>
+<%} else { %>
+0
 <% } %>
+</a>
+<% } %>
+</form>
 </div>
 
 
