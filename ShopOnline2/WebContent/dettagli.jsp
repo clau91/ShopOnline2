@@ -61,7 +61,7 @@
 <div align="right" style="margin-right: 30px;">
 <form autocomplete="off" action="Ricerca" method="get">
 <input id="myInput" type="text" name="keyword" placeholder="Cerca...">
-<input type="submit" value="clicca">
+<input type="submit" name="clicca "value="clicca">
 <script> autocomplete(document.getElementById("myInput"));</script>
 
 <% if (utente == null) { %>
