@@ -128,17 +128,22 @@ magnify("myimage", 2);
 <%=recensioni.getTitolo() %>
 <br>
 <%=recensioni.getContenuto() %>
-
+<br>
 <%}%>
 
 
 <form action="Dettagli" method="post">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
 <br>
+
+
+
 Lascia una recensione<br>
 <textarea rows="1" cols="30" name="titolo" placeholder="inserisci titolo" id="titolo" ></textarea>
 <br>
 <textarea rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
+<br>
+<textarea  rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
 <br>
 <input type="submit" name="invia" value="Invia i dati">
 </form>
