@@ -23,7 +23,7 @@
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-left: 25px;">
 
-<a href="index.jsp">
+<a href="index.html">
 <img src="img/home.png" class="icona">
 </a>
 </a>

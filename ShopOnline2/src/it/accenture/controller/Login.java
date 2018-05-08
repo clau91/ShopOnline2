@@ -33,7 +33,7 @@ public class Login extends HttpServlet {
 			
 			HttpSession sessione = req.getSession();
 			sessione.setAttribute("utenteLoggato", utente);
-			resp.sendRedirect("index.jsp");
+			resp.sendRedirect("index.html");
 			
 		}
 	}
