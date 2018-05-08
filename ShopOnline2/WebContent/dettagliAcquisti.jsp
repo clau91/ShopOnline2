@@ -20,7 +20,6 @@
 <body>
 
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
-<% List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
 <% Prodotto prodotto = (Prodotto) request.getAttribute("prodotto"); %>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 <% List<Recensioni> listaRecensioni = (List<Recensioni>) request.getAttribute("listaRecensioni"); %>
@@ -92,7 +91,6 @@
 
 <div class="container">
 <table class="table">
-<div class="table-responsive">
 <!-- table head -->
 <thead>
 <tr>
@@ -114,54 +112,43 @@
 <td><%=acquisto.getTipoSpedizione()%></td>
 <td><%=acquisto.getDataInizio() %></td>
 <td><%=acquisto.getDataFine() %></td>
-<td><%=acquisto.getPrezzoDiSpedizione() %></td>
-<td><%="somma"%>
+<td><%=acquisto.getPrezzoDiSpedizione() %> &euro;</td>
+<td><%=(prodotto.getPrezzo()*acquisto.getQuantitaAcquistata())+acquisto.getPrezzoDiSpedizione()%> &euro;</td>
 <td><div class="progress-bar progress-bar-success" role="progressbar">
-<progress min="<%=acquisto.getDataInizio().getDayOfMonth()%> value="<%=LocalDate.now().getDayOfMonth()%>" max="<%=acquisto.getDataFine().getDayOfMonth()%>" >
+<progress min="<%=acquisto.getDataInizio().getDayOfMonth()%>" value="<%=LocalDate.now().getDayOfMonth()%>" max="<%=acquisto.getDataFine().getDayOfMonth()%>" >
 </progress>
 </div>
-
+</td>
 </tr>
-
 </tbody>
 </table>
 
-<div class="img-magnifier-container">
-<img id="myimage" src="<%=prodotto.getImmagine()%>" style="width: 400px; height: 400px;">
-<script>
-magnify("myimage", 2); 
-</script>
-</div>
-<br>
-<div align="center">
-<input type="submit" value="Aggiungi al carrello">
-<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
-</div>
-<br>
-<div  align="center">
+<div>
+<table>
+<tbody>
+<tr>
+
+<td>
+<div class="img-magnifier-container"><img id="myimage" src="<%=prodotto.getImmagine()%>" style="width: 400px; height: 400px;"><script>magnify("myimage", 2);</script></div>
+</td>
+
+<td>
+<table class="table">
 <%for(Recensioni recensioni : listaRecensioni) {%>
-<%=recensioni.getTitolo() %>
-<br>
-<%=recensioni.getContenuto() %>
-<br>
+<thead>
+<tr>
+<td><%=recensioni.getTitolo() %></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><%=recensioni.getContenuto() %></td>
+</tr>
+</tbody>
 <%}%>
+</table>
+</table>
 
-
-<form action="DettagliAcquisti" method="post">
-<input type="hidden" name="idAcquisto" value="<%=acquisto.getIdAcquisto()%>">
-<br>
-
-
-
-Lascia una recensione<br>
-<textarea rows="1" cols="30" name="titolo" placeholder="inserisci titolo" id="titolo" ></textarea>
-<br>
-<textarea rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
-<br>
-<input type="submit" name="invia" value="Invia i dati">
-</form>
-
-</div>
 </div>
 
 </body>

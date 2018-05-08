@@ -74,7 +74,7 @@ public class AcquistoDaoImpl implements AcquistoDao {
 	@Override
 	public List<Acquisto> getListaAcquisti(int idUtente) {
 		List<Acquisto> listaAcquisti = new ArrayList<>();
-		String query = "select * from acquisto where where sysdate >= data_fine and id_utente = " + idUtente;
+		String query = "select * from acquisto where sysdate >= data_fine and id_utente = " + idUtente;
 		ResultSet rs = null;
 		try {
 			statement=connection.createStatement();
@@ -87,8 +87,8 @@ public class AcquistoDaoImpl implements AcquistoDao {
 				acquisto.setDataFine(rs.getDate(4).toLocalDate());
 				acquisto.setPrezzoDiSpedizione(rs.getDouble(5));
 				acquisto.setQuantitaAcquistata(rs.getInt(6));
-				acquisto.setIdProdotto(rs.getInt(7));
 				acquisto.setIdUtente(idUtente);
+				acquisto.setIdProdotto(rs.getInt(8));
 				listaAcquisti.add(acquisto);		
 			}
 		} catch (SQLException e) {
@@ -125,8 +125,8 @@ public class AcquistoDaoImpl implements AcquistoDao {
 				acquisto.setDataFine(rs.getDate(4).toLocalDate());
 				acquisto.setPrezzoDiSpedizione(rs.getDouble(5));
 				acquisto.setQuantitaAcquistata(rs.getInt(6));
-				acquisto.setIdProdotto(rs.getInt(7));
 				acquisto.setIdUtente(idUtente);
+				acquisto.setIdProdotto(rs.getInt(8));
 				listaOrdini.add(acquisto);		
 			}
 		} catch (SQLException e) {
@@ -162,8 +162,8 @@ public class AcquistoDaoImpl implements AcquistoDao {
 				acquisto.setDataFine(rs.getDate(4).toLocalDate());
 				acquisto.setPrezzoDiSpedizione(rs.getDouble(5));
 				acquisto.setQuantitaAcquistata(rs.getInt(6));
-				acquisto.setIdProdotto(rs.getInt(7));
 				acquisto.setIdUtente(idUtente);
+				acquisto.setIdProdotto(rs.getInt(8));
 				listaCarrello.add(acquisto);
 			}
 		} catch (SQLException e) {

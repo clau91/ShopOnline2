@@ -16,9 +16,10 @@
 <title>Lista Acquisti</title>
 </head>
 <body>
-<% Utente utente =(Utente)session.getAttribute("utenteLoggato"); %>
+<% Utente utente = (Utente)session.getAttribute("utenteLoggato"); %>
 <% List<Acquisto> listaAcquisti =(List<Acquisto>) request.getAttribute("listaAcquisti");%>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
+<% List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
 
 <!-- NAVBAR -->
 
@@ -96,24 +97,45 @@
 <thead>
 <tr>
 <th>Id Acquisto</th>
-<th>Tipo Spedizione</th>
-<th>Data Partenza</th>
-<th>Data Arrivo</th>
-<th>Prezzo Spedizione</th>
 <th>Quantità Acquistata</th>
+<th></th>
 </tr>
 </thead>
-<tbody ">
+<tbody>
 <% for(Acquisto acquisto : listaAcquisti) {%>
 <tr>
 <td><%=acquisto.getIdAcquisto() %></td>
-<td><%=acquisto.getTipoSpedizione()%></td>
-<td><%=acquisto.getDataInizio() %></td>
-<td><%=acquisto.getDataFine() %></td>
-<td><%=acquisto.getPrezzoDiSpedizione() %></td>
 <td><%=acquisto.getQuantitaAcquistata() %></td>
-</tr>
+<%for(Prodotto prodotto : listaProdotti) {%>
+<td align="center">
+<%if(prodotto.getQuantitaDisponibile() > 0){%>
+<form action="Carrello" method="get">
+<select name="quantitaAcquistata" id="quantitaAcquistata">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+<% } %>
+
+<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
+<input type="submit" value="Aggiungi al carrello" id="Carrello"
+<%if(prodotto.getQuantitaDisponibile() > 0){%>
+class="btn btn-success"
+<%}else{%>
+class="btn btn-warning"
+disabled
 <%} %>
+<%if(utente == null) {%>
+disabled
+<% }%>
+>
+</form>
+</td>
+<% } %>
+</tr>
+<% } %>
 
 </tbody>
 </table>

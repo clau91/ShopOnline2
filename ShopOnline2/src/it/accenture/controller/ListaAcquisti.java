@@ -12,13 +12,23 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import it.accenture.dao.AcquistoDaoImpl;
+import it.accenture.dao.ProdottoDaoImpl;
 import it.accenture.model.Acquisto;
+import it.accenture.model.Prodotto;
 import it.accenture.model.Utente;
 
 public class ListaAcquisti extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		
+		List<Prodotto> listaProdotti = new ArrayList<>();
+		ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
+		listaProdotti = prodottoService.getAllProdotti();
+		prodottoService.close();
+		req.setAttribute("listaProdotti", listaProdotti);
+		
 		List<Acquisto> listaAcquisti = new ArrayList<>();
 		AcquistoDaoImpl acquistoService = new AcquistoDaoImpl();
 		HttpSession sessione = req.getSession();
@@ -27,6 +37,8 @@ public class ListaAcquisti extends HttpServlet {
 		for(Acquisto acquisto : listaAcquisti) {
 			System.out.println(acquisto);
 		}
+		
+		
 		req.setAttribute("listaAcquisti", listaAcquisti);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("listaAcquisti.jsp");
 		dispatcher.forward(req, resp);

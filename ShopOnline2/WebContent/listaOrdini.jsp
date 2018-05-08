@@ -26,7 +26,7 @@
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-left: 25px;">
 
-<a href="index.html">
+<a href="index.jsp">
 <img src="img/home.png" class="icona">
 </a>
 </a>
@@ -98,6 +98,8 @@
 <tr>
 <th>Id Acquisto</th>
 <th>Quantità Acquistata</th>
+<th>Dettagli Acquisti</th>
+<th>Stato Spedizione</th>
 
 
 </tr>
@@ -108,18 +110,24 @@
 
 <td><%=acquisto.getIdAcquisto() %></td>
 <td><%=acquisto.getQuantitaAcquistata() %></td>
+<td>
+<form action="DettagliAcquisti" method="get">
+<input type="hidden" name="idAcquisto" value="<%=acquisto.getIdAcquisto()%>">
+<input type="hidden" name="idProdotto" value="<%=acquisto.getIdProdotto()%>">
+<input type="submit" value="Dettagli Acquisti" class="btn btn-secondary">
+</form>
+</td>
 <td><div class="progress-bar progress-bar-success" role="progressbar">
  <progress value="<%=LocalDate.now().getDayOfMonth()%>" max="<%=acquisto.getDataFine().getDayOfMonth()%>" >
  </progress>
  </div>
-<form action="DettagliAcquisti" method="get">
-<input type="hidden" name="idAcquisto" value="<%=acquisto.getIdAcquisto()%>">
-<input type="submit" value="Dettagli Acquisti" class="btn btn-secondary">
-
-
-
-</tr>
+ </div>
+ </td>
+ <div>
  
+ </div>
+</tr>
+
 
 </div>
 <%} %>

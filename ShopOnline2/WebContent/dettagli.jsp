@@ -113,25 +113,34 @@
 </tbody>
 </table>
 
-<div class="img-magnifier-container">
-<img id="myimage" src="<%=prodotto.getImmagine()%>" style="width: 400px; height: 400px;">
-<script>
-magnify("myimage", 2); 
-</script>
-</div>
-<br>
-<div align="center">
-<input type="submit" value="Aggiungi al carrello">
-<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
-</div>
-<br>
-<div  align="center">
+<div>
+<table>
+<tbody>
+<tr>
+
+<td>
+<div class="img-magnifier-container"><img id="myimage" src="<%=prodotto.getImmagine()%>" style="width: 400px; height: 400px;"><script>magnify("myimage", 2);</script></div>
+</td>
+
+<td>
+<table class="table">
 <%for(Recensioni recensioni : listaRecensioni) {%>
-<%=recensioni.getTitolo() %>
-<br>
-<%=recensioni.getContenuto() %>
-<br>
+<thead>
+<tr>
+<td><%=recensioni.getTitolo() %></td>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><%=recensioni.getContenuto() %></td>
+</tr>
+</tbody>
 <%}%>
+</table>
+</table>
+
+</div>
+
 
 
 <form action="Dettagli" method="post">
