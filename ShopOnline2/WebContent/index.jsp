@@ -63,7 +63,7 @@
 <div align="right" style="margin-right: 30px;">
 
 <form autocomplete="off" action="Ricerca" method="get">
-<input id="myInput" type="text" name="keyword" placeholder="Cerca...">
+<input id="myInput" type="text" name="keyword" >
 <input type="submit" value="cerca">
 <script> autocomplete(document.getElementById("myInput"));</script>
 
@@ -162,7 +162,6 @@
 <ol class="carousel-indicators">
 <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
 <li data-target="#myCarousel2" data-slide-to="1"></li>
-<li data-target="#myCarousel2" data-slide-to="2"></li>
 </ol>
 <!-- FRECCE -->
 <a class="left carousel-control" href="#myCarousel2" data-slide="next">
