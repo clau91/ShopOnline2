@@ -93,7 +93,7 @@ novalidate id="formUpdate">
 <div class="form-group">
 <label class="col-md-4 control-label">Nome</label>
 <div class="col-md-5">
-<input type ="text" name="nome" placeholder="inserisci nuovo nome" class="form-control" id="nome">
+<input  name="nome" placeholder="inserisci nuovo nome" class="form-control" id="nome">
 </div>
 <span class="col-md-3"></span>
 </div>
@@ -102,7 +102,7 @@ novalidate id="formUpdate">
 <div class="form-group">
 <label class="col-md-4 control-label">Cognome</label>
 <div class="col-md-5">
-<input type ="text" name="cognome" placeholder="inserisci nuovo cognome" class="form-control" id="cognome">
+<input  name="cognome" placeholder="inserisci nuovo cognome" class="form-control" id="cognome">
 </div>
 <span class="col-md-3"></span>
 </div>
@@ -111,7 +111,7 @@ novalidate id="formUpdate">
 <div class="form-group">
 <label class="col-md-4 control-label">Indirizzo</label>
 <div class="col-md-5">
-<input type ="text" name="indirizzo" placeholder="inserisci nuovo indirizzo" class="form-control" id="indirizzo">
+<input  name="indirizzo" placeholder="inserisci nuovo indirizzo" class="form-control" id="indirizzo">
 </div>
 <span class="col-md-3"></span>
 </div>
@@ -120,7 +120,7 @@ novalidate id="formUpdate">
 <div class="form-group">
 <label class="col-md-4 control-label">Username</label>
 <div class="col-md-5">
-<input type ="text" name="username" placeholder="inserisci nuovo username" class="form-control" id="username">
+<input  name="username" placeholder="inserisci nuovo username" class="form-control" id="username">
 </div>
 <span class="col-md-3"></span>
 </div>

@@ -22,11 +22,13 @@ public class DettagliAcquisti extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		Prodotto prodotto = new Prodotto();
+		ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
 		AcquistoDaoImpl acquistoService = new AcquistoDaoImpl();
 		int idAcquisto = Integer.parseInt(req.getParameter("idAcquisto"));
+		int idProdotto = Integer.parseInt(req.getParameter("idProdotto"));
 		Acquisto acquisto = acquistoService.getAcquistoById(idAcquisto);
-		int idProdotto = acquisto.getIdProdotto();
+		Prodotto prodotto = prodottoService.getProdottoById(idProdotto);		
+		
 		
 		RecensioniDaoImpl recensioniService = new RecensioniDaoImpl();
 		
@@ -36,6 +38,7 @@ public class DettagliAcquisti extends HttpServlet {
 		req.setAttribute("prodotto", prodotto);
 		recensioniService.close();
 		acquistoService.close();
+		prodottoService.close();
 		RequestDispatcher dispatcher = req.getRequestDispatcher("dettagliAcquisti.jsp");
 		dispatcher.forward(req, resp);
 	}

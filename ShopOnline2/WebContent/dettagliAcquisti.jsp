@@ -20,7 +20,6 @@
 <body>
 
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
-<% List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
 <% Prodotto prodotto = (Prodotto) request.getAttribute("prodotto"); %>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 <% List<Recensioni> listaRecensioni = (List<Recensioni>) request.getAttribute("listaRecensioni"); %>

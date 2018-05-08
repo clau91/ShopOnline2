@@ -19,7 +19,9 @@
 <body>
 <% Utente utente =(Utente)session.getAttribute("utenteLoggato"); %>
 <% List<Acquisto> listaOrdini =(List<Acquisto>) request.getAttribute("listaOrdini");%>
+<% Prodotto prodotto = (Prodotto) request.getAttribute("idProdotto");%>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
+
 
 <!-- NAVBAR -->
 
@@ -114,6 +116,7 @@
  </div>
 <form action="DettagliAcquisti" method="get">
 <input type="hidden" name="idAcquisto" value="<%=acquisto.getIdAcquisto()%>">
+<input type="hidden" name="idProdotto" value="<%=acquisto.getIdProdotto()%>">
 <input type="submit" value="Dettagli Acquisti" class="btn btn-secondary">
 
 
