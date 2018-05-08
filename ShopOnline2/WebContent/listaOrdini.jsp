@@ -20,6 +20,7 @@
 <% Utente utente =(Utente)session.getAttribute("utenteLoggato"); %>
 <% List<Acquisto> listaOrdini =(List<Acquisto>) request.getAttribute("listaOrdini");%>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
+<% Prodotto prodotto = (Prodotto) request.getAttribute("prodotto"); %>
 
 <!-- NAVBAR -->
 
@@ -96,7 +97,7 @@
 <table class="table">
 <thead>
 <tr>
-<th>Id Acquisto</th>
+<th>Prodotto</th>
 <th>Quantità Acquistata</th>
 <th>Dettagli Acquisti</th>
 <th>Stato Spedizione</th>
@@ -107,8 +108,7 @@
 <tbody>
 <% for(Acquisto acquisto : listaOrdini) {%>
 <tr>
-
-<td><%=acquisto.getIdAcquisto() %></td>
+<td><%=prodotto.getNome() %></td>
 <td><%=acquisto.getQuantitaAcquistata() %></td>
 <td>
 <form action="DettagliAcquisti" method="get">

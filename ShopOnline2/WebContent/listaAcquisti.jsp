@@ -110,7 +110,7 @@
 <%for(Prodotto prodotto : listaProdottiAcquistati) {%>
 
 <%if(prodotto.getQuantitaDisponibile() > 0){%>
-<form action="Carrello" method="get">
+<form action="Carrello2" method="get">
 <select name="quantitaAcquistata" id="quantitaAcquistata">
 <option value="1">1</option>
 <option value="2">2</option>
