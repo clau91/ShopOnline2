@@ -29,13 +29,15 @@ public class DettagliAcquisti extends HttpServlet {
 		Acquisto acquisto = acquistoService.getAcquistoById(idAcquisto);
 		Prodotto prodotto = prodottoService.getProdottoById(idProdotto);		
 		
-		
+		System.out.println(acquisto);
+		System.out.println(prodotto);
 		RecensioniDaoImpl recensioniService = new RecensioniDaoImpl();
 		
 		List<Recensioni> listaRecensioni = (List<Recensioni>) recensioniService.getAllByIdProdotto(idProdotto); 
 		req.setAttribute("listaRecensioni", listaRecensioni);
 		req.setAttribute("acquisto", acquisto);
 		req.setAttribute("prodotto", prodotto);
+		System.out.println(listaRecensioni);
 		recensioniService.close();
 		acquistoService.close();
 		prodottoService.close();

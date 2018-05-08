@@ -116,7 +116,7 @@
 <td><%=acquisto.getPrezzoDiSpedizione() %></td>
 <td><%="somma"%>
 <td><div class="progress-bar progress-bar-success" role="progressbar">
-<progress min="<%=acquisto.getDataInizio().getDayOfMonth()%> value="<%=LocalDate.now().getDayOfMonth()%>" max="<%=acquisto.getDataFine().getDayOfMonth()%>" >
+<progress min="<%=acquisto.getDataInizio().getDayOfMonth()%>" value="<%=LocalDate.now().getDayOfMonth()%>" max="<%=acquisto.getDataFine().getDayOfMonth()%>" >
 </progress>
 </div>
 
@@ -134,7 +134,7 @@ magnify("myimage", 2);
 <br>
 <div align="center">
 <input type="submit" value="Aggiungi al carrello">
-<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
+<input type="hidden" name="idProdotto" value="<%=acquisto.getIdProdotto()%>">
 </div>
 <br>
 <div  align="center">

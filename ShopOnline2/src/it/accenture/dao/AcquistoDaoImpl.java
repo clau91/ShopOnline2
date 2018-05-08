@@ -87,8 +87,8 @@ public class AcquistoDaoImpl implements AcquistoDao {
 				acquisto.setDataFine(rs.getDate(4).toLocalDate());
 				acquisto.setPrezzoDiSpedizione(rs.getDouble(5));
 				acquisto.setQuantitaAcquistata(rs.getInt(6));
-				acquisto.setIdProdotto(rs.getInt(7));
 				acquisto.setIdUtente(idUtente);
+				acquisto.setIdProdotto(rs.getInt(8));
 				listaAcquisti.add(acquisto);		
 			}
 		} catch (SQLException e) {
@@ -125,8 +125,8 @@ public class AcquistoDaoImpl implements AcquistoDao {
 				acquisto.setDataFine(rs.getDate(4).toLocalDate());
 				acquisto.setPrezzoDiSpedizione(rs.getDouble(5));
 				acquisto.setQuantitaAcquistata(rs.getInt(6));
-				acquisto.setIdProdotto(rs.getInt(7));
 				acquisto.setIdUtente(idUtente);
+				acquisto.setIdProdotto(rs.getInt(8));
 				listaOrdini.add(acquisto);		
 			}
 		} catch (SQLException e) {
@@ -162,8 +162,8 @@ public class AcquistoDaoImpl implements AcquistoDao {
 				acquisto.setDataFine(rs.getDate(4).toLocalDate());
 				acquisto.setPrezzoDiSpedizione(rs.getDouble(5));
 				acquisto.setQuantitaAcquistata(rs.getInt(6));
-				acquisto.setIdProdotto(rs.getInt(7));
 				acquisto.setIdUtente(idUtente);
+				acquisto.setIdProdotto(rs.getInt(8));
 				listaCarrello.add(acquisto);
 			}
 		} catch (SQLException e) {

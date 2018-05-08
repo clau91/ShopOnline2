@@ -113,7 +113,7 @@
 <td>
 <form action="DettagliAcquisti" method="get">
 <input type="hidden" name="idAcquisto" value="<%=acquisto.getIdAcquisto()%>">
-<input type="hidden" name="idAcquisto" value="<%=acquisto.getIdAcquisto()%>">
+<input type="hidden" name="idProdotto" value="<%=acquisto.getIdProdotto()%>">
 <input type="submit" value="Dettagli Acquisti" class="btn btn-secondary">
 </form>
 </td>
