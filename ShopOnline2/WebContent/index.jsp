@@ -148,18 +148,21 @@
 <div id="myCarousel2" class="carousel slide carousel-fade" data-ride="carousel" data-interval="4000">
 <!-- immagini -->
 <div class="carousel-inner">
-<% for (Prodotto prodotto : listaTop3Venduti) {%>
-<div class="item">
-<img class="img-carousel" src="<%=prodotto.getImmagine()%>" style="width: 300px; height: 300px;">
+<div class="item active">
+<img class="img-carousel" src="<%=listaTop3Venduti.get(0).getImmagine()%>"  style="width: 300px; height: 300px;">
 </div>
-<% } %>
+<div class="item">
+<img class="img-carousel" src="<%=listaTop3Venduti.get(1).getImmagine()%>"  style="width: 300px; height: 300px;">
+</div>
+<div class="item">
+<img class="img-carousel" src="<%=listaTop3Venduti.get(2).getImmagine()%>"  style="width: 300px; height: 300px;">
+</div>
 </div>
 <!-- INDICATORI -->
 <ol class="carousel-indicators">
 <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
 <li data-target="#myCarousel2" data-slide-to="1"></li>
 <li data-target="#myCarousel2" data-slide-to="2"></li>
-
 </ol>
 <!-- FRECCE -->
 <a class="left carousel-control" href="#myCarousel2" data-slide="next">
