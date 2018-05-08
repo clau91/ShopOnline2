@@ -117,7 +117,7 @@
 <td><%=acquisto.getPrezzoDiSpedizione() %></td>
 <td><%="somma"%>
 <td><div class="progress-bar progress-bar-success" role="progressbar">
-<progress value="<%=LocalDate.now().getDayOfMonth()%>" max="<%=acquisto.getDataFine().getDayOfMonth()%>" >
+<progress min="<%=acquisto.getDataInizio().getDayOfMonth()%> value="<%=LocalDate.now().getDayOfMonth()%>" max="<%=acquisto.getDataFine().getDayOfMonth()%>" >
 </progress>
 </div>
 

@@ -19,6 +19,8 @@ public interface ProdottoDao {
 	public void updateQuantitaDisponibile(int idProdotto, int quantita);
 	
 	public List<Prodotto> getProdottiByKeyword(String keyword);
+	
+	public List<Prodotto> getTop3Venduti();
 		
 	public void close();
 

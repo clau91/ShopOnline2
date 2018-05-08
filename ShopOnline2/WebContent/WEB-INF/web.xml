@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>Shop</display-name>
+  
+  
  
  <!-- REGISTRAZIONE -->
   <servlet>
@@ -116,7 +118,7 @@
   <url-pattern>/Carrello</url-pattern>
   </servlet-mapping>
   
-  <!-- Rimuovi da carrello -->
+  <!-- RIMUOVI DA CARRELLO -->
   <servlet>
   <servlet-name>RimuoviDaCarrello</servlet-name>
   <servlet-class>it.accenture.controller.RimuoviDaCarrello</servlet-class>
@@ -136,7 +138,7 @@
   <url-pattern>/Dettagli</url-pattern>
   </servlet-mapping>
   
-  <!-- DETTAGLI acquisti -->
+  <!-- DETTAGLI ACQUISTI -->
   <servlet>
   <servlet-name>DettagliAcquisti</servlet-name>
   <servlet-class>it.accenture.controller.DettagliAcquisti</servlet-class>
@@ -146,7 +148,7 @@
   <url-pattern>/DettagliAcquisti</url-pattern>
   </servlet-mapping>
 
- <!-- Update Account -->
+ <!-- UPDATE ACCOUNT -->
   <servlet>
   <servlet-name>UpdateAccount</servlet-name>
   <servlet-class>it.accenture.controller.UpdateAccount</servlet-class>
@@ -156,7 +158,7 @@
   <url-pattern>/UpdateAccount</url-pattern>
   </servlet-mapping>
   
-   <!-- Ricerca -->
+   <!-- RICERCA -->
   <servlet>
   <servlet-name>Ricerca</servlet-name>
   <servlet-class>it.accenture.controller.Ricerca</servlet-class>
@@ -164,6 +166,16 @@
   <servlet-mapping>
   <servlet-name>Ricerca</servlet-name>
   <url-pattern>/Ricerca</url-pattern>
+  </servlet-mapping>
+
+    <!-- LISTA TOP 3 VENDUTI -->
+  <servlet>
+  <servlet-name>ListaTop3Venduti</servlet-name>
+  <servlet-class>it.accenture.controller.ListaTop3Venduti</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>ListaTop3Venduti</servlet-name>
+  <url-pattern>/ListaTop3Venduti</url-pattern>
   </servlet-mapping>
 
 </web-app>

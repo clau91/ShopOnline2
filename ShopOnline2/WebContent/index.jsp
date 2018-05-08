@@ -19,8 +19,9 @@
 </head>
 <body>
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
-<% List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
+<% List<Prodotto> listaTop3Venduti = (List<Prodotto>) session.getAttribute("listaTop3Venduti"); %>
+
 
 <!-- navbar -->
 <nav class="nav navbar">
@@ -147,15 +148,11 @@
 <div id="myCarousel2" class="carousel slide carousel-fade" data-ride="carousel" data-interval="4000">
 <!-- immagini -->
 <div class="carousel-inner">
-<div class="item active">
-<img class="img-carousel" src="img/bastoni.jpg" style="width: 300px; height: 300px;">
-</div>
+<% for (Prodotto prodotto : listaTop3Venduti) {%>
 <div class="item">
-<img class="img-carousel" src="img/polo.jpg" style="width: 300px; height: 300px;">
+<img class="img-carousel" src="<%=prodotto.getImmagine()%>" style="width: 300px; height: 300px;">
 </div>
-<div class="item">
-<img class="img-carousel" src="img/racchetta.jpg" style="width: 300px; height: 300px;" >
-</div>
+<% } %>
 </div>
 <!-- INDICATORI -->
 <ol class="carousel-indicators">
@@ -173,6 +170,7 @@
 </a>
 
 </div><!-- CHIUSURA CAROUSEL PRODOTTI PIU VENDUTI -->
+
 </div>
 </div><!-- CHIUSURA CONTAINER -->
 
