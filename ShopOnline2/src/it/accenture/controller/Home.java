@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import it.accenture.dao.ProdottoDaoImpl;
 import it.accenture.model.Prodotto;
 
-public class ListaTop3Venduti extends HttpServlet{
+public class Home extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
