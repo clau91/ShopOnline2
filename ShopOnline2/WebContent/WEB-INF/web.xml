@@ -122,6 +122,16 @@
   <url-pattern>/Carrello</url-pattern>
   </servlet-mapping>
   
+  <!-- CARRELLO -->
+  <servlet>
+  <servlet-name>Carrello2</servlet-name>
+  <servlet-class>it.accenture.controller.Carrello2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>Carrello2</servlet-name>
+  <url-pattern>/Carrello2</url-pattern>
+  </servlet-mapping>
+  
   <!-- RIMUOVI DA CARRELLO -->
   <servlet>
   <servlet-name>RimuoviDaCarrello</servlet-name>

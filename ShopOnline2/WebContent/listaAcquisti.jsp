@@ -19,7 +19,7 @@
 <% Utente utente = (Utente)session.getAttribute("utenteLoggato"); %>
 <% List<Acquisto> listaAcquisti =(List<Acquisto>) request.getAttribute("listaAcquisti");%>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
-<% List<Prodotto> listaProdotti = (List<Prodotto>) request.getAttribute("listaProdotti"); %>
+<% List<Prodotto> listaProdottiAcquistati = (List<Prodotto>) request.getAttribute("listaProdottiAcquistati"); %>
 
 <!-- NAVBAR -->
 
@@ -106,8 +106,9 @@
 <tr>
 <td><%=acquisto.getIdAcquisto() %></td>
 <td><%=acquisto.getQuantitaAcquistata() %></td>
-<%for(Prodotto prodotto : listaProdotti) {%>
 <td align="center">
+<%for(Prodotto prodotto : listaProdottiAcquistati) {%>
+
 <%if(prodotto.getQuantitaDisponibile() > 0){%>
 <form action="Carrello" method="get">
 <select name="quantitaAcquistata" id="quantitaAcquistata">
@@ -132,8 +133,9 @@ disabled
 <% }%>
 >
 </form>
-</td>
 <% } %>
+
+</td>
 </tr>
 <% } %>
 

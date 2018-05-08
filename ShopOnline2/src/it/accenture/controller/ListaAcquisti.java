@@ -21,21 +21,22 @@ public class ListaAcquisti extends HttpServlet {
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		
-		List<Prodotto> listaProdotti = new ArrayList<>();
-		ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
-		listaProdotti = prodottoService.getAllProdotti();
-		prodottoService.close();
-		req.setAttribute("listaProdotti", listaProdotti);
-		
+				
 		List<Acquisto> listaAcquisti = new ArrayList<>();
 		AcquistoDaoImpl acquistoService = new AcquistoDaoImpl();
 		HttpSession sessione = req.getSession();
 		Utente utenteLoggato = (Utente) sessione.getAttribute("utenteLoggato");
 		listaAcquisti = acquistoService.getListaAcquisti(utenteLoggato.getIdUtente());
+		
+		
 		for(Acquisto acquisto : listaAcquisti) {
 			System.out.println(acquisto);
+			List<Prodotto> listaProdottiAcquistati = new ArrayList<>();
+			ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
+			Prodotto prodotto = prodottoService.getProdottoById(acquisto.getIdProdotto());
+			prodottoService.close();
+			listaProdottiAcquistati.add(prodotto);
+			req.setAttribute("listaProdottiAcquistati", listaProdottiAcquistati);
 		}
 		
 		

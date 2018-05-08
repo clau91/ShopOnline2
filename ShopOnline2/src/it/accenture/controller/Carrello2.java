@@ -17,7 +17,7 @@ import it.accenture.model.Acquisto;
 import it.accenture.model.Prodotto;
 import it.accenture.model.Utente;
 
-public class Carrello extends HttpServlet {
+public class Carrello2 extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -54,6 +54,6 @@ public class Carrello extends HttpServlet {
 		session.setAttribute("listaCarrello", listaCarrello);
 		
 		
-		resp.sendRedirect("ListaProdotti");
+		resp.sendRedirect("ListaAcquisti");
 		}
 }
