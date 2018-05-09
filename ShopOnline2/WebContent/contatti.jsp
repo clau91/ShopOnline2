@@ -53,11 +53,13 @@
 </div>
 
 <!-- Bottone Ricerca -->
-<div align="right" style="margin-right: 30px;">
-<form autocomplete="off" action="Ricerca" method="get">
-<input id="myInput" type="text" name="keyword" placeholder="Cerca...">
-<input type="submit" value="clicca">
+<div align="right" >
+<form autocomplete="off" action="Ricerca"class="navbar-form navbar-right"  role="search">
+<input class="form-control mr-sm-2" id="myInput" type="search" name="keyword" placeholder="Search for...">
+<button class="btn btn-outline-success my-2 my-sm-0" input type="submit" >Search</button>
 <script> autocomplete(document.getElementById("myInput"));</script>
+
+
 
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
@@ -90,7 +92,7 @@
 
 <div style="text-align:justify; margin-top: 100px; margin-left: 140px; margin-right: 140px;">
 <p style="font-size: 20px;">
-Sportaddicted nasce dall esperienza di quattro persone, Claudio, Daniele, Pavlin e Angelo, che da molto tempo condividono lavoro e passione per l'outdoor e per lo sport.
+Sportsaddicted nasce dall esperienza di quattro persone, Claudio, Daniele, Pavlin e Angelo, che da molto tempo condividono lavoro e passione per l'outdoor e per lo sport.
 Sportaddicted propone ai propri clienti tutto quello che può essere utile o indispensabile per vivere il mondo outdoor in maniera piacevole, confortevole e rilassante senza tralasciare
 chi lo pratica come challenger. Molti hanno la passione dello sport pur non gareggiando da professionisti e per loro Sportaddicted ha selezionato oggetti, accessori, modelli con questo tema e, 
 siccome anche in città possiamo vivere in uno stile sportivo, Sportaddicted propone un abbigliamento 
@@ -101,7 +103,7 @@ sportivo in grado di incontrare i gusti di tutti e soddisfare ogni esigenza con 
 </p>
 </div>
 <div  align="center" style="font-size: 20px;" >
-Sportaddicted s.r.l.
+Sportsaddicted s.r.l.
 <br>
 Via G. Washington 50, 20146 Milano(MI)
 <br>

@@ -60,12 +60,15 @@
 </ul>
 </div>
 
+
 <!-- Bottone Ricerca -->
-<div align="right" style="margin-right: 30px;">
-<form autocomplete="off" action="Ricerca" method="get">
-<input id="myInput" type="text" name="keyword" placeholder="Cerca...">
-<input type="submit" value="clicca">
+<div align="right" >
+<form autocomplete="off" action="Ricerca"class="navbar-form navbar-right"  role="search">
+<input class="form-control mr-sm-2" id="myInput" type="search" name="keyword" placeholder="Search for...">
+<button class="btn btn-outline-success my-2 my-sm-0" input type="submit" >Search</button>
 <script> autocomplete(document.getElementById("myInput"));</script>
+
+
 
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
@@ -93,7 +96,7 @@
 <% } else if(scelta.equals("login")) { %>
 <!-- JUMBOTRON -->
 <div class="jumbotron">
-<h1>Effettua la login per procedere all'ordine !</h1>
+<h1>Effettua la login per procedere all'ordine</h1>
 </div><!-- CHIUSURA JUMBOTRON -->
 <% } %>
 <!-- CONTAINER -->
@@ -226,7 +229,14 @@ novalidate id="formLogin">
 
 <% if(request.getAttribute("errore") != null) { %>
 <div class="alert alert-danger text-center">
+<<<<<<< HEAD
 <h3><br>Username o Password Sbagliati</h3>
+=======
+<br>
+<br>
+<br>
+<h4>USERNAME è/o PASSWORD Sono Sbagliati !</h4>
+>>>>>>> branch 'master' of https://github.com/clau91/ShopOnline2
 </div>
 <% } %>
 </div><!-- chiusura container -->

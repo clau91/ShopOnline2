@@ -36,7 +36,7 @@
 <ul class="nav navbar-nav" >
 <li><a href="ListaProdotti">Prodotti</a></li>
 <li><a href="ListaProdottiInOfferta">Offerte</a></li>
-<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="ListaProdottiPerCategoria">Categorie<span class="caret"></span></a>
+<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="ListaProdottiPerCategoria">Scegli per Categoria<span class="caret"></span></a>
 <ul class="dropdown-menu">
   <li><a href="ListaProdottiPerCategoria?categoria=CALCIO">CALCIO</a></li>
   <li><a href="ListaProdottiPerCategoria?categoria=BASKET">BASKET</a></li>
@@ -60,12 +60,13 @@
 
 
 <!-- Bottone Ricerca -->
-<div align="right" style="margin-right: 30px;">
-
-<form autocomplete="off" action="Ricerca" method="get">
-<input id="myInput" type="text" name="keyword" >
-<input type="submit" value="cerca">
+<div align="right" >
+<form autocomplete="off" action="Ricerca"class="navbar-form navbar-right"  role="search">
+<input class="form-control mr-sm-2" id="myInput" type="search" name="keyword" placeholder="Search for...">
+<button class="btn btn-outline-success my-2 my-sm-0" input type="submit" >Search</button>
 <script> autocomplete(document.getElementById("myInput"));</script>
+
+
 
 
 <% if (utente == null) { %>
@@ -89,7 +90,7 @@
 
 <!-- JUMBOTRON -->
 <div class="jumbotron">
-<h1>WELCOME TO SPORTADDICTED</h1>
+<h1>SPORTSADDICTED</h1>
 <p></p>
 </div><!-- chiusura jumbotron -->
 
@@ -158,19 +159,19 @@ $(document).ready(function(){
 <div class="item active">
 
 <a class="a-popover" data-placement="right" data-toggle="popover" data-trigger="hover" title="Prezzo:<%=listaTop3Venduti.get(0).getPrezzo() %>&euro;"
- data-content="Sconto:<%=listaTop3Venduti.get(0).getSconto()%>&percnt; 		Q.Disponibile:<%=listaTop3Venduti.get(0).getQuantitaDisponibile() %>">
- <img class="img-carousel" src="<%=listaTop3Venduti.get(0).getImmagine()%>"  style="width:100%"></a>
+ data-content="Sconto:<%=listaTop3Venduti.get(0).getSconto()%>&percnt;  Q.Disponibile:<%=listaTop3Venduti.get(0).getQuantitaDisponibile() %>">
+ <img class="img-carousel" src="<%=listaTop3Venduti.get(0).getImmagine()%>"  style="width: 300px; height: 300px;"></a>
 </div>
 
 <div class="item">
 <a class="a-popover" data-placement="right" data-toggle="popover" data-trigger="hover" title="Prezzo:<%=listaTop3Venduti.get(1).getPrezzo() %>&euro;"
- data-content="Sconto:<%=listaTop3Venduti.get(1).getSconto()%>&percnt; Q.Disponibile:<%=listaTop3Venduti.get(1).getQuantitaDisponibile() %>">
+ data-content="Sconto:<%=listaTop3Venduti.get(1).getSconto()%>&percnt;  Q.Disponibile:<%=listaTop3Venduti.get(1).getQuantitaDisponibile() %>">
  <img class="img-carousel" src="<%=listaTop3Venduti.get(1).getImmagine()%>"  style="width: 300px; height: 300px;"></a>
 </div>
 
 <div class="item">
 <a class="a-popover" data-placement="right" data-toggle="popover" data-trigger="hover" title="Prezzo:<%=listaTop3Venduti.get(2).getPrezzo() %>&euro;"
- data-content="Sconto:<%=listaTop3Venduti.get(2).getSconto()%>&percnt; Q.Disponibile:<%=listaTop3Venduti.get(2).getQuantitaDisponibile() %>">
+ data-content="Sconto:<%=listaTop3Venduti.get(2).getSconto()%>&percnt;  Q.Disponibile:<%=listaTop3Venduti.get(2).getQuantitaDisponibile() %>">
  <img class="img-carousel" src="<%=listaTop3Venduti.get(2).getImmagine()%>"  style="width: 300px; height: 300px;"></a>
 </div>
 </div>
@@ -201,52 +202,44 @@ $(document).ready(function(){
     <div class="container-fluid text-center text-md-left">
     <div class="row">
 
-    <!--First column-->
+    <!--1-st column-->
     <div class="col-md-4">
-       <h5 >Info Contacts</h5>
-       <h5>Via G. Washington 50, 20146 Milano(MI) </h5>
-       <h5>Tel: 800123123 </h5>
-       <h5>Email: info@sportaddicted.com </h5>
+       <h5 >INFO CONTACTS</h5>
+       Via G. Washington 50, 20146 Milano(MI)<br> 
+       Tel: 800123123<br>
+       Email: info@sportaddicted.com 
     </div>
             
    
-
-    <!--Second column-->
-       <div class="col-md-2 mx-auto">
-         <ul class="list-unstyled">
-          <li><a class="grey-text text-lighten-3" href="index.jsp">Home</a></li>   
-         </ul>
-       </div>
    
-   <!--Third column-->
+   <!--3d column-->
        <div class="col-md-2 mx-auto">
          <ul class="list-unstyled">
           <li><a class="grey-text text-lighten-3"  href="registrazione.jsp?form=login">Area Riservata</a></li> 
          </ul>
        </div>
             
-   <!--Third column-->
+   <!--4th column-->
        <div class="col-md-2 mx-auto">
          <ul class="list-unstyled">
-          <li><a class="grey-text text-lighten-3"  href="contatti.jsp">About Us</a></li>
+          <li><a class="grey-text text-lighten-3"  href="contatti.jsp">Chi Siamo</a></li>
          </ul>
        </div>        
             
     
-    <!--First column-->
+    <!--5th column-->
      <div class="col-md-2 mx-auto" text-align="left">
-       <h5 >Shopping Online Facile</h5>
-       <h5>Spedizione Garantita </h5>
-       <h5>Reso gratuito</h5>
-       <h5>90 giorni per il reso</h5>
+       <h5 >SHOPPING ONLINE FACILE</h5>
+       Spedizione Garantita<br> 
+       Reso gratuito<br>
+       90 giorni per il reso
     </div>
-    
-    
     
       </div>
      </div>
    </div>
-    <!--/.Footer Links-->
+   
+    <!--/ end of Footer Links-->
 <br>
 <br>
     <!--Copyright-->
