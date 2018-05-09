@@ -167,7 +167,6 @@ disabled
 
 </div>
 
-</table>
 </div><!-- chiusura container -->
 </body>
 </html>

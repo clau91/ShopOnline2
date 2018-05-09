@@ -47,14 +47,13 @@ public class Acquista extends HttpServlet {
 		List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello");
 		List<Acquisto> listaOrdini = new ArrayList<>();
 		List<Integer> listaQuantita = (List<Integer>) session.getAttribute("listaQuantita");
-
+		
+	
 		for (Prodotto prodotto : listaCarrello) {
 			
 		String tipoSpedizione = req.getParameter("tipoSpedizione");
 		Spedizione spedizione = Spedizione.valueOf(tipoSpedizione);
-		System.out.println(spedizione);
-		System.out.println(spedizione.getPrezzoSpedizione());
-		System.out.println(spedizione.getNumeroGiorni());
+		
 
 		LocalDate dataInizio = LocalDate.now();
 		LocalDate dataFine = dataInizio.plusDays(spedizione.getNumeroGiorni());
@@ -64,10 +63,7 @@ public class Acquista extends HttpServlet {
 			
 		Acquisto acquisto = new Acquisto();
 
-		
-		
 
-		
 		acquisto.setTipoSpedizione(spedizione);
 		acquisto.setDataInizio(dataInizio);
 		acquisto.setDataFine(dataFine);
@@ -91,17 +87,14 @@ public class Acquista extends HttpServlet {
 		req.setAttribute("sommaTotale", sommaTotale);
 		System.out.println(sommaTotale);
 
+		
+
 		} 
 		
 		listaCarrello.clear();
+		listaQuantita.clear();
 		
-		AcquistoDaoImpl acquistoService = new AcquistoDaoImpl();
-		acquistoService.acquistaProdotto(listaOrdini);
-		acquistoService.close();
-			
-		
-		System.out.println("Acquisto effettuato");
-		System.out.println(listaOrdini);
+	
 		
 		resp.sendRedirect("ListaOrdini");
 

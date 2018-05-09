@@ -24,17 +24,14 @@ public class ListaOrdini extends HttpServlet{
 		
 		List<Acquisto> listaOrdini = new ArrayList<>();
 		AcquistoDaoImpl acquistoService = new AcquistoDaoImpl();
-		HttpSession sessione = req.getSession();
-		Utente utenteLoggato = (Utente) sessione.getAttribute("utenteLoggato");
+		HttpSession session = req.getSession();
+		Utente utenteLoggato = (Utente) session.getAttribute("utenteLoggato");
 		listaOrdini = acquistoService.getListaOrdini(utenteLoggato.getIdUtente());
-			
-		for(Acquisto acquisto : listaOrdini) {
-			ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
-			Prodotto prodotto = prodottoService.getProdottoById(acquisto.getIdProdotto());
-			prodottoService.close();
-			req.setAttribute("prodotto", prodotto);
-		}
-			
+	
+
+
+		
+		
 		req.setAttribute("listaOrdini", listaOrdini);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("listaOrdini.jsp");
 		dispatcher.forward(req, resp);

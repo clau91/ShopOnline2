@@ -26,13 +26,18 @@ public class Carrello extends HttpServlet {
 
 		int idProdotto = Integer.parseInt(req.getParameter("idProdotto"));
 		List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello");
-		int quantitaAcquistata = Integer.parseInt(req.getParameter("quantitaAcquistata"));
-		List<Integer> listaQuantita = (List<Integer>) session.getAttribute("listaQuantita");
-
 		
 		if (listaCarrello == null) {
 			listaCarrello = new ArrayList<>();
 		}
+		
+		int quantitaAcquistata = Integer.parseInt(req.getParameter("quantitaAcquistata"));
+		List<Integer> listaQuantita = (List<Integer>) session.getAttribute("listaQuantita");
+
+		if (listaQuantita == null) {
+			listaQuantita = new ArrayList<>();
+		}
+			
 		
 		ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
 		Prodotto prodotto = new Prodotto();
@@ -40,9 +45,6 @@ public class Carrello extends HttpServlet {
 		prodottoService.close();
 		listaCarrello.add(prodotto);
 		
-		if (listaQuantita == null) {
-			listaQuantita = new ArrayList<>();
-		}
 		
 		listaQuantita.add(quantitaAcquistata);
 		

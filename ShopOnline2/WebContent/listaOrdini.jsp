@@ -22,6 +22,7 @@
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 <% Prodotto prodotto = (Prodotto) request.getAttribute("prodotto"); %>
 
+
 <!-- NAVBAR -->
 
 <nav class="nav navbar">
@@ -108,7 +109,7 @@
 <tbody>
 <% for(Acquisto acquisto : listaOrdini) {%>
 <tr>
-<td><%=prodotto.getNome() %></td>
+<td><%=acquisto.getIdProdotto()%></td>
 <td><%=acquisto.getQuantitaAcquistata() %></td>
 <td>
 <form action="DettagliAcquisti" method="get">
@@ -118,19 +119,15 @@
 </form>
 </td>
 <td><div class="progress-bar progress-bar-success" role="progressbar">
- <progress value="<%=LocalDate.now().getDayOfMonth()%>" max="<%=acquisto.getDataFine().getDayOfMonth()%>" >
- </progress>
- </div>
- </div>
- </td>
- <div>
- 
- </div>
+<progress value="<%=LocalDate.now().getDayOfMonth()%>" max="<%=acquisto.getDataFine().getDayOfMonth()%>" >
+</progress>
+</div>
+</td>
 </tr>
 
 
 </div>
-<%} %>
+<% } %>
 
 </tbody>
 </table>
