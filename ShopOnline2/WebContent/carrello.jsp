@@ -107,7 +107,7 @@
 <td><%=prodotto.getNome() %></td>
 <td><%=prodotto.getMarca() %></td>
 <td><%=prodotto.getPrezzo() %></td>
-<td><%("quantita")%></td>
+<td></td>
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
 <td><form action="RimuoviDaCarrello" method="get">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">

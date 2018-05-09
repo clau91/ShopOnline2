@@ -116,6 +116,8 @@
 <td><%=prodotto.getQuantitaDisponibile()%></td>
 <td><%=prodotto.getSconto() %></td>
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
+<td><input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>"></td>
+<td><input type="submit" value="Aggiungi al carrello" id="Carrello"></td>
 
 <!-- Tendina Quantita -->
 <td align="center">

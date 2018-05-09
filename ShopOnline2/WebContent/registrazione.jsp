@@ -226,7 +226,7 @@ novalidate id="formLogin">
 
 <% if(request.getAttribute("errore") != null) { %>
 <div class="alert alert-danger text-center">
-<h3>Username o Password Sbagliati</h3>
+<h3><br>Username o Password Sbagliati</h3>
 </div>
 <% } %>
 </div><!-- chiusura container -->
