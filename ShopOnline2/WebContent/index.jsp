@@ -158,27 +158,23 @@ $(document).ready(function(){
 <div class="item active">
 
 <a class="a-popover" data-placement="right" data-toggle="popover" data-trigger="hover" title="Prezzo:<%=listaTop3Venduti.get(0).getPrezzo() %>&euro;"
- data-content="Sconto:<%=listaTop3Venduti.get(0).getSconto()%>&percnt;">
+ data-content="Sconto:<%=listaTop3Venduti.get(0).getSconto()%>&percnt; 		Q.Disponibile:<%=listaTop3Venduti.get(0).getQuantitaDisponibile() %>">
  <img class="img-carousel" src="<%=listaTop3Venduti.get(0).getImmagine()%>"  style="width:100%"></a>
 </div>
 
 <div class="item">
 <a class="a-popover" data-placement="right" data-toggle="popover" data-trigger="hover" title="Prezzo:<%=listaTop3Venduti.get(1).getPrezzo() %>&euro;"
- data-content="Sconto:<%=listaTop3Venduti.get(1).getSconto()%>&percnt;">
+ data-content="Sconto:<%=listaTop3Venduti.get(1).getSconto()%>&percnt; Q.Disponibile:<%=listaTop3Venduti.get(1).getQuantitaDisponibile() %>">
  <img class="img-carousel" src="<%=listaTop3Venduti.get(1).getImmagine()%>"  style="width: 300px; height: 300px;"></a>
 </div>
 
 <div class="item">
 <a class="a-popover" data-placement="right" data-toggle="popover" data-trigger="hover" title="Prezzo:<%=listaTop3Venduti.get(2).getPrezzo() %>&euro;"
- data-content="Sconto:<%=listaTop3Venduti.get(2).getSconto()%>&percnt;">
+ data-content="Sconto:<%=listaTop3Venduti.get(2).getSconto()%>&percnt; Q.Disponibile:<%=listaTop3Venduti.get(2).getQuantitaDisponibile() %>">
  <img class="img-carousel" src="<%=listaTop3Venduti.get(2).getImmagine()%>"  style="width: 300px; height: 300px;"></a>
 </div>
 </div>
 
-
-
- 
- 
 
 <!-- INDICATORI -->
 <ol class="carousel-indicators">
