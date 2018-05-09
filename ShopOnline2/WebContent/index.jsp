@@ -67,6 +67,7 @@
 <input type="submit" value="cerca">
 <script> autocomplete(document.getElementById("myInput"));</script>
 
+
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
 <% } else { %>
