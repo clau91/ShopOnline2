@@ -20,6 +20,7 @@
 <% List<Prodotto> listaProdottiInOfferta = (List<Prodotto>) request.getAttribute("listaProdottiInOfferta"); %>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 
+
 <!-- NAVBAR -->
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-left: 25px;">
@@ -101,10 +102,11 @@
 <th>Prezzo </th>
 <th>Q.tà Disponibile</th>
 <th>Sconto(%)</th>
-<th></th>
-<th>Q.tà richiesta</th>
 <th>Acquista</th>
+<th>Q.tà richiesta</th>
+<th></th>
 <th>Dettagli</th>
+<th></th>
 </tr>
 </thead>
 
@@ -118,9 +120,19 @@
 <td><%=prodotto.getQuantitaDisponibile()%></td>
 <td><%=prodotto.getSconto() %></td>
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
-<td><input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>"></td>
-<td><input type="submit" value="Aggiungi al carrello" id="Carrello"></td>
-
+<form action="ListaProdotti" method="post">
+<input type="hidden" name="nome" value="<%=prodotto.getNome()%>">
+<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
+<td><input type="submit" value="Aggiungi al carrello" id="Carrello"
+<%if(prodotto.getQuantitaDisponibile() > 0){%>
+class="btn btn-success"
+<% }else{%>
+class="btn btn-warning"
+<%} %>
+<%if(utente == null) {%>
+disabled
+<% }%>
+></form></td>
 <!-- Tendina Quantita -->
 <td align="center">
 <select name="articoli" id="articoli">
@@ -131,23 +143,7 @@
 <option value="5">5</option>
 </select>
 </td>
-<td>
-<form action="Carrello" method="get">
-<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
-<input type="submit" value="Aggiungi al carrello" id="Carrello"
-<%if(prodotto.getQuantitaDisponibile() > 0){%>
-class="btn btn-success"
-<%}else{%>
-class="btn btn-warning"
-disabled
-<%} %>
-<%if(utente == null) {%>
-disabled
-<% }%>
->
-</form>
 
-</td>
 <!-- Button Dettagli -->
 <td>
 <form action="Dettagli" method="post">

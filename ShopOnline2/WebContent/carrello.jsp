@@ -19,7 +19,8 @@
 
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
-
+<% List<Acquisto> listaAcquisti =(List<Acquisto>) request.getAttribute("listaAcquisti");%>
+<% List<Prodotto> listaProdottiInOfferta = (List<Prodotto>) request.getAttribute("listaProdottiInOfferta"); %>
 
 <!-- navbar -->
 <nav class="nav navbar">
