@@ -107,7 +107,7 @@
 <tr>
 <td><%=prodotto.getNome() %></td>
 <td><%=prodotto.getMarca() %></td>
-<td><%=prodotto.getPrezzo() %></td>
+<td><%=prodotto.getPrezzo() %>&euro;</td>
 <td><%=prodotto.getQuantitaDisponibile()%></td>
 <td><%=prodotto.getSconto() %></td>
 </tr>
@@ -151,12 +151,8 @@
 
 
 
-Lascia una recensione<br>
-<textarea rows="1" cols="30" name="titolo" placeholder="inserisci titolo" id="titolo" ></textarea>
-<br>
-<textarea rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
-<br>
-<input type="submit" name="invia" value="Invia i dati">
+
+
 </form>
 
 </div>

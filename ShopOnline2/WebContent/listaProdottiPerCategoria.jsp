@@ -109,7 +109,7 @@
 <tr>
 <td><%=prodotto.getNome() %></td>
 <td><%=prodotto.getMarca() %></td>
-<td><%=prodotto.getPrezzo() %></td>
+<td><%=prodotto.getPrezzo() %>&euro;</td>
 <td><%=prodotto.getQuantitaDisponibile()%></td>
 <td><%=prodotto.getSconto() %></td>
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>

@@ -1,3 +1,4 @@
+<%@page import="it.accenture.model.Recensioni"%>
 <%@page import="it.accenture.model.Prodotto"%>
 <%@page import="it.accenture.model.Acquisto"%>
 <%@page import="java.util.List"%>
@@ -20,6 +21,7 @@
 <% List<Acquisto> listaAcquisti =(List<Acquisto>) request.getAttribute("listaAcquisti");%>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 <% List<Prodotto> listaProdottiAcquistati = (List<Prodotto>) request.getAttribute("listaProdottiAcquistati"); %>
+<% List<Recensioni> listaRecensioni = (List<Recensioni>) request.getAttribute("listaRecensioni"); %>
 
 <!-- navbar -->
 <nav class="nav navbar">
@@ -63,7 +65,6 @@
 <input type="submit" value="cerca">
 <script> autocomplete(document.getElementById("myInput"));</script>
 
-
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
 <% } else { %>
@@ -82,17 +83,18 @@
 </nav><!-- chiusura navbar  -->
 
 
-<div class="container">
+
 <!-- JUMBOTRON -->
 <div class="jumbotron">
 <h1>LISTA ACQUISTI</h1>
-
+<p></p>
 </div><!-- chiusura jumbotron -->
 
+<!-- DIV CONTAINER -->
+<div class="container">
 
 <!-- Tabella -->
-<div class="container">
-<div class="table-responsive">
+<div class="table responsive">
 <table class="table">
 <thead>
 <tr>
@@ -101,37 +103,35 @@
 <th></th>
 <th></th>
 <th></th>
-
+<th></th>
 <th>Lascia una recensione</th>
 <th></th>
 </tr>
 </thead>
 <tbody>
 <% for(Acquisto acquisto : listaAcquisti) {%>
-
-
 <tr>
-
+<form action="Carrello2" method="get">
 <td><%=acquisto.getIdAcquisto() %></td>
 <td><%=acquisto.getQuantitaAcquistata() %></td>
+<td align="center">
 <%for(Prodotto prodotto : listaProdottiAcquistati) {%>
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
-<td><input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>"></td>
 <td><%if(prodotto.getQuantitaDisponibile() > 0){%>
-<form action="Carrello2"  method="get">
 <select name="quantitaAcquistata" id="quantitaAcquistata">
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
 <option value="4">4</option>
 <option value="5">5</option>
-</select><br><br>
-<input type="submit" class="btn btn-success" value="Aggiungi al carrello" id="Carrello"></td>
-<td><textarea rows="1" cols="30" name="titolo" placeholder="inserisci titolo" id="titolo" ></textarea>
-<br>
-<textarea rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
-<br>
-<input type="submit" name="invia" value="Invia i dati"></td>
+</select></td>
+
+
+<td><input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
+<input type="submit" value="Aggiungi al carrello" id="Carrello"
+
+<%if(prodotto.getQuantitaDisponibile() > 0){%>
+class="btn btn-success"
 <%}else{%>
 class="btn btn-warning"
 disabled
@@ -139,22 +139,20 @@ disabled
 <%if(utente == null) {%>
 disabled
 <% }%>
+></td>
+<td><textarea rows="1" cols="30" name="titolo" placeholder="inserisci titolo" id="titolo" ></textarea>
+<br>
+<textarea rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
+<br>
+<input type="submit" name="invia" value="Invia i dati"></td>
 
-
-
-
-
+<% } %>
 </form>
-
-<% }%>
-<% }%>
-
 </tr>
-
-
+<% } %>
+<% } %>
 </tbody>
 </table>
-</div>
 </div>
 </div>
 
