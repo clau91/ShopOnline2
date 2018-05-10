@@ -59,9 +59,6 @@ public class Acquista extends HttpServlet {
 		acquisto.setPrezzoDiSpedizione(prezzoDiSpedizione);
 		
 		
-		
-		
-		
 		acquisto.setQuantitaAcquistata(listaQuantita.get(listaCarrello.indexOf(prodotto)));
 		
 		acquisto.setIdProdotto(idProdotto);
