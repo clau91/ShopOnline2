@@ -172,15 +172,31 @@
 </div>
 <!-- immagini -->
 <div class="carousel-inner">
+
+<script>
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+});
+</script>
+
 <div class="item active">
-<img class="img-carousel" src="<%=listaTop3Venduti.get(0).getImmagine()%>"  style="width: 300px; height: 300px;">
+<a class="a-popover" data-placement="right" data-toggle="popover" data-trigger="hover" title="Prezzo:<%=listaTop3Venduti.get(0).getPrezzo() %>&euro;"
+ data-content="Sconto:<%=listaTop3Venduti.get(0).getSconto()%>&percnt; | Q. Disponibile:<%=listaTop3Venduti.get(0).getQuantitaDisponibile() %>">
+ <img class="img-carousel" src="<%=listaTop3Venduti.get(0).getImmagine()%>"  style="width: 300px; height: 300px;"></a>
 </div>
+
 <div class="item">
-<img class="img-carousel" src="<%=listaTop3Venduti.get(1).getImmagine()%>"  style="width: 300px; height: 300px;">
+<a class="a-popover" data-placement="right" data-toggle="popover" data-trigger="hover" title="Prezzo:<%=listaTop3Venduti.get(1).getPrezzo() %>&euro;"
+ data-content="Sconto:<%=listaTop3Venduti.get(1).getSconto()%>&percnt; | Q. Disponibile:<%=listaTop3Venduti.get(1).getQuantitaDisponibile() %>">
+ <img class="img-carousel" src="<%=listaTop3Venduti.get(1).getImmagine()%>"  style="width: 300px; height: 300px;"></a>
 </div>
+
 <div class="item">
-<img class="img-carousel" src="<%=listaTop3Venduti.get(2).getImmagine()%>"  style="width: 300px; height: 300px;">
+<a class="a-popover" data-placement="right" data-toggle="popover" data-trigger="hover" title="Prezzo:<%=listaTop3Venduti.get(2).getPrezzo() %>&euro;"
+ data-content="Sconto:<%=listaTop3Venduti.get(2).getSconto()%>&percnt; | Q. Disponibile:<%=listaTop3Venduti.get(2).getQuantitaDisponibile() %>">
+ <img class="img-carousel" src="<%=listaTop3Venduti.get(2).getImmagine()%>"  style="width: 300px; height: 300px;"></a>
 </div>
+
 </div>
 <!-- INDICATORI -->
 <ol class="carousel-indicators">
@@ -221,9 +237,7 @@
 </div>
 
 <div class="col-md-2">
-<ul class="list-unstyled">
 <li style="font-size: 20px; width: 250px"><a href="registrazione.jsp?form=login"><u>AREA RISERVATA</u></a></li> 
-</ul>
 </div>
      
 <div class="col-md-2">
@@ -233,7 +247,7 @@
 </div>          
 
 <div class="col-md-4">
-<h5 >SPEDITO DA</h5>
+<h5>SPEDITO DA</h5>
     <img src="img/posteItaliane.jpg"  class="icona" class="a-popover"  data-toggle="popover" data-trigger="hover" title="Poste Italiane">
     <img src="img/DHL.png"   class="icona" class="a-popover"   data-toggle="popover"  data-trigger="hover" title="DHL">
  	<img src="img/TNT.jpg"   class="icona" class="a-popover"   data-toggle="popover"  data-trigger="hover" title="TNT">

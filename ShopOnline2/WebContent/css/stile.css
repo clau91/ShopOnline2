@@ -256,3 +256,15 @@ div.split2 div{
 div.clearer{
 float: none; clear: left
 }
+
+.popover {
+	color: red !important;
+	top: 1 !important;
+	left: 100 !important;
+}
+
+.a-popover {
+	width: 35%;
+	margin: auto;
+	display: block;
+}
