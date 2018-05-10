@@ -124,12 +124,11 @@
 </td>
 </tr>
 
-
-</div>
 <% } %>
 
 </tbody>
 </table>
+</div>
 </div>
 
 <!-- FOOTER -->

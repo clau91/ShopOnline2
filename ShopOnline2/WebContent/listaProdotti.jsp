@@ -132,7 +132,6 @@
 
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
 <input type="submit" value="Aggiungi al carrello" id="Carrello"
-<span class="glyphicon glyphicon-search" ></span> 
 <%if(prodotto.getQuantitaDisponibile() > 0){%>
 class="btn btn-success"
 <%}else{%>

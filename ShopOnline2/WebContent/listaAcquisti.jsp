@@ -63,6 +63,7 @@
 <form autocomplete="off" action="Ricerca" method="get">
 <input id="myInput" type="text" name="keyword" >
 <input type="submit" value="cerca">
+
 <script> autocomplete(document.getElementById("myInput"));</script>
 
 <% if (utente == null) { %>
@@ -98,9 +99,8 @@
 <table class="table">
 <thead>
 <tr>
-<th>Id Acquisto</th>
+<th>Id Prodotto</th>
 <th>Quantità Acquistata</th>
-<th></th>
 <th></th>
 <th></th>
 <th></th>
@@ -108,15 +108,14 @@
 <th></th>
 </tr>
 </thead>
+
 <tbody>
 <% for(Acquisto acquisto : listaAcquisti) {%>
 <tr>
-<form action="Carrello2" method="get">
-<td><%=acquisto.getIdAcquisto() %></td>
+<td><%=acquisto.getIdProdotto() %></td>
 <td><%=acquisto.getQuantitaAcquistata() %></td>
 <td align="center">
 <%for(Prodotto prodotto : listaProdottiAcquistati) {%>
-<td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
 <td><%if(prodotto.getQuantitaDisponibile() > 0){%>
 <select name="quantitaAcquistata" id="quantitaAcquistata">
 <option value="1">1</option>
@@ -126,8 +125,9 @@
 <option value="5">5</option>
 </select></td>
 
-
-<td><input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
+<td>
+<form action="Carrello2" method="get">
+<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
 <input type="submit" value="Aggiungi al carrello" id="Carrello"
 
 <%if(prodotto.getQuantitaDisponibile() > 0){%>
@@ -139,15 +139,24 @@ disabled
 <%if(utente == null) {%>
 disabled
 <% }%>
-></td>
-<td><textarea rows="1" cols="30" name="titolo" placeholder="inserisci titolo" id="titolo" ></textarea>
+>
+</form>
+</td>
+
+
+
+<td>
+<form action="Dettagli" method="post">
+<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
+<textarea rows="1" cols="30" name="titolo" placeholder="inserisci titolo" id="titolo" ></textarea>
 <br>
 <textarea rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
 <br>
-<input type="submit" name="invia" value="Invia i dati"></td>
+<input type="submit" name="invia" value="Invia i dati">
+</form>
+</td>
 
 <% } %>
-</form>
 </tr>
 <% } %>
 <% } %>
