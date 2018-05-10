@@ -102,6 +102,7 @@
 <th></th>
 <th>Q.tà richiesta</th>
 <th>Acquista</th>
+<th></th>
 
 </tr>
 </thead>
@@ -130,7 +131,7 @@
 <form action="ListaProdotti" method="post">
 <input type="hidden" name="nome" value="<%=prodotto.getNome()%>">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
-<input type="submit" value="Aggiungi al carrello" id="Carrello"
+<input type="submit" value="Acquista" id="Carrello"
 <%if(prodotto.getQuantitaDisponibile() > 0){%>
 class="btn btn-success"
 <% }else{%>
@@ -142,8 +143,14 @@ disabled
 >
 </form>
 </td>
-<!-- Button Dettagli -->
 
+<!-- Button Dettagli -->
+<td>
+<form action="Dettagli" method="post">
+<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
+<input type="submit" value="Dettagli" class="btn btn-secondary">
+</form>
+</td>
 </tr>
 <%} %>
 </tbody>

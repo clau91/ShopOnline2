@@ -102,10 +102,7 @@
 <th>Id Prodotto</th>
 <th>Quantità Acquistata</th>
 <th></th>
-<th></th>
-<th></th>
 <th>Lascia una recensione</th>
-<th></th>
 </tr>
 </thead>
 
