@@ -28,17 +28,6 @@ import it.accenture.model.Utente;
 public class Acquista extends HttpServlet {
 	
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
-		int idProdotto =Integer.parseInt(req.getParameter("idProdotto"));
-		System.out.println("prodotto selezionato : " + idProdotto);
-		req.setAttribute("idProdotto", idProdotto);
-		RequestDispatcher dispatcher = req.getRequestDispatcher("acquista.jsp");
-		dispatcher.forward(req, resp);
-	}
-	
-	
-	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		HttpSession session = req.getSession();
@@ -69,12 +58,17 @@ public class Acquista extends HttpServlet {
 		acquisto.setDataFine(dataFine);
 		acquisto.setPrezzoDiSpedizione(prezzoDiSpedizione);
 		
+		
+		
+		
+		
 		acquisto.setQuantitaAcquistata(listaQuantita.get(listaCarrello.indexOf(prodotto)));
 		
 		acquisto.setIdProdotto(idProdotto);
 		acquisto.setIdUtente(idUtente);
 
 		listaOrdini.add(acquisto);
+		
 		
 		int nuovaQuantita = prodotto.getQuantitaDisponibile() - acquisto.getQuantitaAcquistata();
 		
@@ -91,14 +85,22 @@ public class Acquista extends HttpServlet {
 
 		} 
 		
+		AcquistoDaoImpl acquistoService = new AcquistoDaoImpl();
+		acquistoService.acquistaProdotto(listaOrdini);
+		acquistoService.close();
+		
 		listaCarrello.clear();
 		listaQuantita.clear();
 		
-	
+		System.out.println("Acquisto effettuato");
+		System.out.println(listaOrdini);
 		
 		resp.sendRedirect("ListaOrdini");
 
 	}
+	
+	
+	
 	
 	
 

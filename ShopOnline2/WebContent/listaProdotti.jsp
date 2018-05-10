@@ -99,7 +99,6 @@
 <th>Prezzo </th>
 <th>Q.tà Disponibile</th>
 <th></th>
-<th>Q.tà richiesta</th>
 <th></th>
 <th></th>
 </tr>
@@ -107,7 +106,7 @@
 <!-- table body -->
 <tbody >
 <%for(Prodotto prodotto : listaProdotti){%>
-<tr align="center">
+<tr>
 
 <td><%=prodotto.getNome() %></td>
 <td><%=prodotto.getMarca() %></td>
@@ -116,7 +115,7 @@
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
 
 <!-- Tendina Quantita -->
-<td align="center">
+<td>
 <%if(prodotto.getQuantitaDisponibile() > 0){%>
 <form action="Carrello" method="get">
 <select name="quantitaAcquistata" id="quantitaAcquistata">

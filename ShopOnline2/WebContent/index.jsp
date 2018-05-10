@@ -21,6 +21,8 @@
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 <% List<Prodotto> listaTop3Venduti = (List<Prodotto>) session.getAttribute("listaTop3Venduti"); %>
+<% List<Acquisto> listaOrdini =(List<Acquisto>) request.getAttribute("listaOrdini");%>
+<% List<Acquisto> listaAcquisti =(List<Acquisto>) request.getAttribute("listaAcquisti");%>
 
 
 <!-- navbar -->
@@ -103,12 +105,13 @@
    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
    <li data-target="#myCarousel" data-slide-to="1"></li>
    <li data-target="#myCarousel" data-slide-to="2"></li>
-<li data-target="#myCarousel" data-slide-to="3"></li>
+   <li data-target="#myCarousel" data-slide-to="3"></li>
    <li data-target="#myCarousel" data-slide-to="4"></li>
    
  </ol>
 
  <!-- Wrapper for slides -->
+
 <div class="carousel-inner">
   <div class="item active">
     <img src="img/basket.jpg" alt="basket" style="width:100%;">
@@ -162,9 +165,11 @@
 <br>
 <!-- JUMBOTRON -->
 
+<% if(listaOrdini == null && listaAcquisti == null) { %>
 <div>
 <!-- chiusura jumbotron -->
 
+<% } else { %>
 <!-- CAROUSEL PRODOTTI PIU VENDUTI -->
 <div id="myCarousel2" class="carousel slide carousel-fade" data-ride="carousel" data-interval="4000">
 <div class="jumbotron">
@@ -214,6 +219,9 @@ $(document).ready(function(){
 </div><!-- CHIUSURA CAROUSEL PRODOTTI PIU VENDUTI -->
 
 </div>
+
+<% } %>
+
 </div><!-- CHIUSURA CONTAINER -->
 
 
@@ -227,8 +235,8 @@ $(document).ready(function(){
 <div class="footer">
 <br>
 
-<div class="col-md-4"> 
-  <h5 >MODALITA DI PAGAMENTO</h5>
+<div class="col-md-3" align="center"> 
+  <h5 style="font-size: 20px; width: 250px; margin-top: 0px">MODALITA DI PAGAMENTO</h5>
   <img src="img/mastercard.jpg" class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="MasterCard">
   <img src="img/paypal.jpg"     class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="PayPal">
   <img src="img/visa.jpg"       class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="Visa"> 
@@ -236,18 +244,20 @@ $(document).ready(function(){
   <img src="img/Americanexpress.png" class="icona" class="a-popover"  data-toggle="popover" data-trigger="hover" title="American Express"> 	
 </div>
 
-<div class="col-md-2">
-<li style="font-size: 20px; width: 250px"><a href="registrazione.jsp?form=login"><u>AREA RISERVATA</u></a></li> 
+<div class="col-md-3" align="center">
+<ul class="list-unstyled">
+<li style="font-size: 20px; width: 250px"><a href="registrazione.jsp?form=login"><u>AREA RISERVATA</u></a></li>
+</ul>
 </div>
      
-<div class="col-md-2">
+<div class="col-md-3" align="center">
 <ul class="list-unstyled">
 <li style="font-size: 20px; width: 250px"><a href="contatti.jsp"><u>CHI SIAMO</u></a></li>
 </ul>
 </div>          
 
-<div class="col-md-4">
-<h5>SPEDITO DA</h5>
+<div class="col-md-3" align="center">
+<h5 style="font-size: 20px; width: 250px; margin-top: 0px">SPEDITO DA</h5>
     <img src="img/posteItaliane.jpg"  class="icona" class="a-popover"  data-toggle="popover" data-trigger="hover" title="Poste Italiane">
     <img src="img/DHL.png"   class="icona" class="a-popover"   data-toggle="popover"  data-trigger="hover" title="DHL">
  	<img src="img/TNT.jpg"   class="icona" class="a-popover"   data-toggle="popover"  data-trigger="hover" title="TNT">
@@ -260,22 +270,11 @@ $(document).ready(function(){
 <br>
 
     
-<br> 
-<br>
-<br>
- 
-<div style="font-size: 20px">
-Spedizione Garantita<br> 
-Reso gratuito<br>
-90 giorni per il reso
-</div>
-<br>
 
-<div style="font-size: 12px">
-SportAddicted s.r.l. &nbsp;
-Via G. Washington 50, 20146 Milano(MI) &nbsp; 
-Tel: 800123123 &nbsp;
-Email: info@sportaddicted.com 
+
+ <!--Copyright-->
+<div class="footer-copyright py-3 text-center">
+<h5 style="font-size: 20px"><img src="img/logo.png" class="icona" class="a-popover" data-toggle="popover" data-trigger="hover" title="WEforSPORTS">&copy;SPORTSADDICTED 2018 - Partita IVA: 012345612132 - Tutti i diritti riservati</h5>
 </div>
 <br>
 </div>

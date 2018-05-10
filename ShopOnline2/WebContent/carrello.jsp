@@ -21,7 +21,6 @@
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 <% List<Acquisto> listaQuantita = (List<Acquisto>) session.getAttribute("listaQuantita"); %>
 <% List<Acquisto> listaAcquisti =(List<Acquisto>) request.getAttribute("listaAcquisti");%>
-<% List<Prodotto> listaProdottiInOfferta = (List<Prodotto>) request.getAttribute("listaProdottiInOfferta"); %>
 
 <!-- navbar -->
 <nav class="nav navbar">

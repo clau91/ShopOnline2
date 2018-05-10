@@ -18,12 +18,15 @@ public class ListaProdottiPerCategoria extends HttpServlet{
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		
 		Categoria categoria = Categoria.valueOf(req.getParameter("categoria"));
 		List<Prodotto> listaProdottiPerCategoria = new ArrayList<>();
 		ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
 		listaProdottiPerCategoria = prodottoService.getProdottiPerCategoria(categoria);
 		prodottoService.close();
 		req.setAttribute("listaProdottiPerCategoria", listaProdottiPerCategoria);
+		
 		
 		req.setAttribute("categoria", categoria);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("listaProdottiPerCategoria.jsp");

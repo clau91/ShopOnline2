@@ -118,28 +118,36 @@
 <td><%=prodotto.getQuantitaDisponibile()%></td>
 <td><%=prodotto.getSconto() %></td>
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
-<form action="ListaProdotti" method="post">
-<input type="hidden" name="nome" value="<%=prodotto.getNome()%>">
-<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
-<td><input type="submit" value="Aggiungi al carrello" id="Carrello"
-<%if(prodotto.getQuantitaDisponibile() > 0){%>
-class="btn btn-success"
-<% }else{%>
-class="btn btn-warning"
-<%} %>
-<%if(utente == null) {%>
-disabled
-<% }%>
-></form></td>
-<!-- Tendina Quantita -->
+
+
+
 <td align="center">
-<select name="articoli" id="articoli">
+<%if(prodotto.getQuantitaDisponibile() > 0){%>
+<form action="Carrello3" method="get">
+<select name="quantitaAcquistata" id="quantitaAcquistata">
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
 <option value="4">4</option>
 <option value="5">5</option>
 </select>
+<% } %>
+
+
+
+<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
+<input type="submit" value="Aggiungi al carrello" id="Carrello"
+<%if(prodotto.getQuantitaDisponibile() > 0){%>
+class="btn btn-success"
+<%}else{%>
+class="btn btn-warning"
+disabled
+<%} %>
+<%if(utente == null) {%>
+disabled
+<% }%>
+>
+</form>
 </td>
 
 <!-- Button Dettagli -->

@@ -108,7 +108,13 @@ p>a {
 	background-color: white;
 }
 
+.table th {
+	text-align: center;
+    padding-top: 12px;
+}
+
 .table td {
+	text-align: center;
     padding-top: 12px;
 }
 
