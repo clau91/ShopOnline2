@@ -28,7 +28,7 @@ public class ListaOrdini extends HttpServlet{
 		Utente utenteLoggato = (Utente) session.getAttribute("utenteLoggato");
 		listaOrdini = acquistoService.getListaOrdini(utenteLoggato.getIdUtente());
 	
-
+		System.out.println(listaOrdini);
 
 		
 		

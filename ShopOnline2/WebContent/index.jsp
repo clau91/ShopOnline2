@@ -163,11 +163,8 @@
 
 <br>
 <br>
-<!-- JUMBOTRON -->
 
-<% if(listaOrdini == null && listaAcquisti == null) { %>
-<div>
-<!-- chiusura jumbotron -->
+<% if (listaTop3Venduti.size() < 3) { %>
 
 <% } else { %>
 <!-- CAROUSEL PRODOTTI PIU VENDUTI -->
@@ -203,6 +200,8 @@ $(document).ready(function(){
 </div>
 
 </div>
+
+
 <!-- INDICATORI -->
 <ol class="carousel-indicators">
 <li data-target="#myCarousel2" data-slide-to="0" class="active"></li>
@@ -217,10 +216,8 @@ $(document).ready(function(){
 </a>
 
 </div><!-- CHIUSURA CAROUSEL PRODOTTI PIU VENDUTI -->
-
-</div>
-
 <% } %>
+
 
 </div><!-- CHIUSURA CONTAINER -->
 
@@ -277,6 +274,7 @@ $(document).ready(function(){
 <h5 style="font-size: 20px"><img src="img/logo.png" class="icona" class="a-popover" data-toggle="popover" data-trigger="hover" title="WEforSPORTS">&copy;SPORTSADDICTED 2018 - Partita IVA: 012345612132 - Tutti i diritti riservati</h5>
 </div>
 <br>
+
 </div>
 </div>
    
