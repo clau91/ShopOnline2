@@ -24,6 +24,8 @@ public class ListaProdottiPerCategoria extends HttpServlet{
 		listaProdottiPerCategoria = prodottoService.getProdottiPerCategoria(categoria);
 		prodottoService.close();
 		req.setAttribute("listaProdottiPerCategoria", listaProdottiPerCategoria);
+		
+		req.setAttribute("categoria", categoria);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("listaProdottiPerCategoria.jsp");
 		dispatcher.forward(req, resp);
 	}

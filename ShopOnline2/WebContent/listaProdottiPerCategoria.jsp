@@ -1,3 +1,4 @@
+<%@page import="it.accenture.model.Categoria"%>
 <%@page import="java.util.List"%>
 <%@page import="it.accenture.model.Utente"%>
 <%@page import="it.accenture.model.Prodotto"%>
@@ -18,6 +19,7 @@
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
 <% List<Prodotto> listaProdottiPerCategoria = (List<Prodotto>) request.getAttribute("listaProdottiPerCategoria"); %>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
+<% Categoria categoria = (Categoria) request.getAttribute("categoria");%>
 
 <!-- navbar -->
 <nav class="nav navbar">
@@ -81,7 +83,7 @@
 
 <!-- JUMBOTRON -->
 <div class="jumbotron">
-<h1>PRODOTTI PER CATEGORIA</h1>
+<h1><%=categoria%></h1>
 <p></p>
 </div><!-- chiusura jumbotron -->
 
@@ -109,7 +111,7 @@
 <tr>
 <td><%=prodotto.getNome() %></td>
 <td><%=prodotto.getMarca() %></td>
-<td><%=prodotto.getPrezzo() %>&euro;</td>
+<td><%=prodotto.getPrezzo() %></td>
 <td><%=prodotto.getQuantitaDisponibile()%></td>
 <td><%=prodotto.getSconto() %></td>
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
