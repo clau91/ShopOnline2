@@ -19,13 +19,9 @@
 
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
-<<<<<<< HEAD
 <% List<Acquisto> listaQuantita = (List<Acquisto>) session.getAttribute("listaQuantita"); %>
-
-=======
 <% List<Acquisto> listaAcquisti =(List<Acquisto>) request.getAttribute("listaAcquisti");%>
 <% List<Prodotto> listaProdottiInOfferta = (List<Prodotto>) request.getAttribute("listaProdottiInOfferta"); %>
->>>>>>> branch 'master' of https://github.com/clau91/ShopOnline2
 
 <!-- navbar -->
 <nav class="nav navbar">
@@ -141,7 +137,24 @@
 </div>
 
 <%} else { %>
+<br> 
+<br>
+<br> 
+<br>
+<br> 
+<br>
+<br>
+<br>
 <h3 align="center">Nessun prodotto nel carrello</h3>
+<br> 
+<br>
+<br> 
+<br>
+<br>
+
+<br> 
+<br>
+<br>
 <% } %>
 
 <br>

@@ -111,25 +111,25 @@
 
 <tbody>
 <% for(Acquisto acquisto : listaAcquisti) {%>
-<tr>
+<tr align="center">
 <td><%=acquisto.getIdProdotto() %></td>
 <td><%=acquisto.getQuantitaAcquistata() %></td>
+
 <td align="center">
 <%for(Prodotto prodotto : listaProdottiAcquistati) {%>
-<td><%if(prodotto.getQuantitaDisponibile() > 0){%>
+<%if(prodotto.getQuantitaDisponibile() > 0){%>
+<form action="Carrello2" method="get">
 <select name="quantitaAcquistata" id="quantitaAcquistata">
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
 <option value="4">4</option>
 <option value="5">5</option>
-</select></td>
+</select>
+<% } %>
 
-<td>
-<form action="Carrello2" method="get">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
 <input type="submit" value="Aggiungi al carrello" id="Carrello"
-
 <%if(prodotto.getQuantitaDisponibile() > 0){%>
 class="btn btn-success"
 <%}else{%>
@@ -158,7 +158,6 @@ disabled
 
 <% } %>
 </tr>
-<% } %>
 <% } %>
 </tbody>
 </table>
