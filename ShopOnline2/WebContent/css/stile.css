@@ -44,7 +44,6 @@ body {
 }
 
 .jumbotron {
-	font-size: 50px;
 	text-align: center;
     padding-top: 30px;
     padding-bottom: 30px;
@@ -53,6 +52,10 @@ body {
     background-color: #5a57523b;
     border-bottom: 50px;
     border-bottom-color: #ff8d00;
+}
+
+.jumbotron>h1 {
+	font-size: 60px;
 }
 
 .img-carousel {
