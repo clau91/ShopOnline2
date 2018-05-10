@@ -211,7 +211,13 @@
 <div class="footer">
 <br>
 
-<div class="col-md-4">   
+<div class="col-md-4"> 
+  <h5 >MODALITA DI PAGAMENTO</h5>
+  <img src="img/mastercard.jpg" class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="MasterCard">
+  <img src="img/paypal.jpg"     class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="PayPal">
+  <img src="img/visa.jpg"       class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="Visa"> 
+  <img src="img/postepay.jpg"   class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="PostePay"> 
+  <img src="img/Americanexpress.png" class="icona" class="a-popover"  data-toggle="popover" data-trigger="hover" title="American Express"> 	
 </div>
 
 <div class="col-md-2">
@@ -226,33 +232,21 @@
 </ul>
 </div>          
 
-<div class="col-md-2 mx-auto">
-</div>   
-
-<br> 
-<br>
-<br>
-
-
-<div class="col-md-2 mx-auto" text-align="left">
-<h5 >MODALITA DI PAGAMENTO</h5>
-  <img src="img/mastercard.jpg" class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="MasterCard">
-  <img src="img/paypal.jpg"     class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="PayPal">
-  <img src="img/visa.jpg"       class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="Visa"> 
-  <img src="img/postepay.jpg"   class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="PostePay"> 
-  <img src="img/Americanexpress.png" class="icona" class="a-popover"  data-toggle="popover" data-trigger="hover" title="American Express"> 	
-</div>
-    
-<div class="col-md-2 mx-auto" text-align="left">
+<div class="col-md-4">
 <h5 >SPEDITO DA</h5>
     <img src="img/posteItaliane.jpg"  class="icona" class="a-popover"  data-toggle="popover" data-trigger="hover" title="Poste Italiane">
     <img src="img/DHL.png"   class="icona" class="a-popover"   data-toggle="popover"  data-trigger="hover" title="DHL">
  	<img src="img/TNT.jpg"   class="icona" class="a-popover"   data-toggle="popover"  data-trigger="hover" title="TNT">
  	<img src="img/Sda.jpg"   class="icona" class="a-popover"   data-toggle="popover"  data-trigger="hover" title="SDA">
  	<img src="img/gls.jpeg"  class="icona" class="a-popover"   data-toggle="popover"  data-trigger="hover" title="GLS">
-</div>
+</div>   
 
- <br> 
+<br> 
+<br>
+<br>
+
+    
+<br> 
 <br>
 <br>
  
