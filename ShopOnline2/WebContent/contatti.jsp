@@ -18,13 +18,14 @@
 <% Utente utente = (Utente) session.getAttribute("utenteLoggato"); %>
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 
+<!-- navbar -->
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-left: 25px;">
 
 <a href="index.html">
-<img src="img/home.png" class="icona">
+<img src="img/logo.png" class="icona">
 </a>
-</a>
+
 </div>
 <div align="center">
 <ul class="nav navbar-nav" >
@@ -42,22 +43,23 @@
 <% if (utente == null) { %>
 <li><a href="registrazione.jsp?form=registrazione">Registrazione</a></li>
 <li><a href="registrazione.jsp?form=login">Login</a></li>
-<li><a href="contatti.jsp">Contatti</a></li>
 <% } else { %>
 <li><a href="ListaAcquisti">Lista Acquisti</a></li>
 <li><a href="ListaOrdini">Lista Ordini</a></li>
 <li><a href="Logout">Logout</a></li>
-<li><a href="contatti.jsp">Contatti</a></li>
 <% } %>
 </ul>
 </div>
 
+
 <!-- Bottone Ricerca -->
 <div align="right" style="margin-right: 30px;">
+
 <form autocomplete="off" action="Ricerca" method="get">
-<input id="myInput" type="text" name="keyword" placeholder="Cerca...">
-<input type="submit" value="clicca">
+<input id="myInput" type="text" name="keyword" >
+<input type="submit" value="cerca">
 <script> autocomplete(document.getElementById("myInput"));</script>
+
 
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
@@ -74,7 +76,6 @@
 </form>
 </div>
 
-
 </nav><!-- chiusura navbar  -->
 
 
@@ -90,7 +91,7 @@
 
 <div style="text-align:justify; margin-top: 100px; margin-left: 140px; margin-right: 140px;">
 <p style="font-size: 20px;">
-Sportaddicted nasce dall esperienza di quattro persone, Claudio, Daniele, Pavlin e Angelo, che da molto tempo condividono lavoro e passione per l'outdoor e per lo sport.
+Sportsaddicted nasce dall esperienza di quattro persone, Claudio, Daniele, Pavlin e Angelo, che da molto tempo condividono lavoro e passione per l'outdoor e per lo sport.
 Sportaddicted propone ai propri clienti tutto quello che può essere utile o indispensabile per vivere il mondo outdoor in maniera piacevole, confortevole e rilassante senza tralasciare
 chi lo pratica come challenger. Molti hanno la passione dello sport pur non gareggiando da professionisti e per loro Sportaddicted ha selezionato oggetti, accessori, modelli con questo tema e, 
 siccome anche in città possiamo vivere in uno stile sportivo, Sportaddicted propone un abbigliamento 
@@ -101,7 +102,7 @@ sportivo in grado di incontrare i gusti di tutti e soddisfare ogni esigenza con 
 </p>
 </div>
 <div  align="center" style="font-size: 20px;" >
-Sportaddicted s.r.l.
+Sportsaddicted s.r.l.
 <br>
 Via G. Washington 50, 20146 Milano(MI)
 <br>
@@ -133,5 +134,50 @@ Nr. di Iscrizione: 12345678
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDD6eXrAKjxJBoACBt2Rhb6fbhqCTrmz1c&callback=myMap"></script></p>
 </div>
 
+<!-- FOOTER -->
+<div class="container-fluid text-center text-md-left">
+<div class="footer">
+<br>
+
+<div class="col-md-4">   
+</div>
+
+<div class="col-md-2">
+<ul class="list-unstyled">
+<li style="font-size: 20px; width: 250px"><a href="registrazione.jsp?form=login"><u>AREA RISERVATA</u></a></li> 
+</ul>
+</div>
+     
+<div class="col-md-2">
+<ul class="list-unstyled">
+<li style="font-size: 20px; width: 250px"><a href="contatti.jsp"><u>CHI SIAMO</u></a></li>
+</ul>
+</div>          
+
+<div class="col-md-2 mx-auto">
+</div>   
+
+<br> 
+<br>
+<br>
+     
+<div style="font-size: 20px">
+Spedizione Garantita<br> 
+Reso gratuito<br>
+90 giorni per il reso
+</div>
+<br>
+
+<div style="font-size: 12px">
+SportAddicted s.r.l. &nbsp;
+Via G. Washington 50, 20146 Milano(MI) &nbsp; 
+Tel: 800123123 &nbsp;
+Email: info@sportaddicted.com 
+</div>
+<br>
+</div>
+</div>
+   
+<!-- FINE FOOTER-->
 
 </html>

@@ -22,14 +22,14 @@
 
 
 
-<!-- NAVBAR -->
+<!-- navbar -->
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-left: 25px;">
 
 <a href="index.html">
-<img src="img/home.png" class="icona">
+<img src="img/logo.png" class="icona">
 </a>
-</a>
+
 </div>
 <div align="center">
 <ul class="nav navbar-nav" >
@@ -41,28 +41,29 @@
   <li><a href="ListaProdottiPerCategoria?categoria=BASKET">BASKET</a></li>
   <li><a href="ListaProdottiPerCategoria?categoria=TENNIS">TENNIS</a></li>
   <li><a href="ListaProdottiPerCategoria?categoria=NUOTO">NUOTO</a></li>
-  <li><a href="ListaProdottiPerCategoria?categoria=TREKKING">TREKKING</a></li>   
+  <li><a href="ListaProdottiPerCategoria?categoria=TREKKING">TREKKING</a></li>  
 </ul>
 </li>
 <% if (utente == null) { %>
 <li><a href="registrazione.jsp?form=registrazione">Registrazione</a></li>
 <li><a href="registrazione.jsp?form=login">Login</a></li>
-<li><a href="contatti.jsp">Contatti</a></li>
 <% } else { %>
 <li><a href="ListaAcquisti">Lista Acquisti</a></li>
 <li><a href="ListaOrdini">Lista Ordini</a></li>
 <li><a href="Logout">Logout</a></li>
-<li><a href="contatti.jsp">Contatti</a></li>
 <% } %>
 </ul>
 </div>
 
+
 <!-- Bottone Ricerca -->
 <div align="right" style="margin-right: 30px;">
+
 <form autocomplete="off" action="Ricerca" method="get">
-<input id="myInput" type="text" name="keyword" placeholder="Cerca...">
-<input type="submit" value="clicca">
+<input id="myInput" type="text" name="keyword" >
+<input type="submit" value="cerca">
 <script> autocomplete(document.getElementById("myInput"));</script>
+
 
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
@@ -78,11 +79,17 @@
 <% } %>
 </form>
 </div>
+
 </nav><!-- chiusura navbar  -->
 
 <div class="jumbotron" >
 <h1>Modificare i campi sotto riportati</h1>
 </div><!-- CHIUSURA JUMBOTRON -->
+
+<br>
+<br>
+<br>
+<br>
 
 <!-- UPDATE FORM -->
 <form action="UpdateAccount" method="post" class="form-horizontal"
@@ -140,13 +147,66 @@ novalidate id="formUpdate">
 <div class="form-group">
 <span class="col-md-4"></span>
 <div class="col-md-5">
-<input type ="submit" value="Save" class="btn-primary">
-<input type ="reset" value="Reset" class="btn-warning">
+<input type ="submit" value="Save" class="btn-basic">
+<input type ="reset" value="Reset" class="btn-basic">
 </div>
 <span class="col-md-3"></span>
 </div>
 
 </form>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- FOOTER -->
+<div class="container-fluid text-center text-md-left">
+<div class="footer">
+<br>
+
+<div class="col-md-4">   
+</div>
+
+<div class="col-md-2">
+<ul class="list-unstyled">
+<li style="font-size: 20px; width: 250px"><a href="registrazione.jsp?form=login"><u>AREA RISERVATA</u></a></li> 
+</ul>
+</div>
+     
+<div class="col-md-2">
+<ul class="list-unstyled">
+<li style="font-size: 20px; width: 250px"><a href="contatti.jsp"><u>CHI SIAMO</u></a></li>
+</ul>
+</div>          
+
+<div class="col-md-2 mx-auto">
+</div>   
+
+<br> 
+<br>
+<br>
+     
+<div style="font-size: 20px">
+Spedizione Garantita<br> 
+Reso gratuito<br>
+90 giorni per il reso
+</div>
+<br>
+
+<div style="font-size: 12px">
+SportAddicted s.r.l. &nbsp;
+Via G. Washington 50, 20146 Milano(MI) &nbsp; 
+Tel: 800123123 &nbsp;
+Email: info@sportaddicted.com 
+</div>
+<br>
+</div>
+</div>
+   
+<!-- FINE FOOTER-->
 
 </body>
 </html>

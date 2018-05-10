@@ -7,8 +7,7 @@ QUESTA APPLICAZIONE DOVRA' IMPLEMENTARE QUESTE PAGINE/FUNZIONALITA :
 (alcune pagine e funzioanlità saranno visibili solo se l'utente è loggato (per es. se non si è loggati non si può acquistare un prodotto))
 
 - HOME 
-costituita principalmente da un carousel e da una navbar (presente in
-tutte le pagine dell'app)
+costituita principalmente da un carousel e da una navbar (presente in tutte le pagine dell'app)
 la navbar oltre i soliti link avrà un riquadro per la ricerca di un prodotto che consentirà al client di ricercare un prodotto tramite il nome
 (ritornare i prodotti con nomi simili)
 

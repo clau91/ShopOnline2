@@ -21,15 +21,14 @@
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 <% List<Prodotto> listaProdottiAcquistati = (List<Prodotto>) request.getAttribute("listaProdottiAcquistati"); %>
 
-<!-- NAVBAR -->
-
+<!-- navbar -->
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-left: 25px;">
 
 <a href="index.html">
-<img src="img/home.png" class="icona">
+<img src="img/logo.png" class="icona">
 </a>
-</a>
+
 </div>
 <div align="center">
 <ul class="nav navbar-nav" >
@@ -41,28 +40,29 @@
   <li><a href="ListaProdottiPerCategoria?categoria=BASKET">BASKET</a></li>
   <li><a href="ListaProdottiPerCategoria?categoria=TENNIS">TENNIS</a></li>
   <li><a href="ListaProdottiPerCategoria?categoria=NUOTO">NUOTO</a></li>
-  <li><a href="ListaProdottiPerCategoria?categoria=TREKKING">TREKKING</a></li>   
+  <li><a href="ListaProdottiPerCategoria?categoria=TREKKING">TREKKING</a></li>  
 </ul>
 </li>
 <% if (utente == null) { %>
 <li><a href="registrazione.jsp?form=registrazione">Registrazione</a></li>
 <li><a href="registrazione.jsp?form=login">Login</a></li>
-<li><a href="contatti.jsp">Contatti</a></li>
 <% } else { %>
 <li><a href="ListaAcquisti">Lista Acquisti</a></li>
 <li><a href="ListaOrdini">Lista Ordini</a></li>
 <li><a href="Logout">Logout</a></li>
-<li><a href="contatti.jsp">Contatti</a></li>
 <% } %>
 </ul>
 </div>
 
+
 <!-- Bottone Ricerca -->
 <div align="right" style="margin-right: 30px;">
+
 <form autocomplete="off" action="Ricerca" method="get">
-<input id="myInput" type="text" name="keyword" placeholder="Cerca...">
-<input type="submit" value="clicca">
+<input id="myInput" type="text" name="keyword" >
+<input type="submit" value="cerca">
 <script> autocomplete(document.getElementById("myInput"));</script>
+
 
 <% if (utente == null) { %>
 <a href="registrazione.jsp?form=login"><img src="img/user.png" class="icona" style="margin-left: 30px"></a>
@@ -79,51 +79,59 @@
 </form>
 </div>
 
-
 </nav><!-- chiusura navbar  -->
 
+
+<div class="container">
 <!-- JUMBOTRON -->
 <div class="jumbotron">
 <h1>LISTA ACQUISTI</h1>
-<p></p>
+
 </div><!-- chiusura jumbotron -->
 
-<!-- DIV CONTAINER -->
-<div class="container">
 
 <!-- Tabella -->
-<div class="table responsive">
+<div class="container">
+<div class="table-responsive">
 <table class="table">
 <thead>
 <tr>
 <th>Id Acquisto</th>
 <th>Quantità Acquistata</th>
 <th></th>
+<th></th>
+<th></th>
+
+<th>Lascia una recensione</th>
+<th></th>
 </tr>
 </thead>
 <tbody>
 <% for(Acquisto acquisto : listaAcquisti) {%>
+
+
 <tr>
+
 <td><%=acquisto.getIdAcquisto() %></td>
 <td><%=acquisto.getQuantitaAcquistata() %></td>
-<td align="center">
 <%for(Prodotto prodotto : listaProdottiAcquistati) {%>
-
-<%if(prodotto.getQuantitaDisponibile() > 0){%>
-<form action="Carrello2" method="get">
+<td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
+<td><input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>"></td>
+<td><%if(prodotto.getQuantitaDisponibile() > 0){%>
+<form action="Carrello2"  method="get">
 <select name="quantitaAcquistata" id="quantitaAcquistata">
 <option value="1">1</option>
 <option value="2">2</option>
 <option value="3">3</option>
 <option value="4">4</option>
 <option value="5">5</option>
-</select>
-<% } %>
-
-<input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
-<input type="submit" value="Aggiungi al carrello" id="Carrello"
-<%if(prodotto.getQuantitaDisponibile() > 0){%>
-class="btn btn-success"
+</select><br><br>
+<input type="submit" class="btn btn-success" value="Aggiungi al carrello" id="Carrello"></td>
+<td><textarea rows="1" cols="30" name="titolo" placeholder="inserisci titolo" id="titolo" ></textarea>
+<br>
+<textarea rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
+<br>
+<input type="submit" name="invia" value="Invia i dati"></td>
 <%}else{%>
 class="btn btn-warning"
 disabled
@@ -131,16 +139,73 @@ disabled
 <%if(utente == null) {%>
 disabled
 <% }%>
->
-</form>
-<% } %>
 
-</td>
+
+
+
+
+</form>
+
+<% }%>
+<% }%>
+
 </tr>
-<% } %>
+
 
 </tbody>
 </table>
 </div>
+</div>
+</div>
+
+<br>
+
+<!-- FOOTER -->
+<div class="container-fluid text-center text-md-left">
+<div class="footer">
+<br>
+
+<div class="col-md-4">   
+</div>
+
+<div class="col-md-2">
+<ul class="list-unstyled">
+<li style="font-size: 20px; width: 250px"><a href="registrazione.jsp?form=login"><u>AREA RISERVATA</u></a></li> 
+</ul>
+</div>
+     
+<div class="col-md-2">
+<ul class="list-unstyled">
+<li style="font-size: 20px; width: 250px"><a href="contatti.jsp"><u>CHI SIAMO</u></a></li>
+</ul>
+</div>          
+
+<div class="col-md-2 mx-auto">
+</div>   
+
+<br> 
+<br>
+<br>
+     
+<div style="font-size: 20px">
+Spedizione Garantita<br> 
+Reso gratuito<br>
+90 giorni per il reso
+</div>
+<br>
+
+<div style="font-size: 12px">
+SportAddicted s.r.l. &nbsp;
+Via G. Washington 50, 20146 Milano(MI) &nbsp; 
+Tel: 800123123 &nbsp;
+Email: info@sportaddicted.com 
+</div>
+<br>
+</div>
+</div>
+   
+<!-- FINE FOOTER-->
+
+
 </body>
 </html>

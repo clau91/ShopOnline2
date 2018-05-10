@@ -45,7 +45,6 @@ body {
 	color: #ff8d00;
 }
 
-
 .jumbotron {
 	text-align: center;
     padding-top: 30px;
@@ -53,6 +52,8 @@ body {
     margin-bottom: 30px;
     color: inherit;
     background-color: #5a57523b;
+    border-bottom: 50px;
+    border-bottom-color: #ff8d00;
 }
 
 .img-carousel {
@@ -71,6 +72,9 @@ p>a {
 	cursor: pointer;
 }
 
+.container-fluid{
+	 background-color: #5a57523b;
+}
 
 
 .carousel-fade .carousel-inner .item {
@@ -102,7 +106,7 @@ p>a {
 }
 
 .table {
-	background-color: #ff9800c4;
+	background-color: white;
 }
 
 .table td {
@@ -220,4 +224,36 @@ input[type=text] {
   /*when navigating through the items using the arrow keys:*/
   background-color: #ff9800c4 !important; 
   color: #ff9800c4; 
+}
+
+div.split2 div{
+    float: left;
+    width: 45%;
+    width: 49%;
+    width: 45%;
+    padding: 0 2%
+}
+
+.col-md-2>ul>li>a {
+	font-size: 20px;
+}
+
+.carousel-caption {
+	text-align: center;
+	left: 0px;
+	right: 0px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-bottom: 30px;
+    color: inherit;
+    background-color: #f5f1eb99;
+}
+
+.carousel-caption>h3 {
+	font-size: 30px;	
+}
+
+
+div.clearer{
+float: none; clear: left
 }
