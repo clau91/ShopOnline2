@@ -59,9 +59,7 @@ public class Dettagli extends HttpServlet {
 		recensioniService.close();
 		
 		listaRecensioni.add(recensioni);
-		
-		System.out.println(recensioni);
-		
+				
 		req.setAttribute("listaRecensioni", listaRecensioni);
 		resp.sendRedirect("Dettagli?idProdotto=" + idProdotto);
 	}

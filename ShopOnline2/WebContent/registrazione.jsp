@@ -115,7 +115,7 @@
 <br>
 
 <!-- FORM REGISTRAZIONE -->
-<form action="Registrazione" method="post" class="form-horizontal"
+<form action="Registrazione" method="post" onsubmit="return validazioneForm()" class="form-horizontal"
 novalidate id="formRegistrazione">
 
 <!-- NOME -->
@@ -186,7 +186,10 @@ novalidate id="formRegistrazione">
 </div>
 
 
-
+<!-- ALERT -->
+<div class="alert alert-danger" id="alert" style="display:none; margin-top:20px; width:460px; margin-left:390px">
+<h3 class="text-center" style="margin-top:14px">DEVI COMPILARE TUTTI I CAMPI</h3>
+</div>
 
 
 
@@ -244,6 +247,7 @@ novalidate id="formLogin">
 <div id="linkLogin">
 <span class="col-md-4"></span>
 <div class="col-md-5 text-primary">
+<br>
 <p>Non sei registrato ?</p>
 <p><a onclick="cambioForm()">Clicca qui</a> per registrarti</p>
 </div>
@@ -252,11 +256,9 @@ novalidate id="formLogin">
 <% } %>
 
 <% if(request.getAttribute("errore") != null) { %>
-<div class="alert alert-danger text-center">
-<h3><br>Username o Password Sbagliati</h3>
-<br>
+<div class="alert alert-danger text-center" align="center">
+<h3><br><br><br>Username o Password Sbagliati</h3>
 
-<br>
 
 </div>
 <% } %>

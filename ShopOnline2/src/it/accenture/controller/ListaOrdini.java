@@ -27,15 +27,7 @@ public class ListaOrdini extends HttpServlet{
 		HttpSession session = req.getSession();
 		Utente utenteLoggato = (Utente) session.getAttribute("utenteLoggato");
 		listaOrdini = acquistoService.getListaOrdini(utenteLoggato.getIdUtente());
-		
-		
-		
-	
-		System.out.println(listaOrdini);
 
-		
-		
-		
 		req.setAttribute("listaOrdini", listaOrdini);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("listaOrdini.jsp");
 		dispatcher.forward(req, resp);

@@ -35,7 +35,7 @@ public class UpdateAccount extends HttpServlet {
 		utenteLoggato.setIndirizzo(indirizzo);
 		
 		utenteService.updateUtente(utenteLoggato);
-		System.out.println("Dati aggiornati");
+
 		utenteService.close();
 		RequestDispatcher dispatcher = req.getRequestDispatcher("profiloUtente.jsp");
 		dispatcher.forward(req, resp);

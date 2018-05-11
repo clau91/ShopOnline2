@@ -36,7 +36,6 @@ public class ListaProdotti extends HttpServlet {
 		int idProdotto = Integer.parseInt(req.getParameter("idProdotto"));
 		ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
 		Prodotto prodotto = prodottoService.getProdottoById(idProdotto);
-		System.out.println(prodotto);
 		req.setAttribute("prodotto", prodotto);
 		prodottoService.close();
 		RequestDispatcher dispatcher = req.getRequestDispatcher("acquista.jsp");

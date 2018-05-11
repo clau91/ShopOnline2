@@ -24,7 +24,6 @@ public class Login extends HttpServlet {
 		
 		
 		if(utente == null) {
-			System.out.println("Credenziali Sbagliate");
 			req.setAttribute("errore", true);
 			RequestDispatcher dispatcher = req.getRequestDispatcher("registrazione.jsp?form=login");
 			dispatcher.forward(req, resp);

@@ -23,7 +23,6 @@ public class Home extends HttpServlet{
 		listaTop3Venduti = prodottoService.getTop3Venduti();
 		prodottoService.close();
 		
-		System.out.println(listaTop3Venduti);
 		
 		req.getSession().setAttribute("listaTop3Venduti", listaTop3Venduti);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("index.jsp");

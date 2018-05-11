@@ -28,16 +28,13 @@ public class DettagliAcquisti extends HttpServlet {
 		int idProdotto = Integer.parseInt(req.getParameter("idProdotto"));
 		Acquisto acquisto = acquistoService.getAcquistoById(idAcquisto);
 		Prodotto prodotto = prodottoService.getProdottoById(idProdotto);		
-		
-		System.out.println(acquisto);
-		System.out.println(prodotto);
+
 		RecensioniDaoImpl recensioniService = new RecensioniDaoImpl();
 		
 		List<Recensioni> listaRecensioni = (List<Recensioni>) recensioniService.getAllByIdProdotto(idProdotto); 
 		req.setAttribute("listaRecensioni", listaRecensioni);
 		req.setAttribute("acquisto", acquisto);
 		req.setAttribute("prodotto", prodotto);
-		System.out.println(listaRecensioni);
 		recensioniService.close();
 		acquistoService.close();
 		prodottoService.close();
@@ -70,7 +67,6 @@ public class DettagliAcquisti extends HttpServlet {
 		
 		listaRecensioni.add(recensioni);
 		
-		System.out.println(recensioni);
 		
 		req.setAttribute("listaRecensioni", listaRecensioni);
 		resp.sendRedirect("DettagliAcquisti?idProdotto=" + idProdotto);

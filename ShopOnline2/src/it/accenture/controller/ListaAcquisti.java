@@ -30,7 +30,6 @@ public class ListaAcquisti extends HttpServlet {
 		
 		
 		for(Acquisto acquisto : listaAcquisti) {
-			System.out.println(acquisto);
 			List<Prodotto> listaProdottiAcquistati = new ArrayList<>();
 			ProdottoDaoImpl prodottoService = new ProdottoDaoImpl();
 			Prodotto prodotto = prodottoService.getProdottoById(acquisto.getIdProdotto());

@@ -89,7 +89,7 @@
 
 <!-- JUMBOTRON -->
 <div class="jumbotron">
-<h1><img src="img/logo.png" class="logo">SPORTADDICTED</h1>
+<h5 style="font-size: 80px"><img src="img/logo.png" class="logo">SPORTADDICTED</h5>
 <p></p>
 </div><!-- chiusura jumbotron -->
 

@@ -94,6 +94,15 @@
 <!-- DIV CONTAINER -->
 <div class="container">
 
+<% if (listaAcquisti.size() != 0) { %>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 <!-- Tabella -->
 <div class="table responsive">
 <table class="table">
@@ -156,9 +165,47 @@ disabled
 <% } %>
 </tr>
 <% } %>
+
 </tbody>
 </table>
 </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<%} else {%>
+
+<br>
+
+<br>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+
+<h2 align="center">NESSUN PRODOTTO NELLA LISTA ACQUISTI</h2>
+<br>
+<br>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+
+
+<% } %>
 </div>
 
 <br>

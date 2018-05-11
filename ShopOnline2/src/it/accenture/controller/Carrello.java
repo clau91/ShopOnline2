@@ -48,9 +48,7 @@ public class Carrello extends HttpServlet {
 		
 		listaQuantita.add(quantitaAcquistata);
 		
-		System.out.println(listaQuantita);
-		System.out.println("Prodotto aggiunto");
-		System.out.println(listaCarrello);
+
 				
 		session.setAttribute("listaQuantita", listaQuantita);
 		session.setAttribute("listaCarrello", listaCarrello);

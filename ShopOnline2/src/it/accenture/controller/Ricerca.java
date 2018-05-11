@@ -20,12 +20,12 @@ public class Ricerca extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String keyword=req.getParameter("keyword");
-		System.out.println(keyword);
+
 		List<Prodotto> listaProdottiByKeyword = new ArrayList<>();
 		ProdottoDaoImpl ricercaService = new ProdottoDaoImpl();
 		listaProdottiByKeyword = ricercaService.getProdottiByKeyword(keyword);
 		ricercaService.close();
-		System.out.println(listaProdottiByKeyword);
+
 		req.setAttribute("listaProdotti", listaProdottiByKeyword);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("listaProdotti.jsp");
 		dispatcher.forward(req, resp);

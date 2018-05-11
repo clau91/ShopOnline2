@@ -23,16 +23,13 @@ public class ProfiloUtente extends HttpServlet {
 		String password = req.getParameter("password");
 		UtenteDaoImpl utenteService = new UtenteDaoImpl();
 		Utente utente = utenteService.login(username, password);
-		System.out.println(utente);
 		
 		if(utente == null) {
-			System.out.println("Credenziali Sbagliate");
 			req.setAttribute("errore", true);
 			RequestDispatcher dispatcher = req.getRequestDispatcher("profiloUtente.jsp?form=login");
 			dispatcher.forward(req, resp);
 			
 		} else {
-			System.out.println("Login Effettuato");
 			HttpSession sessione = req.getSession();
 			sessione.setAttribute("utenteLoggato", utente);
 			resp.sendRedirect("index.jsp");

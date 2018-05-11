@@ -76,7 +76,6 @@ public class Acquista extends HttpServlet {
 		double sommaTotale = (prodotto.getPrezzo()*acquisto.getQuantitaAcquistata()) + acquisto.getPrezzoDiSpedizione();
 		
 		req.setAttribute("sommaTotale", sommaTotale);
-		System.out.println(sommaTotale);
 
 		
 
@@ -89,8 +88,7 @@ public class Acquista extends HttpServlet {
 		listaCarrello.clear();
 		listaQuantita.clear();
 		
-		System.out.println("Acquisto effettuato");
-		System.out.println(listaOrdini);
+	
 		
 		resp.sendRedirect("ListaOrdini");
 

@@ -32,7 +32,7 @@ public class RimuoviDaCarrello extends HttpServlet{
 
 	listaCarrello.remove(prodotto);
 	
-	System.out.println(listaCarrello);
+
 	
 	session.setAttribute("listaCarrello", listaCarrello);
 	resp.sendRedirect("carrello.jsp");
