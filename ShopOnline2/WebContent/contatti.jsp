@@ -139,42 +139,49 @@ Nr. di Iscrizione: 12345678
 <div class="footer">
 <br>
 
-<div class="col-md-4">   
+<div class="col-md-3" align="center"> 
+  <h5 style="font-size: 25px; width: 250px; margin-top: 0px">MODALITA DI PAGAMENTO</h5>
+  <img src="img/mastercard.jpg" class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="MasterCard">
+  <img src="img/paypal.jpg"     class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="PayPal">
+  <img src="img/visa.jpg"       class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="Visa"> 
+  <img src="img/postepay.jpg"   class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="PostePay"> 
+  <img src="img/Americanexpress.png" class="icona" class="a-popover"  data-toggle="popover" data-trigger="hover" title="American Express"> 	
 </div>
 
-<div class="col-md-2">
+<div class="col-md-3" align="center">
 <ul class="list-unstyled">
-<li style="font-size: 20px; width: 250px"><a href="registrazione.jsp?form=login"><u>AREA RISERVATA</u></a></li> 
+<li style="font-size: 25px; width: 250px"><a href="registrazione.jsp?form=login"><u>AREA RISERVATA</u></a></li>
 </ul>
 </div>
      
-<div class="col-md-2">
+<div class="col-md-3" align="center">
 <ul class="list-unstyled">
-<li style="font-size: 20px; width: 250px"><a href="contatti.jsp"><u>CHI SIAMO</u></a></li>
+<li style="font-size: 25px; width: 250px"><a href="contatti.jsp"><u>CHI SIAMO</u></a></li>
 </ul>
 </div>          
 
-<div class="col-md-2 mx-auto">
+<div class="col-md-3" align="center">
+<h5 style="font-size: 25px; width: 250px; margin-top: 0px">SPEDITO DA</h5>
+    <img src="img/posteitaliane.jpg"  class="icona" class="a-popover"  data-toggle="popover" data-trigger="hover" title="Poste Italiane">
+    <img src="img/DHL.png"   class="icona" class="a-popover"   data-toggle="popover"  data-trigger="hover" title="DHL">
+ 	<img src="img/TNT.jpg"  class="icona" class="a-popover"   data-toggle="popover"  data-trigger="hover" title="TNT">
+ 	<img src="img/Sda.jpg"   class="icona" class="a-popover"   data-toggle="popover"  data-trigger="hover" title="SDA">
+ 	<img src="img/gls.jpeg"  class="icona" class="a-popover"   data-toggle="popover"  data-trigger="hover" title="GLS">
 </div>   
 
 <br> 
 <br>
 <br>
-     
-<div style="font-size: 20px">
-Spedizione Garantita<br> 
-Reso gratuito<br>
-90 giorni per il reso
+
+    
+
+
+ <!--Copyright-->
+<div class="footer-copyright py-3 text-center">
+<h5 style="font-size: 20px"><img src="img/logo.png" class="icona" class="a-popover" data-toggle="popover" data-trigger="hover" title="WEforSPORTS">&copy;SPORTSADDICTED 2018 - Partita IVA: 012345612132 - Tutti i diritti riservati</h5>
 </div>
 <br>
 
-<div style="font-size: 12px">
-SportAddicted s.r.l. &nbsp;
-Via G. Washington 50, 20146 Milano(MI) &nbsp; 
-Tel: 800123123 &nbsp;
-Email: info@sportaddicted.com 
-</div>
-<br>
 </div>
 </div>
    

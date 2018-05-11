@@ -170,7 +170,7 @@
 <!-- CAROUSEL PRODOTTI PIU VENDUTI -->
 <div id="myCarousel2" class="carousel slide carousel-fade" data-ride="carousel" data-interval="4000">
 <div class="jumbotron">
-<h4>PRODOTTI PIU VENDUTI</h4>
+<h5 style="font-size: 30px">PRODOTTI PIU VENDUTI</h4>
 </div>
 <!-- immagini -->
 <div class="carousel-inner">
@@ -233,7 +233,7 @@ $(document).ready(function(){
 <br>
 
 <div class="col-md-3" align="center"> 
-  <h5 style="font-size: 20px; width: 250px; margin-top: 0px">MODALITA DI PAGAMENTO</h5>
+  <h5 style="font-size: 25px; width: 250px; margin-top: 0px">MODALITA DI PAGAMENTO</h5>
   <img src="img/mastercard.jpg" class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="MasterCard">
   <img src="img/paypal.jpg"     class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="PayPal">
   <img src="img/visa.jpg"       class="icona"  class="a-popover"   data-toggle="popover"  data-trigger="hover" title="Visa"> 
@@ -243,21 +243,21 @@ $(document).ready(function(){
 
 <div class="col-md-3" align="center">
 <ul class="list-unstyled">
-<li style="font-size: 20px; width: 250px"><a href="registrazione.jsp?form=login"><u>AREA RISERVATA</u></a></li>
+<li style="font-size: 25px; width: 250px"><a href="registrazione.jsp?form=login"><u>AREA RISERVATA</u></a></li>
 </ul>
 </div>
      
 <div class="col-md-3" align="center">
 <ul class="list-unstyled">
-<li style="font-size: 20px; width: 250px"><a href="contatti.jsp"><u>CHI SIAMO</u></a></li>
+<li style="font-size: 25px; width: 250px"><a href="contatti.jsp"><u>CHI SIAMO</u></a></li>
 </ul>
 </div>          
 
 <div class="col-md-3" align="center">
-<h5 style="font-size: 20px; width: 250px; margin-top: 0px">SPEDITO DA</h5>
-    <img src="img/posteItaliane.jpg"  class="icona" class="a-popover"  data-toggle="popover" data-trigger="hover" title="Poste Italiane">
+<h5 style="font-size: 25px; width: 250px; margin-top: 0px">SPEDITO DA</h5>
+    <img src="img/posteitaliane.jpg"  class="icona" class="a-popover"  data-toggle="popover" data-trigger="hover" title="Poste Italiane">
     <img src="img/DHL.png"   class="icona" class="a-popover"   data-toggle="popover"  data-trigger="hover" title="DHL">
- 	<img src="img/TNT.jpg"   class="icona" class="a-popover"   data-toggle="popover"  data-trigger="hover" title="TNT">
+ 	<img src="img/TNT.jpg"  class="icona" class="a-popover"   data-toggle="popover"  data-trigger="hover" title="TNT">
  	<img src="img/Sda.jpg"   class="icona" class="a-popover"   data-toggle="popover"  data-trigger="hover" title="SDA">
  	<img src="img/gls.jpeg"  class="icona" class="a-popover"   data-toggle="popover"  data-trigger="hover" title="GLS">
 </div>   
