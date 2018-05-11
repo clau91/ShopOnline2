@@ -60,7 +60,7 @@
 
 <form autocomplete="off" action="Ricerca" method="get">
 <input id="myInput" type="text" name="keyword" >
-<input type="submit" value="cerca">
+<input type="submit" value="cerca" class="btn btn-secondary" style="background-color: #ff8d00">
 <script> autocomplete(document.getElementById("myInput"));</script>
 
 
@@ -83,9 +83,15 @@
 
 <!-- JUMBOTRON -->
 <div class="jumbotron">
-<h3>ACQUISTA</h3>
+<h1>ACQUISTA</h1>
 <p></p>
 </div><!-- chiusura jumbotron -->
+
+
+<br>
+<br>
+<br>
+<br>
 
 <form action="Acquista" method="post" class="form-horizontal">
 <!-- spedizione -->
@@ -112,13 +118,19 @@ Ordinaria
 <!-- bottoni -->
 <div class="form-group" >
 <span class="col-md-5"></span>
-<div class="col-md-4">
-<input  type="submit" class="btn btn-primary" value="Acquista" >
-<input  type="submit" class="btn btn-warning" value="Indietro">
+<div class="col-md-2" align="center">
+<input  type="submit" class="btn btn-primary" value="Acquista" style="color: black">
+<input  type="submit" value="Indietro" class="btn btn-secondary" style="background-color: #ff8d00">
 </div>
 <span class="col-md-3"></span>
 </div>
 </form>
+
+<br>
+<br>
+<br>
+
+
 
 <!-- FOOTER -->
 <div class="container-fluid text-center text-md-left">

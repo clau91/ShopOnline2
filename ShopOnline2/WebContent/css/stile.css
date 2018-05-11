@@ -8,6 +8,7 @@
 html * {
    font-family: big_noodle_titling;
    color: black;
+   font-size: 25px;
 }
 
 body {
@@ -17,7 +18,6 @@ body {
 
 .icona{
 	width: 50px;
-	height 50px;
 	margin-top: 12px;  
 	margin-bottom: 10px;
 	margin-right: 15px;"
@@ -66,7 +66,7 @@ body {
 .carousel-indicators li {
 	width: 15px;
 	heigth: 15px;
-	margin 1px;
+	margin: 1px;
 }
 
 p>a {
@@ -149,19 +149,24 @@ p>a {
 
 .nav input[type=text] {
     width: 200px;
-    height: 50px;
+    height: 25px;
     box-sizing: border-box;
     border: 2px solid #ccc;
     border-radius: 4px;
-    font-size: 18px;
+    font-size: 16px;
     background-color: white;
     background-image: url(img/searchicon.png);
     background-size: 30px;
-    background-position: 10px 8px; 
+    background-position: 9px 6px; 
     background-repeat: no-repeat;
-    padding: 20px 40px 20px 50px;
+    padding: 25px 40px 20px 50px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
+}
+
+
+.btn btn-primary {
+	
 }
 
 input[type=text]:focus {

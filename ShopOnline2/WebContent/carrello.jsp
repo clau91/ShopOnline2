@@ -61,7 +61,7 @@
 
 <form autocomplete="off" action="Ricerca" method="get">
 <input id="myInput" type="text" name="keyword" >
-<input type="submit" value="cerca">
+<input type="submit" value="cerca" class="btn btn-secondary" style="background-color: #ff8d00; font-size: 18px">
 <script> autocomplete(document.getElementById("myInput"));</script>
 
 
@@ -92,9 +92,14 @@
 <br>
 <br>
 
-
 <!-- TABELLA -->
 <% if (listaCarrello != null) { %>
+<br> 
+<br>
+<br>
+<br> 
+<br>
+<br>
 <div class="table-responsive">
 <table class="table">
 <thead>
@@ -120,7 +125,7 @@
 <td><img src="<%=prodotto.getImmagine()%>" style="width: 60px; height: 60px;"></td>
 <td><form action="RimuoviDaCarrello" method="get">
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
-<input type="submit" value="Rimuovi" class="btn btn-secondary">
+<input type="submit" value="Rimuovi" class="btn btn-secondary" style="background-color: #ff8d00; font-size: 18px;">
 </form></td>
 </tr>
 <% } %>
@@ -131,27 +136,23 @@
 <div align="center">
 <form action="acquista.jsp" >
 <input type="hidden">
-<input type="submit" value="Procedi all'acquisto" class="btn btn-secondary">
+<input type="submit" value="Procedi all'acquisto" class="btn btn-primary" style="color: black; font-size: 18px">
 </form>
 </div>
+<br> 
+<br>
+<br>
+<br> 
+<br>
+<br>
 
 <%} else { %>
 <br> 
-<br>
-<br> 
-<br>
-<br> 
-<br>
 <br>
 <br>
 <h3 align="center">Nessun prodotto nel carrello</h3>
 <br> 
 <br>
-<br> 
-<br>
-<br>
-
-<br> 
 <br>
 <br>
 <% } %>

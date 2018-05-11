@@ -60,7 +60,7 @@
 
 <form autocomplete="off" action="Ricerca" method="get">
 <input id="myInput" type="text" name="keyword" >
-<input type="submit" value="cerca">
+<input type="submit" value="cerca" class="btn btn-secondary" style="background-color: #ff8d00; font-size: 18px">
 <script> autocomplete(document.getElementById("myInput"));</script>
 
 

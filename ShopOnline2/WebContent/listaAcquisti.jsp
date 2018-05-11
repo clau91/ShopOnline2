@@ -147,7 +147,7 @@ disabled
 <input type="hidden" name="idProdotto" value="<%=prodotto.getIdProdotto()%>">
 <textarea rows="1" cols="30" name="titolo" placeholder="inserisci titolo" id="titolo" ></textarea>
 <br>
-<textarea rows="5" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
+<textarea rows="3" cols="30" name="contenuto" placeholder="inserisci recensione" id="contenuto"></textarea>
 <br>
 <input type="submit" name="invia" value="Invia i dati" class="btn btn-primary">
 </form>

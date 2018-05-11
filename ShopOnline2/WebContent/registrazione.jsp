@@ -64,7 +64,7 @@
 
 <form autocomplete="off" action="Ricerca" method="get">
 <input id="myInput" type="text" name="keyword" >
-<input type="submit" value="cerca">
+<input type="submit" value="cerca" class="btn btn-secondary" style="background-color: #ff8d00; font-size: 18px">
 <script> autocomplete(document.getElementById("myInput"));</script>
 
 
@@ -168,8 +168,8 @@ novalidate id="formRegistrazione">
 <div class="form-group">
 <span class="col-md-4"></span>
 <div class="col-md-5">
-<input type ="submit" value="Registrati" class="btn-basic">
-<input type ="reset" value="Reset" class="btn-basic">
+<input  type="submit" value="Registrati" class="btn btn-primary" style="color: black; font-size: 18px;">
+<input  type="reset" value="Reset" class="btn btn-secondary" style="background-color: #ff8d00; font-size: 18px;">
 </div>
 <span class="col-md-3"></span>
 </div>
@@ -193,15 +193,13 @@ novalidate id="formRegistrazione">
 
 <% } else if(scelta.equals("login")) { %>
 
+
+
 <br>
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 <!-- FORM LOGIN -->
 <form action="Login" method="post" class="form-horizontal"
 novalidate id="formLogin">
@@ -231,8 +229,8 @@ novalidate id="formLogin">
 <div class="form-group">
 <span class="col-md-4"></span>
 <div class="col-md-5">
-<input type ="submit" value="Login" class="btn-basic">
-<input type ="reset" value="Reset" class="btn-basic">
+<input  type="submit" value="Login" class="btn btn-primary" style="color: black; font-size: 18px;">
+<input  type="reset" value="Reset" class="btn btn-secondary" style="background-color: #ff8d00; font-size: 18px;">
 </div>
 <span class="col-md-3"></span>
 </div>
@@ -268,10 +266,8 @@ novalidate id="formLogin">
 <br>
 <br>
 <br>
-<br>
-<br>
-<br>
-<br>
+
+
 
 
 
