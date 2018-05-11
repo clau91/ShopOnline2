@@ -22,7 +22,6 @@
 <% List<Prodotto> listaCarrello = (List<Prodotto>) session.getAttribute("listaCarrello"); %>
 <% Prodotto prodotto = (Prodotto) request.getAttribute("prodotto"); %>
 
-
 <!-- navbar -->
 <nav class="nav navbar">
 <div class="navbar-header div-icona-home" style="margin-left: 25px;">
@@ -116,6 +115,7 @@
 <tbody>
 <% for(Acquisto acquisto : listaOrdini) {%>
 <tr>
+
 <td><%=acquisto.getIdProdotto()%></td>
 <td><%=acquisto.getQuantitaAcquistata() %></td>
 <td>
